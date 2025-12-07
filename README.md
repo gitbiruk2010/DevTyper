@@ -9,14 +9,14 @@ DevTyper is a fully offline, cross-platform desktop application designed to help
 
 ## Features
 
-- 🎯 **Code-Focused Practice**: Practice typing real code snippets from JavaScript, TypeScript, Python, Java, HTML, CSS, SQL, and PostgreSQL
-- 🎮 **Interactive Game Track**: Watch a racing car move across the screen as you type - the faster you type, the faster it goes!
-- 🏎️ **Real-time Performance**: Live WPM and accuracy updates during gameplay
-- 📊 **Three Difficulty Levels**: Beginner, Intermediate, and Advanced exercises
-- 💾 **Offline Storage**: All data stored locally using electron-store
-- 🎨 **Developer-Friendly UI**: Dark theme with syntax highlighting colors
-- ⚡ **Fast & Lightweight**: Built with Vite and React for blazing fast performance
-- 🏁 **Visual Progress**: Progress bar with milestone markers and finish line
+- **Code-Focused Practice**: Practice typing real code snippets from JavaScript, TypeScript, Python, Java, HTML, CSS, SQL, and PostgreSQL
+- **Interactive Game Track**: Watch a racing car move across the screen as you type - the faster you type, the faster it goes!
+- **Real-time Performance**: Live WPM and accuracy updates during gameplay
+- **Three Difficulty Levels**: Beginner, Intermediate, and Advanced exercises
+- **Offline Storage**: All data stored locally using electron-store
+- **Developer-Friendly UI**: Dark theme with syntax highlighting colors
+- **Fast & Lightweight**: Built with Vite and React for blazing fast performance
+- **Visual Progress**: Progress bar with milestone markers and finish line
 
 ## Installation
 
@@ -53,21 +53,6 @@ The packaged application will be in the `release` folder.
 - **Storage**: electron-store (persistent local storage)
 - **Packaging**: electron-builder
 
-## Project Structure
-
-```
-CodeF/
-├── electron/           # Electron main and preload processes
-├── src/
-│   ├── components/    # React components
-│   ├── context/       # React Context for state management
-│   ├── data/          # Exercise data (JSON)
-│   ├── types/         # TypeScript type definitions
-│   └── utils/         # Utility functions
-├── scripts/           # Build scripts
-└── dist/              # Build output
-```
-
 ## Usage
 
 1. **Select Difficulty**: Choose from Beginner, Intermediate, or Advanced
@@ -89,5 +74,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 MIT License
 
 ## Author
+Biruk B.
 
-Built with ❤️ for developers who want to type faster
+Built for developers who want to type faster
