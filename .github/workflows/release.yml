@@ -6,11 +6,24 @@ on:
       - 'v*.*.*'
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  release:
-    runs-on: windows-latest
+  build:
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - os: windows-latest
+            name: windows
+            files: |
+              release/DevTyper-*-Setup.exe
+          - os: ubuntu-latest
+            name: linux
+            files: |
+              release/DevTyper-*-linux.AppImage
+              release/DevTyper-*-linux.deb
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,20 +47,46 @@ jobs:
       - run: npm audit --audit-level=high
       - run: npm run package
 
+      - uses: actions/upload-artifact@v4
+        with:
+          name: installer-${{ matrix.name }}
+          path: ${{ matrix.files }}
+          if-no-files-found: error
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: assets
+          pattern: installer-*
+          merge-multiple: true
+
       - name: Checksums
-        shell: bash
         run: |
-          cd release
-          sha256sum DevTyper-*-Setup.exe > SHA256SUMS.txt
+          cd assets
+          sha256sum DevTyper-* > SHA256SUMS.txt
+          cat SHA256SUMS.txt
 
       - name: Publish GitHub Release
-        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" \
-            release/DevTyper-*-Setup.exe \
-            release/SHA256SUMS.txt \
+          # Use release-notes/<tag>.md when it exists, otherwise auto-generate notes.
+          NOTES_FILE="release-notes/$GITHUB_REF_NAME.md"
+          if [ -f "$NOTES_FILE" ]; then
+            NOTES_ARGS=(--notes-file "$NOTES_FILE")
+          else
+            NOTES_ARGS=(--generate-notes)
+          fi
+          gh release create "$GITHUB_REF_NAME" assets/* \
             --title "DevTyper $GITHUB_REF_NAME" \
-            --generate-notes \
+            "${NOTES_ARGS[@]}" \
             --verify-tag

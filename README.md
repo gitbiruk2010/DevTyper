@@ -19,6 +19,19 @@ DevTyper is a fully offline, cross-platform desktop application designed to help
 - **Fast & Lightweight**: Built with Vite and React for blazing fast performance
 - **Visual Progress**: Progress bar with milestone markers and finish line
 
+## Download
+
+Get the latest installer from the [Releases page](https://github.com/gitbiruk2010/DevTyper/releases/latest).
+
+| Platform | File | Notes |
+|----------|------|-------|
+| Windows 10/11 (64-bit) | `DevTyper-X.Y.Z-Setup.exe` | Not code-signed: if SmartScreen warns, choose More info, then Run anyway |
+| Ubuntu, Debian and derivatives (64-bit) | `DevTyper-X.Y.Z-linux.deb` | Install with `sudo apt install ./DevTyper-X.Y.Z-linux.deb` |
+| Other Linux distributions (64-bit) | `DevTyper-X.Y.Z-linux.AppImage` | Run `chmod +x DevTyper-X.Y.Z-linux.AppImage`, then start it |
+
+If the AppImage does not start on Ubuntu 24.04 or newer, the system is restricting the Chromium sandbox. Install the `.deb` instead, or launch the AppImage once with `--no-sandbox`.
+macOS builds are not provided yet; you can build from source (below).
+
 ## Installation
 
 ### Development
