@@ -1,6 +1,6 @@
 # DevTyper - Developer Typing Tutor
 
-![DevTyper](https://img.shields.io/badge/version-0.0.2-blue)
+![DevTyper](https://img.shields.io/badge/version-0.1.0-blue)
 ![Electron](https://img.shields.io/badge/Electron-44.x-brightgreen)
 ![React](https://img.shields.io/badge/React-19.x-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)

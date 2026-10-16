@@ -39,8 +39,8 @@ pre-releases with a suffix, e.g. `v0.1.0-beta.1`.
    The installer is written to `release/`.
 5. Tag the merged commit and push the tag:
    ```bash
-   git tag v0.0.2
-   git push origin v0.0.2
+   git tag v0.1.0
+   git push origin v0.1.0
    ```
    The tag must match `package.json` (`v` + version) or the workflow fails on purpose.
 6. Watch the **Release** run in the Actions tab. When it finishes, the release appears at
