@@ -4,8 +4,28 @@
   "version": "0.0.1",
   "type": "module",
   "main": "dist-electron/main.cjs",
-  "author": "Your Name",
+  "author": {
+    "name": "Biruk.B",
+    "url": "https://github.com/gitbiruk2010"
+  },
   "description": "DevTyper - A developer typing tutor for mastering code typing speed",
+  "license": "MIT",
+  "homepage": "https://github.com/gitbiruk2010/DevTyper#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitbiruk2010/DevTyper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gitbiruk2010/DevTyper/issues"
+  },
+  "keywords": [
+    "typing",
+    "typing-tutor",
+    "developer",
+    "electron",
+    "react",
+    "code-typing"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && npm run build:electron",
