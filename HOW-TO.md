@@ -1,5 +1,9 @@
 # DevTyper - Developer Guide
 
+**Requirements:** Node.js 22.12+ and npm 10+. Use `npm ci` for clean installs.
+
+> Every change goes on its own branch and reaches `main` through a pull request. CI (build + audit) and CodeQL must pass before merging.
+
 ## 📋 Complete Workflow After Making Changes
 
 ### Step-by-Step Process
@@ -17,7 +21,7 @@ Make Changes → Test in Dev → Build → Test Build → Package Installer → 
 - **Command:** `npm run dev:electron`
 - **Features:**
   - ✅ Hot module replacement (HMR)
-  - ✅ DevTools open automatically
+  - ✅ DevTools open automatically (dev only; disabled in packaged builds)
   - ✅ Instant code changes without restart
   - ✅ Source maps for debugging
 - **When to use:** While coding/testing features
@@ -89,7 +93,8 @@ Make Changes → Test in Dev → Build → Test Build → Package Installer → 
    npm start
    ```
    - This runs the built version (not dev server)
-   - No DevTools, no hot reload
+   - No DevTools, no hot reload (the packaged app also enforces a strict Content Security Policy, so
+     check for CSP errors here that dev mode would not show)
    - Tests actual production performance
 
 7. **Verify:**
@@ -195,7 +200,7 @@ npm install
 # 2. Check for vulnerabilities
 npm audit
 
-# 3. Fix if needed
+# 3. Fix if needed (avoid `--force`; review major bumps by hand)
 npm audit fix
 
 # 4. Test thoroughly
@@ -225,7 +230,7 @@ npm run package
 - [ ] Racing game animates smoothly
 - [ ] Stats persist after closing app
 - [ ] All difficulty levels work
-- [ ] All 32 exercises load properly
+- [ ] All exercises load properly (currently 32)
 
 ### **Build Quality**
 
@@ -237,7 +242,7 @@ npm run package
 
 ### **Installer Quality**
 
-- [ ] Installer builds: `npm run package`
+- [ ] Installer builds: `npm run package` (if you get `EPERM ... win-unpacked.tmp`, see RELEASE-GUIDE.md)
 - [ ] Installer size reasonable (~90-100 MB)
 - [ ] Custom icon displays correctly
 - [ ] Installation completes successfully
@@ -249,7 +254,7 @@ npm run package
 
 - [ ] Zero vulnerabilities: `npm audit`
 - [ ] Dependencies up to date (check for critical updates)
-- [ ] No exposed secrets in code
+- [ ] No exposed secrets in code (GitHub secret scanning is enabled on the repo)
 
 ### **Version Management**
 
@@ -277,9 +282,9 @@ npm start                # Run built app (no dev server)
 npm run package          # Create Windows installer
 
 # Maintenance
-npm install              # Install dependencies
+npm ci                   # Clean install from the lockfile
 npm audit                # Check for vulnerabilities
-npm run lint             # Run ESLint
+npm run lint             # Run ESLint (currently has known errors)
 npx tsc --noEmit         # Check TypeScript types
 ```
 
@@ -326,7 +331,8 @@ When releasing a new version:
    DevTyper-0.0.2-Setup.exe
    ```
 
-4. **Distribute the new version**
+4. **Release it:** merge the version bump through a PR, then push a `vX.Y.Z` tag. GitHub Actions builds
+   the installer and publishes the release. See [RELEASE-GUIDE.md](RELEASE-GUIDE.md).
 
 ---
 
@@ -335,7 +341,9 @@ When releasing a new version:
 ### Issue: "Module not found" errors
 **Solution:** 
 ```bash
+# macOS/Linux/Git Bash
 rm -rf node_modules package-lock.json
+# PowerShell: Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
@@ -398,9 +406,9 @@ Before release:
 ├── npm audit
 ├── npm run build
 ├── npm start (test production)
-├── npm run package
+├── npm run package (optional local test)
 ├── Test installer
-└── Distribute
+└── Tag vX.Y.Z -> GitHub Actions publishes the release
 ```
 
 ---
