@@ -1,0 +1,250 @@
+[
+  {
+    "id": "6",
+    "level": "intermediate",
+    "focus": "keywords_python",
+    "text": "def calculate_average(data): pass",
+    "source_language": "python",
+    "difficulty_score": 4
+  },
+  {
+    "id": "7",
+    "level": "intermediate",
+    "focus": "loops",
+    "text": "for i in range(10): print(i)",
+    "source_language": "python",
+    "difficulty_score": 5
+  },
+  {
+    "id": "19",
+    "level": "intermediate",
+    "focus": "list_comprehension",
+    "text": "squares = [x**2 for x in range(10) if x % 2 == 0]",
+    "source_language": "python",
+    "difficulty_score": 6
+  },
+  {
+    "id": "20",
+    "level": "advanced",
+    "focus": "decorators",
+    "text": "@property\ndef name(self): return self._name",
+    "source_language": "python",
+    "difficulty_score": 7
+  },
+  {
+    "id": "python-b1",
+    "level": "beginner",
+    "focus": "print_hello",
+    "text": "print(\"Hello, DevTyper!\")",
+    "source_language": "python",
+    "difficulty_score": 1
+  },
+  {
+    "id": "python-b2",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "name = \"Ada\"\nage = 36\nprint(name, age)",
+    "source_language": "python",
+    "difficulty_score": 2
+  },
+  {
+    "id": "python-i1",
+    "level": "intermediate",
+    "focus": "functions",
+    "text": "def greet(name, excited=False):\n    msg = f\"Hello, {name}\"\n    return msg + \"!\" if excited else msg",
+    "source_language": "python",
+    "difficulty_score": 4
+  },
+  {
+    "id": "python-i2",
+    "level": "intermediate",
+    "focus": "dict_loop",
+    "text": "scores = {\"ana\": 91, \"bo\": 78, \"cy\": 85}\nfor student, score in scores.items():\n    if score >= 80:\n        print(f\"{student} passed with {score}\")",
+    "source_language": "python",
+    "difficulty_score": 5
+  },
+  {
+    "id": "python-a1",
+    "level": "advanced",
+    "focus": "classes",
+    "text": "class Stack:\n    def __init__(self):\n        self._items = []\n\n    def push(self, item):\n        self._items.append(item)\n\n    def pop(self):\n        return self._items.pop() if self._items else None",
+    "source_language": "python",
+    "difficulty_score": 7
+  },
+  {
+    "id": "python-a2",
+    "level": "advanced",
+    "focus": "comprehension_lambda",
+    "text": "words = [\"lambda\", \"map\", \"zip\", \"yield\"]\nlengths = {w: len(w) for w in words if len(w) > 3}\nranked = sorted(lengths.items(), key=lambda kv: (-kv[1], kv[0]))",
+    "source_language": "python",
+    "difficulty_score": 8
+  },
+  {
+    "id": "python-b3",
+    "level": "beginner",
+    "focus": "import_basics",
+    "text": "import os\nimport sys\nfrom pathlib import Path",
+    "source_language": "python",
+    "difficulty_score": 1
+  },
+  {
+    "id": "python-b4",
+    "level": "beginner",
+    "focus": "if_elif_else",
+    "text": "if score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelse:\n    grade = \"C\"",
+    "source_language": "python",
+    "difficulty_score": 2
+  },
+  {
+    "id": "python-b5",
+    "level": "beginner",
+    "focus": "list_methods",
+    "text": "items = [3, 1, 2]\nitems.append(4)\nitems.sort(reverse=True)\nprint(len(items))",
+    "source_language": "python",
+    "difficulty_score": 2
+  },
+  {
+    "id": "python-b6",
+    "level": "beginner",
+    "focus": "while_loop",
+    "text": "count = 0\nwhile count < 5:\n    print(count)\n    count += 1",
+    "source_language": "python",
+    "difficulty_score": 2
+  },
+  {
+    "id": "python-b7",
+    "level": "beginner",
+    "focus": "input_cast",
+    "text": "age = int(input(\"Age: \"))\nprint(f\"Next year: {age + 1}\")",
+    "source_language": "python",
+    "difficulty_score": 3
+  },
+  {
+    "id": "python-b8",
+    "level": "beginner",
+    "focus": "string_methods",
+    "text": "text = \"  Hello World  \"\nprint(text.strip().lower().split())",
+    "source_language": "python",
+    "difficulty_score": 2
+  },
+  {
+    "id": "python-b9",
+    "level": "beginner",
+    "focus": "range_enumerate",
+    "text": "for i, name in enumerate([\"a\", \"b\", \"c\"], start=1):\n    print(i, name)",
+    "source_language": "python",
+    "difficulty_score": 3
+  },
+  {
+    "id": "python-i6",
+    "level": "intermediate",
+    "focus": "read_file",
+    "text": "with open(\"data.txt\", \"r\", encoding=\"utf-8\") as f:\n    for line in f:\n        print(line.strip())",
+    "source_language": "python",
+    "difficulty_score": 4
+  },
+  {
+    "id": "python-i7",
+    "level": "intermediate",
+    "focus": "try_except",
+    "text": "try:\n    value = int(text)\nexcept ValueError as err:\n    print(f\"Bad number: {err}\")\nfinally:\n    print(\"done\")",
+    "source_language": "python",
+    "difficulty_score": 5
+  },
+  {
+    "id": "python-i8",
+    "level": "intermediate",
+    "focus": "dataclass",
+    "text": "from dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: float\n    y: float = 0.0",
+    "source_language": "python",
+    "difficulty_score": 5
+  },
+  {
+    "id": "python-i9",
+    "level": "intermediate",
+    "focus": "main_guard",
+    "text": "def main():\n    print(\"running\")\n\nif __name__ == \"__main__\":\n    main()",
+    "source_language": "python",
+    "difficulty_score": 5
+  },
+  {
+    "id": "python-i10",
+    "level": "intermediate",
+    "focus": "dict_get_setdefault",
+    "text": "counts = {}\nfor word in text.split():\n    counts[word] = counts.get(word, 0) + 1\ntop = sorted(counts, key=counts.get, reverse=True)[:3]",
+    "source_language": "python",
+    "difficulty_score": 6
+  },
+  {
+    "id": "python-i11",
+    "level": "intermediate",
+    "focus": "zip_sorted",
+    "text": "names = [\"ann\", \"bob\", \"cy\"]\nages = [31, 27, 45]\npairs = sorted(zip(names, ages), key=lambda p: p[1])",
+    "source_language": "python",
+    "difficulty_score": 6
+  },
+  {
+    "id": "python-i12",
+    "level": "intermediate",
+    "focus": "args_kwargs",
+    "text": "def log(message, *args, level=\"INFO\", **extra):\n    print(f\"[{level}] {message % args}\", extra)",
+    "source_language": "python",
+    "difficulty_score": 6
+  },
+  {
+    "id": "python-a4",
+    "level": "advanced",
+    "focus": "context_manager",
+    "text": "from contextlib import contextmanager\nimport time\n\n@contextmanager\ndef timer(label):\n    start = time.perf_counter()\n    yield\n    print(f\"{label}: {time.perf_counter() - start:.3f}s\")",
+    "source_language": "python",
+    "difficulty_score": 7
+  },
+  {
+    "id": "python-a5",
+    "level": "advanced",
+    "focus": "generator",
+    "text": "def read_chunks(path, size=1024):\n    with open(path, \"rb\") as f:\n        while chunk := f.read(size):\n            yield chunk",
+    "source_language": "python",
+    "difficulty_score": 8
+  },
+  {
+    "id": "python-a6",
+    "level": "advanced",
+    "focus": "decorator_wraps",
+    "text": "import functools\n\ndef retry(times=3):\n    def decorator(fn):\n        @functools.wraps(fn)\n        def wrapper(*args, **kwargs):\n            for attempt in range(times):\n                try:\n                    return fn(*args, **kwargs)\n                except Exception:\n                    if attempt == times - 1:\n                        raise\n        return wrapper\n    return decorator",
+    "source_language": "python",
+    "difficulty_score": 8
+  },
+  {
+    "id": "python-a7",
+    "level": "advanced",
+    "focus": "asyncio",
+    "text": "import asyncio\n\nasync def fetch(n):\n    await asyncio.sleep(0.1)\n    return n * 2\n\nasync def main():\n    results = await asyncio.gather(*(fetch(i) for i in range(5)))\n    print(results)\n\nasyncio.run(main())",
+    "source_language": "python",
+    "difficulty_score": 8
+  },
+  {
+    "id": "python-a8",
+    "level": "advanced",
+    "focus": "typing_generics",
+    "text": "from typing import Generic, TypeVar, Optional\n\nT = TypeVar(\"T\")\n\nclass Cache(Generic[T]):\n    def __init__(self) -> None:\n        self._data: dict[str, T] = {}\n\n    def get(self, key: str) -> Optional[T]:\n        return self._data.get(key)",
+    "source_language": "python",
+    "difficulty_score": 9
+  },
+  {
+    "id": "python-a9",
+    "level": "advanced",
+    "focus": "argparse_cli",
+    "text": "import argparse\n\nparser = argparse.ArgumentParser(description=\"Resize images\")\nparser.add_argument(\"path\", help=\"input folder\")\nparser.add_argument(\"--width\", type=int, default=800)\nparser.add_argument(\"-v\", \"--verbose\", action=\"store_true\")\nargs = parser.parse_args()",
+    "source_language": "python",
+    "difficulty_score": 9
+  },
+  {
+    "id": "python-a10",
+    "level": "advanced",
+    "focus": "pytest_fixture",
+    "text": "import pytest\n\n@pytest.fixture\ndef client():\n    return App().test_client()\n\ndef test_health(client):\n    response = client.get(\"/health\")\n    assert response.status_code == 200",
+    "source_language": "python",
+    "difficulty_score": 8
+  }
+]

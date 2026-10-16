@@ -1,0 +1,146 @@
+[
+  {
+    "id": "28",
+    "level": "beginner",
+    "focus": "postgresql_create",
+    "text": "CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(100));",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "29",
+    "level": "intermediate",
+    "focus": "postgresql_index",
+    "text": "CREATE INDEX idx_users_email ON users(email) WHERE email IS NOT NULL;",
+    "source_language": "postgresql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "30",
+    "level": "advanced",
+    "focus": "postgresql_window",
+    "text": "SELECT name, salary, AVG(salary) OVER (PARTITION BY department) FROM employees;",
+    "source_language": "postgresql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "32",
+    "level": "advanced",
+    "focus": "postgresql_json",
+    "text": "SELECT data->>'name' as name FROM users WHERE data @> '{\"active\": true}';",
+    "source_language": "postgresql",
+    "difficulty_score": 9
+  },
+  {
+    "id": "postgresql-i1",
+    "level": "intermediate",
+    "focus": "upsert",
+    "text": "INSERT INTO counters (name, hits)\nVALUES ('home', 1)\nON CONFLICT (name)\nDO UPDATE SET hits = counters.hits + 1;",
+    "source_language": "postgresql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "postgresql-a1",
+    "level": "advanced",
+    "focus": "recursive_cte",
+    "text": "WITH RECURSIVE tree AS (\n  SELECT id, parent_id, name FROM categories WHERE parent_id IS NULL\n  UNION ALL\n  SELECT c.id, c.parent_id, c.name\n  FROM categories c JOIN tree t ON c.parent_id = t.id\n)\nSELECT * FROM tree;",
+    "source_language": "postgresql",
+    "difficulty_score": 9
+  },
+  {
+    "id": "postgresql-b2",
+    "level": "beginner",
+    "focus": "select_limit",
+    "text": "SELECT id, name\nFROM users\nORDER BY created_at DESC\nLIMIT 5;",
+    "source_language": "postgresql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "postgresql-b3",
+    "level": "beginner",
+    "focus": "returning",
+    "text": "INSERT INTO users (name, email)\nVALUES ('Ann', 'ann@example.com')\nRETURNING id;",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "postgresql-b4",
+    "level": "beginner",
+    "focus": "ilike",
+    "text": "SELECT * FROM products\nWHERE name ILIKE '%phone%';",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "postgresql-b5",
+    "level": "beginner",
+    "focus": "now_interval",
+    "text": "SELECT * FROM events\nWHERE created_at > NOW() - INTERVAL '7 days';",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "postgresql-i3",
+    "level": "intermediate",
+    "focus": "uuid_table",
+    "text": "CREATE TABLE sessions (\n  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),\n  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,\n  created_at TIMESTAMPTZ NOT NULL DEFAULT now()\n);",
+    "source_language": "postgresql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "postgresql-i4",
+    "level": "intermediate",
+    "focus": "array_agg",
+    "text": "SELECT department, ARRAY_AGG(name ORDER BY name) AS people\nFROM employees\nGROUP BY department;",
+    "source_language": "postgresql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "postgresql-i5",
+    "level": "intermediate",
+    "focus": "jsonb_arrow",
+    "text": "SELECT data->>'email' AS email, data->'address'->>'city' AS city\nFROM profiles\nWHERE data ? 'email';",
+    "source_language": "postgresql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "postgresql-i6",
+    "level": "intermediate",
+    "focus": "generate_series",
+    "text": "SELECT d::date\nFROM generate_series('2026-01-01'::date, '2026-01-31'::date, '1 day') AS d;",
+    "source_language": "postgresql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "postgresql-a4",
+    "level": "advanced",
+    "focus": "cte_chain",
+    "text": "WITH recent AS (\n  SELECT * FROM orders WHERE created_at > now() - interval '30 days'\n), totals AS (\n  SELECT user_id, SUM(total) AS spent FROM recent GROUP BY user_id\n)\nSELECT u.name, t.spent FROM totals t JOIN users u ON u.id = t.user_id;",
+    "source_language": "postgresql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "postgresql-a5",
+    "level": "advanced",
+    "focus": "lateral_join",
+    "text": "SELECT u.name, o.total\nFROM users u\nCROSS JOIN LATERAL (\n  SELECT total FROM orders\n  WHERE user_id = u.id\n  ORDER BY created_at DESC LIMIT 1\n) o;",
+    "source_language": "postgresql",
+    "difficulty_score": 9
+  },
+  {
+    "id": "postgresql-a6",
+    "level": "advanced",
+    "focus": "gin_index_jsonb",
+    "text": "CREATE INDEX idx_docs_tags ON docs USING GIN (tags);\nCREATE INDEX idx_profiles_data ON profiles USING GIN (data jsonb_path_ops);",
+    "source_language": "postgresql",
+    "difficulty_score": 9
+  },
+  {
+    "id": "postgresql-a7",
+    "level": "advanced",
+    "focus": "trigger_function",
+    "text": "CREATE OR REPLACE FUNCTION touch_updated_at() RETURNS trigger AS $$\nBEGIN\n  NEW.updated_at = now();\n  RETURN NEW;\nEND;\n$$ LANGUAGE plpgsql;",
+    "source_language": "postgresql",
+    "difficulty_score": 9
+  }
+]

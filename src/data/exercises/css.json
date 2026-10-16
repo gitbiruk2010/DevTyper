@@ -1,0 +1,170 @@
+[
+  {
+    "id": "12",
+    "level": "intermediate",
+    "focus": "css_properties",
+    "text": ".button { padding: 10px; margin: 5px; background: #007bff; }",
+    "source_language": "css",
+    "difficulty_score": 5
+  },
+  {
+    "id": "css-b1",
+    "level": "beginner",
+    "focus": "color_font",
+    "text": "body {\n  color: #222;\n  font-size: 16px;\n}",
+    "source_language": "css",
+    "difficulty_score": 2
+  },
+  {
+    "id": "css-b2",
+    "level": "beginner",
+    "focus": "classes",
+    "text": ".card {\n  padding: 1rem;\n  border-radius: 8px;\n  background: white;\n}",
+    "source_language": "css",
+    "difficulty_score": 3
+  },
+  {
+    "id": "css-i1",
+    "level": "intermediate",
+    "focus": "flexbox",
+    "text": ".nav {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 1rem;\n}",
+    "source_language": "css",
+    "difficulty_score": 5
+  },
+  {
+    "id": "css-i2",
+    "level": "intermediate",
+    "focus": "hover_transition",
+    "text": "a:hover {\n  color: tomato;\n  transition: color 0.2s ease-in-out;\n}",
+    "source_language": "css",
+    "difficulty_score": 6
+  },
+  {
+    "id": "css-a1",
+    "level": "advanced",
+    "focus": "grid",
+    "text": ".gallery {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  gap: 12px;\n}",
+    "source_language": "css",
+    "difficulty_score": 8
+  },
+  {
+    "id": "css-a2",
+    "level": "advanced",
+    "focus": "variables_media",
+    "text": ":root {\n  --accent: #7c5cff;\n}\n\n@media (max-width: 600px) {\n  .btn:not(.ghost)::after {\n    content: \"\\2192\";\n    background: var(--accent);\n  }\n}",
+    "source_language": "css",
+    "difficulty_score": 9
+  },
+  {
+    "id": "css-b3",
+    "level": "beginner",
+    "focus": "selectors",
+    "text": "h1 {\n  color: navy;\n}\n\n.note {\n  font-style: italic;\n}",
+    "source_language": "css",
+    "difficulty_score": 1
+  },
+  {
+    "id": "css-b4",
+    "level": "beginner",
+    "focus": "box_model",
+    "text": ".box {\n  width: 300px;\n  padding: 16px;\n  margin: 0 auto;\n  border: 1px solid #ccc;\n}",
+    "source_language": "css",
+    "difficulty_score": 2
+  },
+  {
+    "id": "css-b5",
+    "level": "beginner",
+    "focus": "text_styles",
+    "text": "p {\n  font-family: Arial, sans-serif;\n  line-height: 1.6;\n  text-align: center;\n}",
+    "source_language": "css",
+    "difficulty_score": 2
+  },
+  {
+    "id": "css-b6",
+    "level": "beginner",
+    "focus": "background",
+    "text": ".hero {\n  background: linear-gradient(135deg, #7c5cff, #22d3ee);\n  color: white;\n}",
+    "source_language": "css",
+    "difficulty_score": 3
+  },
+  {
+    "id": "css-i4",
+    "level": "intermediate",
+    "focus": "id_class_combinators",
+    "text": "#header .nav > li a {\n  color: inherit;\n  text-decoration: none;\n}",
+    "source_language": "css",
+    "difficulty_score": 4
+  },
+  {
+    "id": "css-i5",
+    "level": "intermediate",
+    "focus": "positioning",
+    "text": ".badge {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  z-index: 10;\n}",
+    "source_language": "css",
+    "difficulty_score": 5
+  },
+  {
+    "id": "css-i6",
+    "level": "intermediate",
+    "focus": "media_query",
+    "text": "@media (max-width: 768px) {\n  .sidebar {\n    display: none;\n  }\n  .content {\n    padding: 12px;\n  }\n}",
+    "source_language": "css",
+    "difficulty_score": 6
+  },
+  {
+    "id": "css-i7",
+    "level": "intermediate",
+    "focus": "pseudo_classes",
+    "text": "button:hover,\nbutton:focus-visible {\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);\n}",
+    "source_language": "css",
+    "difficulty_score": 6
+  },
+  {
+    "id": "css-i8",
+    "level": "intermediate",
+    "focus": "center_flex",
+    "text": ".center {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n}",
+    "source_language": "css",
+    "difficulty_score": 6
+  },
+  {
+    "id": "css-a3",
+    "level": "advanced",
+    "focus": "custom_properties",
+    "text": ":root {\n  --bg: #0b0d14;\n  --accent: #22d3ee;\n  --radius: 12px;\n}\n\n.card {\n  background: var(--bg);\n  border: 1px solid var(--accent);\n  border-radius: var(--radius);\n}",
+    "source_language": "css",
+    "difficulty_score": 7
+  },
+  {
+    "id": "css-a4",
+    "level": "advanced",
+    "focus": "keyframes",
+    "text": "@keyframes pulse {\n  0%, 100% { transform: scale(1); }\n  50% { transform: scale(1.08); }\n}\n\n.logo {\n  animation: pulse 2s ease-in-out infinite;\n}",
+    "source_language": "css",
+    "difficulty_score": 8
+  },
+  {
+    "id": "css-a5",
+    "level": "advanced",
+    "focus": "grid_areas",
+    "text": ".layout {\n  display: grid;\n  grid-template-areas:\n    \"header header\"\n    \"sidebar main\"\n    \"footer footer\";\n  grid-template-columns: 240px 1fr;\n}",
+    "source_language": "css",
+    "difficulty_score": 9
+  },
+  {
+    "id": "css-a6",
+    "level": "advanced",
+    "focus": "clamp_calc",
+    "text": "h1 {\n  font-size: clamp(1.5rem, 4vw + 1rem, 3rem);\n  margin-block: calc(var(--space) * 2);\n  inline-size: min(100% - 2rem, 70ch);\n}",
+    "source_language": "css",
+    "difficulty_score": 9
+  },
+  {
+    "id": "css-a7",
+    "level": "advanced",
+    "focus": "selectors_advanced",
+    "text": ".list li:nth-child(odd):not(.skip)::before {\n  content: \"*\";\n  color: hotpink;\n}\n\ninput[type=\"email\"]:invalid + .hint {\n  display: block;\n}",
+    "source_language": "css",
+    "difficulty_score": 9
+  }
+]

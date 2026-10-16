@@ -1,0 +1,98 @@
+[
+  {
+    "id": "json-b1",
+    "level": "beginner",
+    "focus": "json_object",
+    "text": "{\n  \"name\": \"devtyper\",\n  \"version\": \"0.1.0\",\n  \"private\": true\n}",
+    "source_language": "json",
+    "difficulty_score": 2
+  },
+  {
+    "id": "json-i1",
+    "level": "intermediate",
+    "focus": "json_nested",
+    "text": "{\n  \"user\": {\n    \"id\": 42,\n    \"tags\": [\"dev\", \"typing\"],\n    \"active\": true\n  }\n}",
+    "source_language": "json",
+    "difficulty_score": 5
+  },
+  {
+    "id": "json-a1",
+    "level": "advanced",
+    "focus": "yaml_workflow",
+    "text": "name: CI\non:\n  push:\n    branches: [main]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - run: npm ci && npm test",
+    "source_language": "json",
+    "difficulty_score": 8
+  },
+  {
+    "id": "json-b2",
+    "level": "beginner",
+    "focus": "package_json",
+    "text": "{\n  \"name\": \"my-app\",\n  \"version\": \"1.0.0\",\n  \"scripts\": {\n    \"start\": \"node index.js\"\n  }\n}",
+    "source_language": "json",
+    "difficulty_score": 2
+  },
+  {
+    "id": "json-b3",
+    "level": "beginner",
+    "focus": "array_values",
+    "text": "{\n  \"colors\": [\"red\", \"green\", \"blue\"],\n  \"count\": 3,\n  \"enabled\": true,\n  \"owner\": null\n}",
+    "source_language": "json",
+    "difficulty_score": 2
+  },
+  {
+    "id": "json-b4",
+    "level": "beginner",
+    "focus": "yaml_basics",
+    "text": "name: my-app\nversion: 1.0.0\ntags:\n  - web\n  - api",
+    "source_language": "json",
+    "difficulty_score": 3
+  },
+  {
+    "id": "json-i2",
+    "level": "intermediate",
+    "focus": "tsconfig",
+    "text": "{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"ESNext\",\n    \"strict\": true,\n    \"outDir\": \"dist\"\n  },\n  \"include\": [\"src\"]\n}",
+    "source_language": "json",
+    "difficulty_score": 5
+  },
+  {
+    "id": "json-i3",
+    "level": "intermediate",
+    "focus": "yaml_nested",
+    "text": "server:\n  host: localhost\n  port: 8080\ndatabase:\n  url: postgres://user:pass@db:5432/app\n  pool: 10",
+    "source_language": "json",
+    "difficulty_score": 6
+  },
+  {
+    "id": "json-i4",
+    "level": "intermediate",
+    "focus": "json_api_response",
+    "text": "{\n  \"data\": [\n    { \"id\": 1, \"name\": \"Ann\" },\n    { \"id\": 2, \"name\": \"Bob\" }\n  ],\n  \"meta\": { \"page\": 1, \"total\": 2 }\n}",
+    "source_language": "json",
+    "difficulty_score": 6
+  },
+  {
+    "id": "json-a2",
+    "level": "advanced",
+    "focus": "docker_compose_yaml",
+    "text": "services:\n  api:\n    image: node:22\n    ports: [\"3000:3000\"]\n    environment:\n      DB_URL: postgres://db/app\n    depends_on: [db]",
+    "source_language": "json",
+    "difficulty_score": 8
+  },
+  {
+    "id": "json-a3",
+    "level": "advanced",
+    "focus": "k8s_deployment",
+    "text": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: web\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: web",
+    "source_language": "json",
+    "difficulty_score": 8
+  },
+  {
+    "id": "json-a4",
+    "level": "advanced",
+    "focus": "github_actions_matrix",
+    "text": "jobs:\n  test:\n    strategy:\n      matrix:\n        node: [20, 22]\n        os: [ubuntu-latest, windows-latest]\n    runs-on: ${{ matrix.os }}",
+    "source_language": "json",
+    "difficulty_score": 9
+  }
+]

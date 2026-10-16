@@ -1,0 +1,106 @@
+[
+  {
+    "id": "dart-b1",
+    "level": "beginner",
+    "focus": "main",
+    "text": "void main() {\n  var name = 'Dash';\n  print('Hello, $name!');\n}",
+    "source_language": "dart",
+    "difficulty_score": 2
+  },
+  {
+    "id": "dart-i1",
+    "level": "intermediate",
+    "focus": "classes",
+    "text": "class Dog {\n  final String name;\n  Dog(this.name);\n\n  void bark() => print('$name says woof');\n}",
+    "source_language": "dart",
+    "difficulty_score": 5
+  },
+  {
+    "id": "dart-a1",
+    "level": "advanced",
+    "focus": "async_futures",
+    "text": "Future<String> loadUser(int id) async {\n  final response = await http.get(Uri.parse('https://api.test/u/$id'));\n  if (response.statusCode != 200) {\n    throw Exception('Failed to load');\n  }\n  return response.body;\n}",
+    "source_language": "dart",
+    "difficulty_score": 8
+  },
+  {
+    "id": "dart-b2",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "var name = 'Dash';\nfinal int age = 5;\nconst pi = 3.14;\nprint('$name is $age');",
+    "source_language": "dart",
+    "difficulty_score": 2
+  },
+  {
+    "id": "dart-b3",
+    "level": "beginner",
+    "focus": "list_loop",
+    "text": "final fruits = ['apple', 'pear'];\nfor (final f in fruits) {\n  print(f);\n}",
+    "source_language": "dart",
+    "difficulty_score": 2
+  },
+  {
+    "id": "dart-b4",
+    "level": "beginner",
+    "focus": "function_arrow",
+    "text": "int square(int n) => n * n;\n\nvoid main() {\n  print(square(4));\n}",
+    "source_language": "dart",
+    "difficulty_score": 3
+  },
+  {
+    "id": "dart-i2",
+    "level": "intermediate",
+    "focus": "class_named_params",
+    "text": "class User {\n  final String name;\n  final int age;\n\n  User({required this.name, this.age = 18});\n}",
+    "source_language": "dart",
+    "difficulty_score": 5
+  },
+  {
+    "id": "dart-i3",
+    "level": "intermediate",
+    "focus": "map_literal",
+    "text": "final scores = {'ann': 91, 'bob': 78};\nscores['cy'] = 85;\nscores.forEach((k, v) => print('$k: $v'));",
+    "source_language": "dart",
+    "difficulty_score": 5
+  },
+  {
+    "id": "dart-i4",
+    "level": "intermediate",
+    "focus": "null_safety",
+    "text": "String? nickname;\nfinal shown = nickname ?? 'none';\nprint(nickname?.length);",
+    "source_language": "dart",
+    "difficulty_score": 6
+  },
+  {
+    "id": "dart-i5",
+    "level": "intermediate",
+    "focus": "list_functional",
+    "text": "final evens = numbers\n    .where((n) => n.isEven)\n    .map((n) => n * n)\n    .toList();",
+    "source_language": "dart",
+    "difficulty_score": 6
+  },
+  {
+    "id": "dart-a2",
+    "level": "advanced",
+    "focus": "stateless_widget",
+    "text": "class Greeting extends StatelessWidget {\n  const Greeting({super.key, required this.name});\n  final String name;\n\n  @override\n  Widget build(BuildContext context) {\n    return Text('Hello, $name');\n  }\n}",
+    "source_language": "dart",
+    "difficulty_score": 8
+  },
+  {
+    "id": "dart-a3",
+    "level": "advanced",
+    "focus": "stateful_counter",
+    "text": "class _CounterState extends State<Counter> {\n  int _count = 0;\n\n  void _increment() {\n    setState(() => _count++);\n  }\n}",
+    "source_language": "dart",
+    "difficulty_score": 8
+  },
+  {
+    "id": "dart-a4",
+    "level": "advanced",
+    "focus": "stream_async",
+    "text": "Stream<int> countdown(int from) async* {\n  for (var i = from; i >= 0; i--) {\n    await Future.delayed(const Duration(seconds: 1));\n    yield i;\n  }\n}",
+    "source_language": "dart",
+    "difficulty_score": 9
+  }
+]

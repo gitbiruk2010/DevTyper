@@ -1,0 +1,98 @@
+[
+  {
+    "id": "elixir-b1",
+    "level": "beginner",
+    "focus": "io_puts",
+    "text": "name = \"Jose\"\nIO.puts(\"Hello, #{name}!\")",
+    "source_language": "elixir",
+    "difficulty_score": 2
+  },
+  {
+    "id": "elixir-i1",
+    "level": "intermediate",
+    "focus": "pipe_enum",
+    "text": "[1, 2, 3, 4]\n|> Enum.filter(fn n -> rem(n, 2) == 0 end)\n|> Enum.map(&(&1 * 10))\n|> IO.inspect()",
+    "source_language": "elixir",
+    "difficulty_score": 5
+  },
+  {
+    "id": "elixir-a1",
+    "level": "advanced",
+    "focus": "modules_match",
+    "text": "defmodule Math do\n  def fib(0), do: 0\n  def fib(1), do: 1\n  def fib(n) when n > 1 do\n    fib(n - 1) + fib(n - 2)\n  end\nend",
+    "source_language": "elixir",
+    "difficulty_score": 8
+  },
+  {
+    "id": "elixir-b2",
+    "level": "beginner",
+    "focus": "variables_io",
+    "text": "name = \"Elixir\"\ncount = 3\nIO.puts(\"#{name} x #{count}\")",
+    "source_language": "elixir",
+    "difficulty_score": 2
+  },
+  {
+    "id": "elixir-b3",
+    "level": "beginner",
+    "focus": "list_tuple_map",
+    "text": "list = [1, 2, 3]\ntuple = {:ok, \"done\"}\nmap = %{name: \"Ann\", age: 31}",
+    "source_language": "elixir",
+    "difficulty_score": 2
+  },
+  {
+    "id": "elixir-b4",
+    "level": "beginner",
+    "focus": "function_def",
+    "text": "defmodule Greeter do\n  def hello(name), do: \"Hello, #{name}!\"\nend\n\nIO.puts(Greeter.hello(\"Ann\"))",
+    "source_language": "elixir",
+    "difficulty_score": 3
+  },
+  {
+    "id": "elixir-i2",
+    "level": "intermediate",
+    "focus": "case_match",
+    "text": "case File.read(\"data.txt\") do\n  {:ok, body} -> IO.puts(body)\n  {:error, reason} -> IO.puts(\"Failed: #{reason}\")\nend",
+    "source_language": "elixir",
+    "difficulty_score": 5
+  },
+  {
+    "id": "elixir-i3",
+    "level": "intermediate",
+    "focus": "enum_map",
+    "text": "1..5\n|> Enum.map(fn n -> n * n end)\n|> Enum.filter(&(rem(&1, 2) == 1))\n|> Enum.sum()",
+    "source_language": "elixir",
+    "difficulty_score": 5
+  },
+  {
+    "id": "elixir-i4",
+    "level": "intermediate",
+    "focus": "pattern_head_tail",
+    "text": "def sum([]), do: 0\ndef sum([head | tail]), do: head + sum(tail)",
+    "source_language": "elixir",
+    "difficulty_score": 6
+  },
+  {
+    "id": "elixir-a2",
+    "level": "advanced",
+    "focus": "genserver",
+    "text": "defmodule Counter do\n  use GenServer\n\n  def init(n), do: {:ok, n}\n  def handle_call(:get, _from, n), do: {:reply, n, n}\n  def handle_cast(:inc, n), do: {:noreply, n + 1}\nend",
+    "source_language": "elixir",
+    "difficulty_score": 8
+  },
+  {
+    "id": "elixir-a3",
+    "level": "advanced",
+    "focus": "with_statement",
+    "text": "with {:ok, user} <- fetch_user(id),\n     {:ok, posts} <- fetch_posts(user) do\n  {:ok, posts}\nelse\n  {:error, reason} -> {:error, reason}\nend",
+    "source_language": "elixir",
+    "difficulty_score": 8
+  },
+  {
+    "id": "elixir-a4",
+    "level": "advanced",
+    "focus": "phoenix_route",
+    "text": "scope \"/\", MyAppWeb do\n  pipe_through :browser\n\n  get \"/\", PageController, :home\n  resources \"/users\", UserController, only: [:index, :show]\nend",
+    "source_language": "elixir",
+    "difficulty_score": 9
+  }
+]

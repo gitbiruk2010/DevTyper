@@ -1,0 +1,266 @@
+[
+  {
+    "id": "3",
+    "level": "beginner",
+    "focus": "basic_code",
+    "text": "let name = value;",
+    "source_language": "javascript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "4",
+    "level": "intermediate",
+    "focus": "variables",
+    "text": "const userId = 12345;",
+    "source_language": "javascript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "5",
+    "level": "intermediate",
+    "focus": "functions",
+    "text": "function calculate(x, y) { return x + y; }",
+    "source_language": "javascript",
+    "difficulty_score": 4
+  },
+  {
+    "id": "8",
+    "level": "advanced",
+    "focus": "symbols_brackets",
+    "text": "if (count > 0) { return total; } else { throw new Error('Invalid'); }",
+    "source_language": "javascript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "9",
+    "level": "advanced",
+    "focus": "array_methods",
+    "text": "const filtered = arr.filter(item => item.active).map(x => x.id);",
+    "source_language": "javascript",
+    "difficulty_score": 7
+  },
+  {
+    "id": "10",
+    "level": "advanced",
+    "focus": "promises",
+    "text": "async function fetchData() { const res = await fetch('/api'); return res.json(); }",
+    "source_language": "javascript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "13",
+    "level": "advanced",
+    "focus": "destructuring",
+    "text": "const { name, age, ...rest } = user;",
+    "source_language": "javascript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "14",
+    "level": "intermediate",
+    "focus": "conditionals",
+    "text": "result = x > y ? x : y;",
+    "source_language": "javascript",
+    "difficulty_score": 4
+  },
+  {
+    "id": "15",
+    "level": "advanced",
+    "focus": "regex",
+    "text": "const pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;",
+    "source_language": "javascript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "javascript-b1",
+    "level": "beginner",
+    "focus": "arrow_function",
+    "text": "const double = n => n * 2;",
+    "source_language": "javascript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "javascript-i1",
+    "level": "intermediate",
+    "focus": "array_loop",
+    "text": "const nums = [1, 2, 3, 4, 5];\nfor (const n of nums) {\n  if (n % 2 === 0) console.log(n);\n}",
+    "source_language": "javascript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "javascript-a1",
+    "level": "advanced",
+    "focus": "class_getter",
+    "text": "class Counter {\n  #count = 0;\n\n  increment() {\n    return ++this.#count;\n  }\n\n  get value() {\n    return this.#count;\n  }\n}",
+    "source_language": "javascript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "javascript-a2",
+    "level": "advanced",
+    "focus": "promise_all",
+    "text": "const urls = ['/a', '/b', '/c'];\nconst results = await Promise.all(\n  urls.map(url => fetch(url).then(res => res.json()))\n);",
+    "source_language": "javascript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "javascript-b3",
+    "level": "beginner",
+    "focus": "const_let",
+    "text": "const API_URL = \"https://api.example.com\";\nlet retries = 3;\nretries--;",
+    "source_language": "javascript",
+    "difficulty_score": 1
+  },
+  {
+    "id": "javascript-b4",
+    "level": "beginner",
+    "focus": "template_literal",
+    "text": "const name = \"Ada\";\nconsole.log(`Hello, ${name}!`);",
+    "source_language": "javascript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "javascript-b5",
+    "level": "beginner",
+    "focus": "array_basics",
+    "text": "const fruits = [\"apple\", \"pear\"];\nfruits.push(\"plum\");\nconsole.log(fruits.length);",
+    "source_language": "javascript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "javascript-b6",
+    "level": "beginner",
+    "focus": "object_literal",
+    "text": "const user = {\n  name: \"Ada\",\n  age: 36,\n  admin: true,\n};",
+    "source_language": "javascript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "javascript-b7",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (age >= 18) {\n  console.log(\"adult\");\n} else {\n  console.log(\"minor\");\n}",
+    "source_language": "javascript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "javascript-b8",
+    "level": "beginner",
+    "focus": "array_map",
+    "text": "const doubled = [1, 2, 3].map(n => n * 2);\nconsole.log(doubled);",
+    "source_language": "javascript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "javascript-b9",
+    "level": "beginner",
+    "focus": "dom_select",
+    "text": "const btn = document.querySelector(\"#save\");\nbtn.addEventListener(\"click\", () => alert(\"Saved\"));",
+    "source_language": "javascript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "javascript-i5",
+    "level": "intermediate",
+    "focus": "for_of_entries",
+    "text": "for (const [key, value] of Object.entries(user)) {\n  console.log(`${key}: ${value}`);\n}",
+    "source_language": "javascript",
+    "difficulty_score": 4
+  },
+  {
+    "id": "javascript-i6",
+    "level": "intermediate",
+    "focus": "fetch_then",
+    "text": "fetch(\"/api/users\")\n  .then(res => res.json())\n  .then(data => console.log(data))\n  .catch(err => console.error(err));",
+    "source_language": "javascript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "javascript-i7",
+    "level": "intermediate",
+    "focus": "reduce_sum",
+    "text": "const total = cart.reduce((sum, item) => {\n  return sum + item.price * item.qty;\n}, 0);",
+    "source_language": "javascript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "javascript-i8",
+    "level": "intermediate",
+    "focus": "spread_merge",
+    "text": "const defaults = { theme: \"dark\", lang: \"en\" };\nconst settings = { ...defaults, lang: \"fr\" };\nconst copy = [...items, newItem];",
+    "source_language": "javascript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "javascript-i9",
+    "level": "intermediate",
+    "focus": "try_catch_async",
+    "text": "async function load(id) {\n  try {\n    const res = await fetch(`/api/items/${id}`);\n    return await res.json();\n  } catch (err) {\n    console.error(\"Failed:\", err.message);\n  }\n}",
+    "source_language": "javascript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "javascript-i10",
+    "level": "intermediate",
+    "focus": "optional_chaining",
+    "text": "const city = user?.address?.city ?? \"Unknown\";\nconst first = list?.[0];\ncallback?.();",
+    "source_language": "javascript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "javascript-i11",
+    "level": "intermediate",
+    "focus": "import_export",
+    "text": "import { readFile } from \"node:fs/promises\";\nimport express from \"express\";\n\nexport const sleep = ms => new Promise(r => setTimeout(r, ms));",
+    "source_language": "javascript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "javascript-a8",
+    "level": "advanced",
+    "focus": "debounce",
+    "text": "function debounce(fn, delay = 300) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), delay);\n  };\n}",
+    "source_language": "javascript",
+    "difficulty_score": 7
+  },
+  {
+    "id": "javascript-a9",
+    "level": "advanced",
+    "focus": "class_inheritance",
+    "text": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    return `${this.name} makes a sound`;\n  }\n}\n\nclass Dog extends Animal {\n  speak() {\n    return `${super.speak()} (woof)`;\n  }\n}",
+    "source_language": "javascript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "javascript-a10",
+    "level": "advanced",
+    "focus": "express_route",
+    "text": "app.get(\"/users/:id\", async (req, res) => {\n  const user = await db.users.findById(req.params.id);\n  if (!user) return res.status(404).json({ error: \"Not found\" });\n  res.json(user);\n});",
+    "source_language": "javascript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "javascript-a11",
+    "level": "advanced",
+    "focus": "promise_race_timeout",
+    "text": "const timeout = ms =>\n  new Promise((_, reject) => setTimeout(() => reject(new Error(\"timeout\")), ms));\n\nconst result = await Promise.race([fetch(url), timeout(5000)]);",
+    "source_language": "javascript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "javascript-a12",
+    "level": "advanced",
+    "focus": "generator_iterator",
+    "text": "function* range(start, end, step = 1) {\n  for (let i = start; i < end; i += step) {\n    yield i;\n  }\n}\n\nconsole.log([...range(0, 10, 2)]);",
+    "source_language": "javascript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "javascript-a13",
+    "level": "advanced",
+    "focus": "proxy_memoize",
+    "text": "const memoize = fn => {\n  const cache = new Map();\n  return n => cache.has(n) ? cache.get(n) : (cache.set(n, fn(n)), cache.get(n));\n};",
+    "source_language": "javascript",
+    "difficulty_score": 9
+  }
+]

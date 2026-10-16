@@ -1,0 +1,178 @@
+[
+  {
+    "id": "ruby-b1",
+    "level": "beginner",
+    "focus": "puts",
+    "text": "name = \"Matz\"\nputs \"Hello, #{name}!\"",
+    "source_language": "ruby",
+    "difficulty_score": 2
+  },
+  {
+    "id": "ruby-b2",
+    "level": "beginner",
+    "focus": "arrays",
+    "text": "fruits = %w[apple pear plum]\nfruits << \"fig\"\nputs fruits.length",
+    "source_language": "ruby",
+    "difficulty_score": 3
+  },
+  {
+    "id": "ruby-i1",
+    "level": "intermediate",
+    "focus": "blocks",
+    "text": "[1, 2, 3, 4].each do |n|\n  puts n * 2 if n.even?\nend",
+    "source_language": "ruby",
+    "difficulty_score": 5
+  },
+  {
+    "id": "ruby-i2",
+    "level": "intermediate",
+    "focus": "hash_methods",
+    "text": "prices = { apple: 1.2, pear: 0.8, plum: 2.5 }\ncheap = prices.select { |_, price| price < 2 }\nputs cheap.keys.inspect",
+    "source_language": "ruby",
+    "difficulty_score": 6
+  },
+  {
+    "id": "ruby-a1",
+    "level": "advanced",
+    "focus": "classes",
+    "text": "class Animal\n  attr_reader :name\n\n  def initialize(name)\n    @name = name\n  end\n\n  def to_s\n    \"#{self.class}: #{@name}\"\n  end\nend",
+    "source_language": "ruby",
+    "difficulty_score": 8
+  },
+  {
+    "id": "ruby-a2",
+    "level": "advanced",
+    "focus": "modules_enumerable",
+    "text": "module Greeter\n  def greet = \"Hi, #{name}\"\nend\n\nscores = { ann: 91, bo: 78 }\nputs scores.sum { |_, v| v }.fdiv(scores.size).round(1)",
+    "source_language": "ruby",
+    "difficulty_score": 9
+  },
+  {
+    "id": "ruby-b3",
+    "level": "beginner",
+    "focus": "variables_puts",
+    "text": "name = \"Matz\"\nage = 59\nputs \"#{name} is #{age}\"",
+    "source_language": "ruby",
+    "difficulty_score": 1
+  },
+  {
+    "id": "ruby-b4",
+    "level": "beginner",
+    "focus": "if_elsif",
+    "text": "if score >= 90\n  puts \"A\"\nelsif score >= 80\n  puts \"B\"\nelse\n  puts \"C\"\nend",
+    "source_language": "ruby",
+    "difficulty_score": 2
+  },
+  {
+    "id": "ruby-b5",
+    "level": "beginner",
+    "focus": "array_each",
+    "text": "fruits = [\"apple\", \"pear\", \"plum\"]\nfruits.each do |fruit|\n  puts fruit\nend",
+    "source_language": "ruby",
+    "difficulty_score": 2
+  },
+  {
+    "id": "ruby-b6",
+    "level": "beginner",
+    "focus": "hash_basics",
+    "text": "user = { name: \"Ann\", age: 31 }\nuser[:email] = \"ann@example.com\"\nputs user[:name]",
+    "source_language": "ruby",
+    "difficulty_score": 3
+  },
+  {
+    "id": "ruby-b7",
+    "level": "beginner",
+    "focus": "string_methods",
+    "text": "text = \"hello world\"\nputs text.capitalize\nputs text.split.map(&:capitalize).join(\" \")\nputs text.length",
+    "source_language": "ruby",
+    "difficulty_score": 3
+  },
+  {
+    "id": "ruby-i3",
+    "level": "intermediate",
+    "focus": "method_default",
+    "text": "def greet(name, greeting: \"Hello\")\n  \"#{greeting}, #{name}!\"\nend\n\nputs greet(\"Ann\")",
+    "source_language": "ruby",
+    "difficulty_score": 4
+  },
+  {
+    "id": "ruby-i4",
+    "level": "intermediate",
+    "focus": "map_select",
+    "text": "nums = [1, 2, 3, 4, 5]\nevens = nums.select(&:even?)\nsquares = nums.map { |n| n * n }\ntotal = nums.sum",
+    "source_language": "ruby",
+    "difficulty_score": 5
+  },
+  {
+    "id": "ruby-i5",
+    "level": "intermediate",
+    "focus": "case_when",
+    "text": "case status\nwhen \"active\"\n  puts \"welcome\"\nwhen \"banned\", \"suspended\"\n  puts \"denied\"\nelse\n  puts \"unknown\"\nend",
+    "source_language": "ruby",
+    "difficulty_score": 5
+  },
+  {
+    "id": "ruby-i6",
+    "level": "intermediate",
+    "focus": "file_lines",
+    "text": "File.readlines(\"data.txt\", chomp: true).each_with_index do |line, i|\n  puts \"#{i + 1}: #{line}\"\nend",
+    "source_language": "ruby",
+    "difficulty_score": 6
+  },
+  {
+    "id": "ruby-i7",
+    "level": "intermediate",
+    "focus": "begin_rescue",
+    "text": "begin\n  Integer(text)\nrescue ArgumentError => e\n  puts \"Bad number: #{e.message}\"\nensure\n  puts \"done\"\nend",
+    "source_language": "ruby",
+    "difficulty_score": 6
+  },
+  {
+    "id": "ruby-i8",
+    "level": "intermediate",
+    "focus": "struct",
+    "text": "Point = Struct.new(:x, :y) do\n  def distance_to(other)\n    Math.hypot(x - other.x, y - other.y)\n  end\nend",
+    "source_language": "ruby",
+    "difficulty_score": 6
+  },
+  {
+    "id": "ruby-a3",
+    "level": "advanced",
+    "focus": "module_mixin",
+    "text": "module Greetable\n  def greet\n    \"Hello, #{name}\"\n  end\nend\n\nclass Person\n  include Greetable\n  attr_accessor :name\n  def initialize(name) = @name = name\nend",
+    "source_language": "ruby",
+    "difficulty_score": 8
+  },
+  {
+    "id": "ruby-a4",
+    "level": "advanced",
+    "focus": "rails_model",
+    "text": "class Post < ApplicationRecord\n  belongs_to :author, class_name: \"User\"\n  has_many :comments, dependent: :destroy\n\n  validates :title, presence: true, length: { maximum: 120 }\n  scope :published, -> { where(published: true) }\nend",
+    "source_language": "ruby",
+    "difficulty_score": 8
+  },
+  {
+    "id": "ruby-a5",
+    "level": "advanced",
+    "focus": "rails_controller",
+    "text": "class PostsController < ApplicationController\n  def show\n    @post = Post.find(params[:id])\n  end\n\n  def create\n    @post = Post.new(post_params)\n    @post.save ? redirect_to(@post) : render(:new)\n  end\nend",
+    "source_language": "ruby",
+    "difficulty_score": 9
+  },
+  {
+    "id": "ruby-a6",
+    "level": "advanced",
+    "focus": "enumerable_chain",
+    "text": "words = %w[apple banana cherry avocado]\ngrouped = words.group_by { |w| w[0] }\n         .transform_values(&:count)\n         .sort_by { |_, n| -n }\n         .to_h",
+    "source_language": "ruby",
+    "difficulty_score": 9
+  },
+  {
+    "id": "ruby-a7",
+    "level": "advanced",
+    "focus": "method_missing",
+    "text": "class Ghost\n  def method_missing(name, *args, &block)\n    return \"boo #{name}\" if name.to_s.start_with?(\"say_\")\n    super\n  end\n\n  def respond_to_missing?(name, include_private = false)\n    name.to_s.start_with?(\"say_\") || super\n  end\nend",
+    "source_language": "ruby",
+    "difficulty_score": 9
+  }
+]

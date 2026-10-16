@@ -1,35 +1,17 @@
-# Icon Setup for Windows Build
+# App icon
 
-## Quick Setup (For Testing)
+The app logo lives in `build/logo-source.png` (original artwork). The files below are generated from it:
 
-For now, electron-builder will use the default Electron icon. To build without errors, we can skip the icon requirement.
+| File | Used for |
+|------|----------|
+| `build/icons/icon.ico` | Windows installer, `DevTyper.exe`, window icon |
+| `build/icons/icon.icns` | macOS app icon |
+| `build/icons/icon.png` (512px) | Linux app icon |
+| `src/assets/logo.png` (256px) | Logo shown on the menu screen |
+| `public/favicon.png` (64px) | Browser/dev favicon |
 
-## To Add a Custom Icon (Recommended for Production)
+To change the logo, replace `build/logo-source.png` and regenerate the icons. Any square-ish PNG of 512px or
+more with a transparent background works; non-square images are padded to a square. The `.ico` is built from
+16-256px PNG layers and the `.icns` from 128-1024px layers (e.g. with `sharp`, or `electron-icon-maker`).
 
-1. **Create or download an icon:**
-   - Use an online tool like https://www.icoconverter.com/
-   - Or use GIMP, Photoshop, or other graphics software
-   
-2. **Icon Requirements:**
-   - Format: `.ico` file for Windows
-   - Sizes needed: 16x16, 32x32, 48x48, 64x64, 128x128, 256x256
-   - Suggested design: Keyboard keys, typing symbol, or code brackets
-
-3. **Save the icon:**
-   - Place as `build/icon.ico`
-
-## Alternative: Use Icon Generator Package
-
-```bash
-npm install -g electron-icon-maker
-electron-icon-maker --input=myicon.png --output=./build
-```
-
-This will generate all required icon formats from a single PNG image (at least 1024x1024).
-
-## For Now
-
-The build will proceed with Electron's default icon. You can replace it later by:
-1. Creating/downloading an icon
-2. Saving it as `build/icon.ico`
-3. Rebuilding with `npm run package`
+`signExecutable: false` in `package.json` skips code signing but still embeds the icon into `DevTyper.exe`.

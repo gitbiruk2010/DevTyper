@@ -1,0 +1,178 @@
+[
+  {
+    "id": "php-b1",
+    "level": "beginner",
+    "focus": "echo",
+    "text": "<?php\n$name = \"Rasmus\";\necho \"Hello, $name!\";",
+    "source_language": "php",
+    "difficulty_score": 2
+  },
+  {
+    "id": "php-b2",
+    "level": "beginner",
+    "focus": "array_basics",
+    "text": "$fruits = [\"apple\", \"pear\", \"plum\"];\n$fruits[] = \"fig\";\necho count($fruits);",
+    "source_language": "php",
+    "difficulty_score": 3
+  },
+  {
+    "id": "php-i1",
+    "level": "intermediate",
+    "focus": "functions",
+    "text": "function total(array $prices, float $tax = 0.2): float {\n    return array_sum($prices) * (1 + $tax);\n}",
+    "source_language": "php",
+    "difficulty_score": 5
+  },
+  {
+    "id": "php-i2",
+    "level": "intermediate",
+    "focus": "foreach_assoc",
+    "text": "$user = [\"name\" => \"Ann\", \"role\" => \"admin\"];\nforeach ($user as $key => $value) {\n    echo \"$key: $value\\n\";\n}",
+    "source_language": "php",
+    "difficulty_score": 6
+  },
+  {
+    "id": "php-a1",
+    "level": "advanced",
+    "focus": "classes",
+    "text": "class User\n{\n    public function __construct(\n        private string $name,\n        private string $email,\n    ) {}\n\n    public function getName(): string\n    {\n        return $this->name;\n    }\n}",
+    "source_language": "php",
+    "difficulty_score": 8
+  },
+  {
+    "id": "php-a2",
+    "level": "advanced",
+    "focus": "arrow_pdo",
+    "text": "$stmt = $pdo->prepare(\"SELECT * FROM users WHERE id = :id\");\n$stmt->execute([\"id\" => $id]);\n$names = array_map(fn($u) => strtoupper($u[\"name\"]), $stmt->fetchAll());",
+    "source_language": "php",
+    "difficulty_score": 9
+  },
+  {
+    "id": "php-b3",
+    "level": "beginner",
+    "focus": "variables_echo",
+    "text": "<?php\n$name = \"Rasmus\";\n$age = 30;\necho \"$name is $age\";",
+    "source_language": "php",
+    "difficulty_score": 1
+  },
+  {
+    "id": "php-b4",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if ($score >= 90) {\n    echo \"A\";\n} else {\n    echo \"B\";\n}",
+    "source_language": "php",
+    "difficulty_score": 2
+  },
+  {
+    "id": "php-b5",
+    "level": "beginner",
+    "focus": "foreach_array",
+    "text": "$fruits = [\"apple\", \"pear\", \"plum\"];\nforeach ($fruits as $fruit) {\n    echo $fruit . \"\\n\";\n}",
+    "source_language": "php",
+    "difficulty_score": 2
+  },
+  {
+    "id": "php-b6",
+    "level": "beginner",
+    "focus": "assoc_array",
+    "text": "$user = [\n    \"name\" => \"Ann\",\n    \"age\" => 31,\n];\necho $user[\"name\"];",
+    "source_language": "php",
+    "difficulty_score": 3
+  },
+  {
+    "id": "php-b7",
+    "level": "beginner",
+    "focus": "string_functions",
+    "text": "$text = \"Hello World\";\necho strtoupper($text);\necho strlen($text);\necho str_replace(\"World\", \"PHP\", $text);",
+    "source_language": "php",
+    "difficulty_score": 3
+  },
+  {
+    "id": "php-i3",
+    "level": "intermediate",
+    "focus": "function_default",
+    "text": "function greet(string $name, string $greeting = \"Hello\"): string {\n    return \"$greeting, $name!\";\n}\n\necho greet(\"Ann\");",
+    "source_language": "php",
+    "difficulty_score": 4
+  },
+  {
+    "id": "php-i4",
+    "level": "intermediate",
+    "focus": "superglobals_post",
+    "text": "if ($_SERVER[\"REQUEST_METHOD\"] === \"POST\") {\n    $email = trim($_POST[\"email\"] ?? \"\");\n    echo htmlspecialchars($email);\n}",
+    "source_language": "php",
+    "difficulty_score": 5
+  },
+  {
+    "id": "php-i5",
+    "level": "intermediate",
+    "focus": "array_functions",
+    "text": "$nums = [3, 1, 2];\nsort($nums);\n$sum = array_sum($nums);\n$even = array_filter($nums, fn($n) => $n % 2 === 0);",
+    "source_language": "php",
+    "difficulty_score": 5
+  },
+  {
+    "id": "php-i6",
+    "level": "intermediate",
+    "focus": "class_basic",
+    "text": "class Car\n{\n    private string $brand;\n\n    public function __construct(string $brand)\n    {\n        $this->brand = $brand;\n    }\n\n    public function getBrand(): string\n    {\n        return $this->brand;\n    }\n}",
+    "source_language": "php",
+    "difficulty_score": 6
+  },
+  {
+    "id": "php-i7",
+    "level": "intermediate",
+    "focus": "try_catch",
+    "text": "try {\n    $result = riskyOperation();\n} catch (InvalidArgumentException $e) {\n    echo \"Error: \" . $e->getMessage();\n} finally {\n    echo \"done\";\n}",
+    "source_language": "php",
+    "difficulty_score": 6
+  },
+  {
+    "id": "php-i8",
+    "level": "intermediate",
+    "focus": "include_namespace",
+    "text": "<?php\ndeclare(strict_types=1);\n\nnamespace App\\Models;\n\nuse App\\Interfaces\\Jsonable;\n\nrequire_once __DIR__ . \"/vendor/autoload.php\";",
+    "source_language": "php",
+    "difficulty_score": 6
+  },
+  {
+    "id": "php-a3",
+    "level": "advanced",
+    "focus": "pdo_connect",
+    "text": "$pdo = new PDO(\n    \"mysql:host=localhost;dbname=app;charset=utf8mb4\",\n    $user,\n    $pass,\n    [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]\n);",
+    "source_language": "php",
+    "difficulty_score": 8
+  },
+  {
+    "id": "php-a4",
+    "level": "advanced",
+    "focus": "interface_trait",
+    "text": "interface Loggable\n{\n    public function log(string $message): void;\n}\n\ntrait Timestamps\n{\n    public ?string $createdAt = null;\n}",
+    "source_language": "php",
+    "difficulty_score": 8
+  },
+  {
+    "id": "php-a5",
+    "level": "advanced",
+    "focus": "laravel_route",
+    "text": "Route::get(\"/users/{id}\", function (int $id) {\n    return User::findOrFail($id);\n})->middleware(\"auth\");",
+    "source_language": "php",
+    "difficulty_score": 9
+  },
+  {
+    "id": "php-a6",
+    "level": "advanced",
+    "focus": "laravel_eloquent",
+    "text": "$posts = Post::where(\"published\", true)\n    ->with(\"author\")\n    ->orderBy(\"created_at\", \"desc\")\n    ->paginate(10);",
+    "source_language": "php",
+    "difficulty_score": 9
+  },
+  {
+    "id": "php-a7",
+    "level": "advanced",
+    "focus": "match_enum",
+    "text": "enum Status: string\n{\n    case Active = \"active\";\n    case Banned = \"banned\";\n\n    public function label(): string\n    {\n        return match ($this) {\n            Status::Active => \"Active\",\n            Status::Banned => \"Banned\",\n        };\n    }\n}",
+    "source_language": "php",
+    "difficulty_score": 9
+  }
+]

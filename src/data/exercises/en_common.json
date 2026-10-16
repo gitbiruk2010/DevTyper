@@ -1,0 +1,106 @@
+[
+  {
+    "id": "1",
+    "level": "beginner",
+    "focus": "homeRow",
+    "text": "The quick brown fox jumps over the lazy dog.",
+    "source_language": "en_common",
+    "difficulty_score": 1
+  },
+  {
+    "id": "en_common-b2",
+    "level": "beginner",
+    "focus": "pangram_jump",
+    "text": "Pack my box with five dozen liquor jugs.",
+    "source_language": "en_common",
+    "difficulty_score": 1
+  },
+  {
+    "id": "en_common-b3",
+    "level": "beginner",
+    "focus": "pangram_vex",
+    "text": "How vexingly quick daft zebras jump!",
+    "source_language": "en_common",
+    "difficulty_score": 1
+  },
+  {
+    "id": "en_common-b4",
+    "level": "beginner",
+    "focus": "dev_quote_dry",
+    "text": "Don't repeat yourself. Keep it simple.",
+    "source_language": "en_common",
+    "difficulty_score": 2
+  },
+  {
+    "id": "en_common-b5",
+    "level": "beginner",
+    "focus": "hello_world_story",
+    "text": "Every programmer starts with Hello, World!",
+    "source_language": "en_common",
+    "difficulty_score": 2
+  },
+  {
+    "id": "en_common-b6",
+    "level": "beginner",
+    "focus": "cat_sat",
+    "text": "The cat sat on the mat and typed a very long command.",
+    "source_language": "en_common",
+    "difficulty_score": 2
+  },
+  {
+    "id": "en_common-i1",
+    "level": "intermediate",
+    "focus": "knuth_quote",
+    "text": "Premature optimization is the root of all evil. - Donald Knuth",
+    "source_language": "en_common",
+    "difficulty_score": 4
+  },
+  {
+    "id": "en_common-i2",
+    "level": "intermediate",
+    "focus": "fowler_quote",
+    "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "source_language": "en_common",
+    "difficulty_score": 4
+  },
+  {
+    "id": "en_common-i3",
+    "level": "intermediate",
+    "focus": "dev_joke_bugs",
+    "text": "There are only two hard things in computer science: cache invalidation, naming things, and off-by-one errors.",
+    "source_language": "en_common",
+    "difficulty_score": 5
+  },
+  {
+    "id": "en_common-i4",
+    "level": "intermediate",
+    "focus": "commit_message",
+    "text": "fix: handle empty input in parser (closes #42)",
+    "source_language": "en_common",
+    "difficulty_score": 5
+  },
+  {
+    "id": "en_common-a1",
+    "level": "advanced",
+    "focus": "kernighan_quote",
+    "text": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+    "source_language": "en_common",
+    "difficulty_score": 7
+  },
+  {
+    "id": "en_common-a2",
+    "level": "advanced",
+    "focus": "zen_python",
+    "text": "Beautiful is better than ugly. Explicit is better than implicit. Simple is better than complex. Readability counts.",
+    "source_language": "en_common",
+    "difficulty_score": 7
+  },
+  {
+    "id": "en_common-a3",
+    "level": "advanced",
+    "focus": "rubber_duck",
+    "text": "Rubber duck debugging: explain your code line by line to a rubber duck, and the bug will usually reveal itself before you finish.",
+    "source_language": "en_common",
+    "difficulty_score": 8
+  }
+]

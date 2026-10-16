@@ -1,0 +1,178 @@
+[
+  {
+    "id": "csharp-b1",
+    "level": "beginner",
+    "focus": "console",
+    "text": "Console.WriteLine(\"Hello, C#!\");",
+    "source_language": "csharp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "csharp-b2",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "string name = \"Grace\";\nint year = 1952;\nvar message = $\"{name} joined in {year}\";",
+    "source_language": "csharp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "csharp-i1",
+    "level": "intermediate",
+    "focus": "properties",
+    "text": "public class Player\n{\n    public string Name { get; set; }\n    public int Score { get; private set; } = 0;\n}",
+    "source_language": "csharp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "csharp-i2",
+    "level": "intermediate",
+    "focus": "linq_basic",
+    "text": "var evens = numbers\n    .Where(n => n % 2 == 0)\n    .OrderByDescending(n => n)\n    .ToList();",
+    "source_language": "csharp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "csharp-a1",
+    "level": "advanced",
+    "focus": "async_await",
+    "text": "public async Task<string> GetAsync(string url)\n{\n    using var client = new HttpClient();\n    var response = await client.GetAsync(url);\n    return await response.Content.ReadAsStringAsync();\n}",
+    "source_language": "csharp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "csharp-a2",
+    "level": "advanced",
+    "focus": "records_pattern",
+    "text": "public record Shape(string Kind, double Size);\n\ndouble Area(Shape s) => s switch\n{\n    { Kind: \"square\" } => s.Size * s.Size,\n    { Kind: \"circle\" } => Math.PI * s.Size * s.Size,\n    _ => 0\n};",
+    "source_language": "csharp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "csharp-b3",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "int count = 5;\ndouble price = 9.99;\nbool active = true;\nstring name = \"Anders\";",
+    "source_language": "csharp",
+    "difficulty_score": 1
+  },
+  {
+    "id": "csharp-b4",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (score >= 90)\n{\n    Console.WriteLine(\"A\");\n}\nelse\n{\n    Console.WriteLine(\"B\");\n}",
+    "source_language": "csharp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "csharp-b5",
+    "level": "beginner",
+    "focus": "list_basics",
+    "text": "var names = new List<string>();\nnames.Add(\"Ann\");\nnames.Add(\"Bob\");\nConsole.WriteLine(names.Count);",
+    "source_language": "csharp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "csharp-b6",
+    "level": "beginner",
+    "focus": "foreach_loop",
+    "text": "foreach (var n in numbers)\n{\n    Console.WriteLine(n);\n}",
+    "source_language": "csharp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "csharp-b7",
+    "level": "beginner",
+    "focus": "readline_parse",
+    "text": "Console.Write(\"Age: \");\nint age = int.Parse(Console.ReadLine());\nConsole.WriteLine($\"Next year: {age + 1}\");",
+    "source_language": "csharp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "csharp-i3",
+    "level": "intermediate",
+    "focus": "using_namespace",
+    "text": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\n\nnamespace MyApp\n{\n    class Program { }\n}",
+    "source_language": "csharp",
+    "difficulty_score": 4
+  },
+  {
+    "id": "csharp-i4",
+    "level": "intermediate",
+    "focus": "dictionary",
+    "text": "var ages = new Dictionary<string, int>\n{\n    [\"Ann\"] = 31,\n    [\"Bob\"] = 27\n};\nforeach (var (name, age) in ages)\n    Console.WriteLine($\"{name}: {age}\");",
+    "source_language": "csharp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "csharp-i5",
+    "level": "intermediate",
+    "focus": "try_catch",
+    "text": "try\n{\n    var value = int.Parse(text);\n}\ncatch (FormatException ex)\n{\n    Console.WriteLine(ex.Message);\n}\nfinally\n{\n    Console.WriteLine(\"done\");\n}",
+    "source_language": "csharp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "csharp-i6",
+    "level": "intermediate",
+    "focus": "interface_class",
+    "text": "public interface IShape\n{\n    double Area();\n}\n\npublic class Square : IShape\n{\n    public double Side { get; init; }\n    public double Area() => Side * Side;\n}",
+    "source_language": "csharp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "csharp-i7",
+    "level": "intermediate",
+    "focus": "null_handling",
+    "text": "string display = user?.Name ?? \"Guest\";\nint length = text?.Length ?? 0;\nname ??= \"default\";",
+    "source_language": "csharp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "csharp-i8",
+    "level": "intermediate",
+    "focus": "linq_select",
+    "text": "var names = people\n    .Where(p => p.Age >= 18)\n    .Select(p => p.Name)\n    .OrderBy(n => n)\n    .ToList();",
+    "source_language": "csharp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "csharp-a3",
+    "level": "advanced",
+    "focus": "file_async",
+    "text": "public static async Task<int> CountLinesAsync(string path)\n{\n    var lines = await File.ReadAllLinesAsync(path);\n    return lines.Length;\n}",
+    "source_language": "csharp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "csharp-a4",
+    "level": "advanced",
+    "focus": "generic_constraint",
+    "text": "public class Repository<T> where T : class, new()\n{\n    private readonly List<T> _items = new();\n    public void Add(T item) => _items.Add(item);\n    public T Create() => new T();\n}",
+    "source_language": "csharp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "csharp-a5",
+    "level": "advanced",
+    "focus": "aspnet_endpoint",
+    "text": "var app = WebApplication.CreateBuilder(args).Build();\n\napp.MapGet(\"/users/{id}\", async (int id, AppDb db) =>\n    await db.Users.FindAsync(id) is User user\n        ? Results.Ok(user)\n        : Results.NotFound());\n\napp.Run();",
+    "source_language": "csharp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "csharp-a6",
+    "level": "advanced",
+    "focus": "ef_query",
+    "text": "var recent = await db.Orders\n    .Where(o => o.CreatedAt > DateTime.UtcNow.AddDays(-7))\n    .Include(o => o.Customer)\n    .OrderByDescending(o => o.CreatedAt)\n    .Take(10)\n    .ToListAsync();",
+    "source_language": "csharp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "csharp-a7",
+    "level": "advanced",
+    "focus": "delegate_event",
+    "text": "public event EventHandler<string> Message;\n\nprotected void Raise(string text)\n{\n    Message?.Invoke(this, text);\n}",
+    "source_language": "csharp",
+    "difficulty_score": 9
+  }
+]

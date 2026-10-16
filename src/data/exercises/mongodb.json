@@ -1,0 +1,98 @@
+[
+  {
+    "id": "mongodb-b1",
+    "level": "beginner",
+    "focus": "find",
+    "text": "db.users.find({ age: { $gt: 18 } })",
+    "source_language": "mongodb",
+    "difficulty_score": 2
+  },
+  {
+    "id": "mongodb-i1",
+    "level": "intermediate",
+    "focus": "update",
+    "text": "db.orders.updateOne(\n  { _id: orderId },\n  { $set: { status: \"shipped\" }, $inc: { version: 1 } }\n)",
+    "source_language": "mongodb",
+    "difficulty_score": 5
+  },
+  {
+    "id": "mongodb-a1",
+    "level": "advanced",
+    "focus": "aggregate",
+    "text": "db.sales.aggregate([\n  { $match: { year: 2026 } },\n  { $group: { _id: \"$region\", total: { $sum: \"$amount\" } } },\n  { $sort: { total: -1 } }\n])",
+    "source_language": "mongodb",
+    "difficulty_score": 8
+  },
+  {
+    "id": "mongodb-b2",
+    "level": "beginner",
+    "focus": "insert_one",
+    "text": "db.users.insertOne({ name: \"Ann\", age: 31 })",
+    "source_language": "mongodb",
+    "difficulty_score": 2
+  },
+  {
+    "id": "mongodb-b3",
+    "level": "beginner",
+    "focus": "find_projection",
+    "text": "db.users.find({ active: true }, { name: 1, _id: 0 })",
+    "source_language": "mongodb",
+    "difficulty_score": 2
+  },
+  {
+    "id": "mongodb-b4",
+    "level": "beginner",
+    "focus": "sort_limit",
+    "text": "db.scores.find().sort({ points: -1 }).limit(5)",
+    "source_language": "mongodb",
+    "difficulty_score": 3
+  },
+  {
+    "id": "mongodb-i2",
+    "level": "intermediate",
+    "focus": "update_many",
+    "text": "db.users.updateMany(\n  { lastLogin: { $lt: cutoff } },\n  { $set: { active: false } }\n)",
+    "source_language": "mongodb",
+    "difficulty_score": 5
+  },
+  {
+    "id": "mongodb-i3",
+    "level": "intermediate",
+    "focus": "delete_count",
+    "text": "db.sessions.deleteMany({ expires: { $lt: new Date() } })\ndb.users.countDocuments({ role: \"admin\" })",
+    "source_language": "mongodb",
+    "difficulty_score": 5
+  },
+  {
+    "id": "mongodb-i4",
+    "level": "intermediate",
+    "focus": "operators",
+    "text": "db.products.find({\n  $or: [{ price: { $lt: 10 } }, { tags: { $in: [\"sale\", \"new\"] } }],\n  stock: { $gte: 1 }\n})",
+    "source_language": "mongodb",
+    "difficulty_score": 6
+  },
+  {
+    "id": "mongodb-i5",
+    "level": "intermediate",
+    "focus": "index_unique",
+    "text": "db.users.createIndex({ email: 1 }, { unique: true })\ndb.logs.createIndex({ createdAt: 1 }, { expireAfterSeconds: 3600 })",
+    "source_language": "mongodb",
+    "difficulty_score": 6
+  },
+  {
+    "id": "mongodb-a2",
+    "level": "advanced",
+    "focus": "aggregate_lookup",
+    "text": "db.orders.aggregate([\n  { $lookup: { from: \"users\", localField: \"userId\", foreignField: \"_id\", as: \"user\" } },\n  { $unwind: \"$user\" },\n  { $project: { total: 1, \"user.name\": 1 } }\n])",
+    "source_language": "mongodb",
+    "difficulty_score": 8
+  },
+  {
+    "id": "mongodb-a3",
+    "level": "advanced",
+    "focus": "aggregate_bucket",
+    "text": "db.sales.aggregate([\n  { $group: { _id: { $month: \"$date\" }, revenue: { $sum: \"$amount\" }, orders: { $count: {} } } },\n  { $sort: { _id: 1 } },\n  { $limit: 12 }\n])",
+    "source_language": "mongodb",
+    "difficulty_score": 9
+  }
+]

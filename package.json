@@ -44,7 +44,9 @@
     },
     "files": [
       "dist/**/*",
-      "dist-electron/**/*"
+      "dist-electron/**/*",
+      "build/icons/icon.ico",
+      "build/icons/icon.png"
     ],
     "win": {
       "target": [
@@ -57,8 +59,8 @@
       ],
       "icon": "build/icons/icon.ico",
       "artifactName": "${productName}-${version}-Setup.${ext}",
-      "signAndEditExecutable": false,
-      "verifyUpdateCodeSignature": false
+      "verifyUpdateCodeSignature": false,
+      "signExecutable": false
     },
     "nsis": {
       "oneClick": false,
@@ -82,10 +84,12 @@
         "AppImage"
       ],
       "category": "Development",
-      "icon": "build/icons"
+      "icon": "build/icons/icon.png"
     }
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
     "clsx": "^2.1.1",
     "electron-store": "^11.0.2",
     "react": "^19.2.0",

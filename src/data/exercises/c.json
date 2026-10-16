@@ -1,0 +1,154 @@
+[
+  {
+    "id": "c-b1",
+    "level": "beginner",
+    "focus": "hello_world",
+    "text": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Hello, C!\\n\");\n    return 0;\n}",
+    "source_language": "c",
+    "difficulty_score": 2
+  },
+  {
+    "id": "c-i1",
+    "level": "intermediate",
+    "focus": "arrays_loop",
+    "text": "int nums[5] = {4, 8, 15, 16, 23};\nint total = 0;\nfor (int i = 0; i < 5; i++) {\n    total += nums[i];\n}",
+    "source_language": "c",
+    "difficulty_score": 5
+  },
+  {
+    "id": "c-a1",
+    "level": "advanced",
+    "focus": "pointers_struct",
+    "text": "typedef struct Node {\n    int value;\n    struct Node *next;\n} Node;\n\nNode *push(Node *head, int value) {\n    Node *n = malloc(sizeof(Node));\n    n->value = value;\n    n->next = head;\n    return n;\n}",
+    "source_language": "c",
+    "difficulty_score": 8
+  },
+  {
+    "id": "c-b2",
+    "level": "beginner",
+    "focus": "printf_vars",
+    "text": "int age = 30;\nprintf(\"Age: %d\\n\", age);",
+    "source_language": "c",
+    "difficulty_score": 1
+  },
+  {
+    "id": "c-b3",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (x > 0) {\n    printf(\"positive\\n\");\n} else {\n    printf(\"not positive\\n\");\n}",
+    "source_language": "c",
+    "difficulty_score": 2
+  },
+  {
+    "id": "c-b4",
+    "level": "beginner",
+    "focus": "for_loop",
+    "text": "for (int i = 0; i < 10; i++) {\n    printf(\"%d\\n\", i);\n}",
+    "source_language": "c",
+    "difficulty_score": 2
+  },
+  {
+    "id": "c-b5",
+    "level": "beginner",
+    "focus": "scanf",
+    "text": "int n;\nscanf(\"%d\", &n);\nprintf(\"You typed %d\\n\", n);",
+    "source_language": "c",
+    "difficulty_score": 2
+  },
+  {
+    "id": "c-b6",
+    "level": "beginner",
+    "focus": "char_array",
+    "text": "char name[20] = \"Dennis\";\nprintf(\"%s has %zu chars\\n\", name, strlen(name));",
+    "source_language": "c",
+    "difficulty_score": 3
+  },
+  {
+    "id": "c-i2",
+    "level": "intermediate",
+    "focus": "function",
+    "text": "int max(int a, int b) {\n    return a > b ? a : b;\n}\n\nint main(void) {\n    printf(\"%d\\n\", max(3, 7));\n    return 0;\n}",
+    "source_language": "c",
+    "difficulty_score": 4
+  },
+  {
+    "id": "c-i3",
+    "level": "intermediate",
+    "focus": "pointer_swap",
+    "text": "void swap(int *a, int *b) {\n    int tmp = *a;\n    *a = *b;\n    *b = tmp;\n}",
+    "source_language": "c",
+    "difficulty_score": 5
+  },
+  {
+    "id": "c-i4",
+    "level": "intermediate",
+    "focus": "malloc_free",
+    "text": "int *arr = malloc(10 * sizeof(int));\nif (arr == NULL) {\n    return 1;\n}\nfree(arr);",
+    "source_language": "c",
+    "difficulty_score": 5
+  },
+  {
+    "id": "c-i5",
+    "level": "intermediate",
+    "focus": "while_getchar",
+    "text": "int c;\nwhile ((c = getchar()) != EOF) {\n    putchar(c);\n}",
+    "source_language": "c",
+    "difficulty_score": 5
+  },
+  {
+    "id": "c-i6",
+    "level": "intermediate",
+    "focus": "struct_basic",
+    "text": "struct Point {\n    int x;\n    int y;\n};\n\nstruct Point p = {3, 4};\nprintf(\"%d,%d\\n\", p.x, p.y);",
+    "source_language": "c",
+    "difficulty_score": 6
+  },
+  {
+    "id": "c-i7",
+    "level": "intermediate",
+    "focus": "file_read",
+    "text": "FILE *fp = fopen(\"data.txt\", \"r\");\nchar line[256];\nwhile (fgets(line, sizeof line, fp)) {\n    printf(\"%s\", line);\n}\nfclose(fp);",
+    "source_language": "c",
+    "difficulty_score": 6
+  },
+  {
+    "id": "c-a2",
+    "level": "advanced",
+    "focus": "linked_list_print",
+    "text": "void print_list(const Node *head) {\n    for (const Node *cur = head; cur != NULL; cur = cur->next) {\n        printf(\"%d -> \", cur->value);\n    }\n    printf(\"NULL\\n\");\n}",
+    "source_language": "c",
+    "difficulty_score": 8
+  },
+  {
+    "id": "c-a3",
+    "level": "advanced",
+    "focus": "function_pointer",
+    "text": "int apply(int (*fn)(int, int), int a, int b) {\n    return fn(a, b);\n}\n\nint add(int a, int b) { return a + b; }\nint result = apply(add, 2, 3);",
+    "source_language": "c",
+    "difficulty_score": 8
+  },
+  {
+    "id": "c-a4",
+    "level": "advanced",
+    "focus": "macro_guard",
+    "text": "#ifndef VECTOR_H\n#define VECTOR_H\n\n#define MAX(a, b) ((a) > (b) ? (a) : (b))\n#define ARRAY_LEN(x) (sizeof(x) / sizeof((x)[0]))\n\n#endif",
+    "source_language": "c",
+    "difficulty_score": 8
+  },
+  {
+    "id": "c-a5",
+    "level": "advanced",
+    "focus": "strcpy_safe",
+    "text": "char *dup = malloc(strlen(src) + 1);\nif (!dup) {\n    perror(\"malloc\");\n    exit(EXIT_FAILURE);\n}\nstrcpy(dup, src);",
+    "source_language": "c",
+    "difficulty_score": 9
+  },
+  {
+    "id": "c-a6",
+    "level": "advanced",
+    "focus": "qsort_compare",
+    "text": "static int cmp_int(const void *a, const void *b) {\n    return *(const int *)a - *(const int *)b;\n}\n\nqsort(values, count, sizeof(values[0]), cmp_int);",
+    "source_language": "c",
+    "difficulty_score": 9
+  }
+]

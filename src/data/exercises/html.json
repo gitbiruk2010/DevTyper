@@ -1,0 +1,138 @@
+[
+  {
+    "id": "11",
+    "level": "beginner",
+    "focus": "html_basics",
+    "text": "<div class=\"container\"><h1>Hello World</h1></div>",
+    "source_language": "html",
+    "difficulty_score": 2
+  },
+  {
+    "id": "html-b1",
+    "level": "beginner",
+    "focus": "link_image",
+    "text": "<a href=\"/about\">About</a>\n<img src=\"logo.png\" alt=\"Logo\">",
+    "source_language": "html",
+    "difficulty_score": 2
+  },
+  {
+    "id": "html-i1",
+    "level": "intermediate",
+    "focus": "list_form",
+    "text": "<ul class=\"menu\">\n  <li><a href=\"/\">Home</a></li>\n  <li><a href=\"/docs\">Docs</a></li>\n</ul>",
+    "source_language": "html",
+    "difficulty_score": 5
+  },
+  {
+    "id": "html-i2",
+    "level": "intermediate",
+    "focus": "form",
+    "text": "<form action=\"/login\" method=\"post\">\n  <input type=\"email\" name=\"email\" required>\n  <button type=\"submit\">Log in</button>\n</form>",
+    "source_language": "html",
+    "difficulty_score": 6
+  },
+  {
+    "id": "html-a1",
+    "level": "advanced",
+    "focus": "page_skeleton",
+    "text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>My Page</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <main id=\"app\"></main>\n</body>\n</html>",
+    "source_language": "html",
+    "difficulty_score": 8
+  },
+  {
+    "id": "html-b3",
+    "level": "beginner",
+    "focus": "heading_paragraph",
+    "text": "<h1>Welcome</h1>\n<p>This is a paragraph.</p>",
+    "source_language": "html",
+    "difficulty_score": 1
+  },
+  {
+    "id": "html-b4",
+    "level": "beginner",
+    "focus": "image_link",
+    "text": "<a href=\"https://example.com\">Visit</a>\n<img src=\"cat.png\" alt=\"A cat\">",
+    "source_language": "html",
+    "difficulty_score": 2
+  },
+  {
+    "id": "html-b5",
+    "level": "beginner",
+    "focus": "unordered_list",
+    "text": "<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n  <li>JavaScript</li>\n</ul>",
+    "source_language": "html",
+    "difficulty_score": 2
+  },
+  {
+    "id": "html-b6",
+    "level": "beginner",
+    "focus": "button_input",
+    "text": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" placeholder=\"Your name\">\n<button>Send</button>",
+    "source_language": "html",
+    "difficulty_score": 3
+  },
+  {
+    "id": "html-i3",
+    "level": "intermediate",
+    "focus": "table",
+    "text": "<table>\n  <thead>\n    <tr><th>Name</th><th>Age</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Ann</td><td>31</td></tr>\n  </tbody>\n</table>",
+    "source_language": "html",
+    "difficulty_score": 4
+  },
+  {
+    "id": "html-i4",
+    "level": "intermediate",
+    "focus": "nav_semantic",
+    "text": "<header>\n  <nav>\n    <a href=\"/\">Home</a>\n    <a href=\"/blog\">Blog</a>\n  </nav>\n</header>\n<main>\n  <article>\n    <h2>Title</h2>\n  </article>\n</main>",
+    "source_language": "html",
+    "difficulty_score": 5
+  },
+  {
+    "id": "html-i5",
+    "level": "intermediate",
+    "focus": "form_select",
+    "text": "<form method=\"post\" action=\"/signup\">\n  <select name=\"plan\">\n    <option value=\"free\">Free</option>\n    <option value=\"pro\">Pro</option>\n  </select>\n  <input type=\"checkbox\" name=\"terms\" required>\n</form>",
+    "source_language": "html",
+    "difficulty_score": 5
+  },
+  {
+    "id": "html-i6",
+    "level": "intermediate",
+    "focus": "meta_head",
+    "text": "<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>My Site</title>\n  <link rel=\"icon\" href=\"/favicon.ico\">\n</head>",
+    "source_language": "html",
+    "difficulty_score": 6
+  },
+  {
+    "id": "html-a2",
+    "level": "advanced",
+    "focus": "script_defer",
+    "text": "<script src=\"app.js\" defer></script>\n<script type=\"module\">\n  import { init } from \"./main.js\";\n  init();\n</script>",
+    "source_language": "html",
+    "difficulty_score": 7
+  },
+  {
+    "id": "html-a3",
+    "level": "advanced",
+    "focus": "aria_dialog",
+    "text": "<div role=\"dialog\" aria-labelledby=\"dlg-title\" aria-modal=\"true\">\n  <h2 id=\"dlg-title\">Confirm</h2>\n  <button aria-label=\"Close\" data-action=\"close\">x</button>\n</div>",
+    "source_language": "html",
+    "difficulty_score": 8
+  },
+  {
+    "id": "html-a4",
+    "level": "advanced",
+    "focus": "picture_srcset",
+    "text": "<picture>\n  <source srcset=\"hero.webp\" type=\"image/webp\">\n  <img src=\"hero.jpg\" alt=\"Hero\" loading=\"lazy\" width=\"800\" height=\"400\">\n</picture>",
+    "source_language": "html",
+    "difficulty_score": 8
+  },
+  {
+    "id": "html-a5",
+    "level": "advanced",
+    "focus": "video_track",
+    "text": "<video controls poster=\"thumb.jpg\">\n  <source src=\"clip.mp4\" type=\"video/mp4\">\n  <track kind=\"captions\" src=\"en.vtt\" srclang=\"en\" label=\"English\">\n</video>",
+    "source_language": "html",
+    "difficulty_score": 9
+  }
+]

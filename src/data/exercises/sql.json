@@ -1,0 +1,162 @@
+[
+  {
+    "id": "25",
+    "level": "beginner",
+    "focus": "sql_select",
+    "text": "SELECT * FROM users WHERE age > 18;",
+    "source_language": "sql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "26",
+    "level": "intermediate",
+    "focus": "sql_join",
+    "text": "SELECT u.name, o.total FROM users u JOIN orders o ON u.id = o.user_id;",
+    "source_language": "sql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "27",
+    "level": "advanced",
+    "focus": "sql_subquery",
+    "text": "SELECT name FROM users WHERE id IN (SELECT user_id FROM orders WHERE total > 100);",
+    "source_language": "sql",
+    "difficulty_score": 7
+  },
+  {
+    "id": "sql-i1",
+    "level": "intermediate",
+    "focus": "group_by",
+    "text": "SELECT department, COUNT(*) AS total\nFROM employees\nGROUP BY department\nHAVING COUNT(*) > 5\nORDER BY total DESC;",
+    "source_language": "sql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "sql-a1",
+    "level": "advanced",
+    "focus": "cte_update",
+    "text": "WITH recent AS (\n  SELECT user_id, MAX(created_at) AS last_order\n  FROM orders\n  GROUP BY user_id\n)\nSELECT u.name, r.last_order\nFROM users u\nLEFT JOIN recent r ON r.user_id = u.id;",
+    "source_language": "sql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "sql-b2",
+    "level": "beginner",
+    "focus": "select_columns",
+    "text": "SELECT id, name, email\nFROM users;",
+    "source_language": "sql",
+    "difficulty_score": 1
+  },
+  {
+    "id": "sql-b3",
+    "level": "beginner",
+    "focus": "where_and_or",
+    "text": "SELECT * FROM products\nWHERE price < 50 AND stock > 0;",
+    "source_language": "sql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "sql-b4",
+    "level": "beginner",
+    "focus": "order_limit",
+    "text": "SELECT name, score\nFROM players\nORDER BY score DESC\nLIMIT 10;",
+    "source_language": "sql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "sql-b5",
+    "level": "beginner",
+    "focus": "insert_row",
+    "text": "INSERT INTO users (name, email)\nVALUES ('Ann', 'ann@example.com');",
+    "source_language": "sql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "sql-b6",
+    "level": "beginner",
+    "focus": "update_delete",
+    "text": "UPDATE users SET active = 0 WHERE id = 7;\nDELETE FROM sessions WHERE expires_at < NOW();",
+    "source_language": "sql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "sql-i3",
+    "level": "intermediate",
+    "focus": "like_in_between",
+    "text": "SELECT * FROM orders\nWHERE status IN ('paid', 'shipped')\n  AND total BETWEEN 50 AND 200\n  AND customer LIKE 'A%';",
+    "source_language": "sql",
+    "difficulty_score": 4
+  },
+  {
+    "id": "sql-i4",
+    "level": "intermediate",
+    "focus": "aggregates",
+    "text": "SELECT COUNT(*) AS total, AVG(price) AS avg_price, MAX(price) AS top\nFROM products\nWHERE category = 'books';",
+    "source_language": "sql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "sql-i5",
+    "level": "intermediate",
+    "focus": "left_join",
+    "text": "SELECT u.name, COUNT(o.id) AS orders\nFROM users u\nLEFT JOIN orders o ON o.user_id = u.id\nGROUP BY u.name;",
+    "source_language": "sql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "sql-i6",
+    "level": "intermediate",
+    "focus": "create_table",
+    "text": "CREATE TABLE orders (\n  id INT PRIMARY KEY AUTO_INCREMENT,\n  user_id INT NOT NULL,\n  total DECIMAL(10, 2) DEFAULT 0,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  FOREIGN KEY (user_id) REFERENCES users(id)\n);",
+    "source_language": "sql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "sql-i7",
+    "level": "intermediate",
+    "focus": "alter_index",
+    "text": "ALTER TABLE users ADD COLUMN phone VARCHAR(20);\nCREATE INDEX idx_users_email ON users (email);",
+    "source_language": "sql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "sql-a3",
+    "level": "advanced",
+    "focus": "case_when",
+    "text": "SELECT name,\n  CASE\n    WHEN score >= 90 THEN 'A'\n    WHEN score >= 80 THEN 'B'\n    ELSE 'C'\n  END AS grade\nFROM students;",
+    "source_language": "sql",
+    "difficulty_score": 7
+  },
+  {
+    "id": "sql-a4",
+    "level": "advanced",
+    "focus": "window_rank",
+    "text": "SELECT name, department, salary,\n  RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rnk\nFROM employees;",
+    "source_language": "sql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "sql-a5",
+    "level": "advanced",
+    "focus": "exists_subquery",
+    "text": "SELECT name FROM customers c\nWHERE EXISTS (\n  SELECT 1 FROM orders o\n  WHERE o.customer_id = c.id AND o.total > 500\n);",
+    "source_language": "sql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "sql-a6",
+    "level": "advanced",
+    "focus": "transaction",
+    "text": "BEGIN;\nUPDATE accounts SET balance = balance - 100 WHERE id = 1;\nUPDATE accounts SET balance = balance + 100 WHERE id = 2;\nCOMMIT;",
+    "source_language": "sql",
+    "difficulty_score": 9
+  },
+  {
+    "id": "sql-a7",
+    "level": "advanced",
+    "focus": "running_total",
+    "text": "SELECT order_date, amount,\n  SUM(amount) OVER (ORDER BY order_date\n    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running\nFROM sales;",
+    "source_language": "sql",
+    "difficulty_score": 9
+  }
+]

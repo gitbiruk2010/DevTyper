@@ -1,0 +1,162 @@
+[
+  {
+    "id": "rust-b1",
+    "level": "beginner",
+    "focus": "hello",
+    "text": "fn main() {\n    println!(\"Hello, Rust!\");\n}",
+    "source_language": "rust",
+    "difficulty_score": 2
+  },
+  {
+    "id": "rust-i1",
+    "level": "intermediate",
+    "focus": "structs_impl",
+    "text": "struct Circle {\n    radius: f64,\n}\n\nimpl Circle {\n    fn area(&self) -> f64 {\n        std::f64::consts::PI * self.radius * self.radius\n    }\n}",
+    "source_language": "rust",
+    "difficulty_score": 5
+  },
+  {
+    "id": "rust-a1",
+    "level": "advanced",
+    "focus": "match_option",
+    "text": "fn describe(n: Option<i32>) -> &'static str {\n    match n {\n        Some(x) if x < 0 => \"negative\",\n        Some(0) => \"zero\",\n        Some(_) => \"positive\",\n        None => \"nothing\",\n    }\n}",
+    "source_language": "rust",
+    "difficulty_score": 8
+  },
+  {
+    "id": "rust-a2",
+    "level": "advanced",
+    "focus": "traits_generics",
+    "text": "trait Speak {\n    fn speak(&self) -> String;\n}\n\nfn chorus<T: Speak>(items: &[T]) -> Vec<String> {\n    items.iter().map(|i| i.speak()).collect()\n}",
+    "source_language": "rust",
+    "difficulty_score": 9
+  },
+  {
+    "id": "rust-b2",
+    "level": "beginner",
+    "focus": "let_mut",
+    "text": "let name = \"Ferris\";\nlet mut count = 0;\ncount += 1;",
+    "source_language": "rust",
+    "difficulty_score": 1
+  },
+  {
+    "id": "rust-b3",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if score >= 90 {\n    println!(\"A\");\n} else {\n    println!(\"B\");\n}",
+    "source_language": "rust",
+    "difficulty_score": 2
+  },
+  {
+    "id": "rust-b4",
+    "level": "beginner",
+    "focus": "vec_basics",
+    "text": "let mut nums = vec![1, 2, 3];\nnums.push(4);\nprintln!(\"{:?} len={}\", nums, nums.len());",
+    "source_language": "rust",
+    "difficulty_score": 2
+  },
+  {
+    "id": "rust-b5",
+    "level": "beginner",
+    "focus": "for_range",
+    "text": "for i in 0..5 {\n    println!(\"{}\", i);\n}",
+    "source_language": "rust",
+    "difficulty_score": 3
+  },
+  {
+    "id": "rust-b6",
+    "level": "beginner",
+    "focus": "string_basics",
+    "text": "let mut s = String::from(\"Hello\");\ns.push_str(\", world\");\nprintln!(\"{}\", s);",
+    "source_language": "rust",
+    "difficulty_score": 3
+  },
+  {
+    "id": "rust-i2",
+    "level": "intermediate",
+    "focus": "function",
+    "text": "fn add(a: i32, b: i32) -> i32 {\n    a + b\n}\n\nfn main() {\n    println!(\"{}\", add(2, 3));\n}",
+    "source_language": "rust",
+    "difficulty_score": 4
+  },
+  {
+    "id": "rust-i3",
+    "level": "intermediate",
+    "focus": "option_unwrap",
+    "text": "let maybe: Option<i32> = Some(5);\nif let Some(n) = maybe {\n    println!(\"got {}\", n);\n}\nlet value = maybe.unwrap_or(0);",
+    "source_language": "rust",
+    "difficulty_score": 5
+  },
+  {
+    "id": "rust-i4",
+    "level": "intermediate",
+    "focus": "result_question",
+    "text": "fn read_name() -> Result<String, std::io::Error> {\n    let text = std::fs::read_to_string(\"name.txt\")?;\n    Ok(text.trim().to_string())\n}",
+    "source_language": "rust",
+    "difficulty_score": 5
+  },
+  {
+    "id": "rust-i5",
+    "level": "intermediate",
+    "focus": "struct_derive",
+    "text": "#[derive(Debug, Clone)]\nstruct User {\n    name: String,\n    age: u32,\n}\n\nlet user = User { name: String::from(\"Ann\"), age: 31 };",
+    "source_language": "rust",
+    "difficulty_score": 6
+  },
+  {
+    "id": "rust-i6",
+    "level": "intermediate",
+    "focus": "iter_map_collect",
+    "text": "let squares: Vec<i32> = (1..=5)\n    .map(|x| x * x)\n    .filter(|x| x % 2 == 1)\n    .collect();",
+    "source_language": "rust",
+    "difficulty_score": 6
+  },
+  {
+    "id": "rust-i7",
+    "level": "intermediate",
+    "focus": "hashmap",
+    "text": "use std::collections::HashMap;\n\nlet mut scores = HashMap::new();\nscores.insert(\"ann\", 91);\n*scores.entry(\"bob\").or_insert(0) += 5;",
+    "source_language": "rust",
+    "difficulty_score": 6
+  },
+  {
+    "id": "rust-a3",
+    "level": "advanced",
+    "focus": "enum_match",
+    "text": "enum Shape {\n    Circle(f64),\n    Rect { w: f64, h: f64 },\n}\n\nfn area(s: &Shape) -> f64 {\n    match s {\n        Shape::Circle(r) => std::f64::consts::PI * r * r,\n        Shape::Rect { w, h } => w * h,\n    }\n}",
+    "source_language": "rust",
+    "difficulty_score": 8
+  },
+  {
+    "id": "rust-a4",
+    "level": "advanced",
+    "focus": "lifetimes",
+    "text": "fn longest<'a>(a: &'a str, b: &'a str) -> &'a str {\n    if a.len() >= b.len() { a } else { b }\n}",
+    "source_language": "rust",
+    "difficulty_score": 8
+  },
+  {
+    "id": "rust-a5",
+    "level": "advanced",
+    "focus": "trait_impl_display",
+    "text": "use std::fmt;\n\nimpl fmt::Display for User {\n    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {\n        write!(f, \"{} ({})\", self.name, self.age)\n    }\n}",
+    "source_language": "rust",
+    "difficulty_score": 9
+  },
+  {
+    "id": "rust-a6",
+    "level": "advanced",
+    "focus": "arc_mutex_thread",
+    "text": "let counter = Arc::new(Mutex::new(0));\nlet mut handles = vec![];\nfor _ in 0..4 {\n    let c = Arc::clone(&counter);\n    handles.push(thread::spawn(move || {\n        *c.lock().unwrap() += 1;\n    }));\n}",
+    "source_language": "rust",
+    "difficulty_score": 9
+  },
+  {
+    "id": "rust-a7",
+    "level": "advanced",
+    "focus": "async_tokio",
+    "text": "#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let body = reqwest::get(\"https://example.com\").await?.text().await?;\n    println!(\"{}\", body.len());\n    Ok(())\n}",
+    "source_language": "rust",
+    "difficulty_score": 9
+  }
+]

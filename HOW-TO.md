@@ -213,6 +213,30 @@ npm run package
 
 ---
 
+## Adding exercises
+
+Snippets live in `src/data/exercises/<language>.json` (one file per language, picked up automatically). Each entry:
+
+```json
+{
+  "id": "python-b10",
+  "level": "beginner",
+  "focus": "list_methods",
+  "text": "items = [3, 1, 2]
+items.sort()",
+  "source_language": "python",
+  "difficulty_score": 2
+}
+```
+
+- `id` must be unique across all files (use `<language>-<b|i|a><number>`); `level` is `beginner`, `intermediate` or `advanced`.
+- Use plain ASCII, no tabs and no trailing spaces; indent with spaces. Multi-line code uses `
+`. When you press Enter the editor auto-indents, like a real editor.
+- A new language also needs an entry in `src/data/languages.ts` (name, glyph, colour) to look right in the menu.
+- Aim for 4+ snippets per level so Next never repeats quickly. Mastering a snippet takes 2 clean runs.
+
+---
+
 ## 🔍 Before Release Checklist
 
 ### **Code Quality**
@@ -230,7 +254,7 @@ npm run package
 - [ ] Racing game animates smoothly
 - [ ] Stats persist after closing app
 - [ ] All difficulty levels work
-- [ ] All exercises load properly (currently 32)
+- [ ] All exercises load properly (see `src/data/exercises.json`)
 
 ### **Build Quality**
 
@@ -284,7 +308,7 @@ npm run package          # Create Windows installer
 # Maintenance
 npm ci                   # Clean install from the lockfile
 npm audit                # Check for vulnerabilities
-npm run lint             # Run ESLint (currently has known errors)
+npm run lint             # Run ESLint
 npx tsc --noEmit         # Check TypeScript types
 ```
 

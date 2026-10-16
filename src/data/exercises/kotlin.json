@@ -1,0 +1,106 @@
+[
+  {
+    "id": "kotlin-b1",
+    "level": "beginner",
+    "focus": "main",
+    "text": "fun main() {\n    println(\"Hello, Kotlin!\")\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 2
+  },
+  {
+    "id": "kotlin-i1",
+    "level": "intermediate",
+    "focus": "data_class",
+    "text": "data class User(val name: String, val age: Int)\n\nval users = listOf(User(\"Ann\", 31), User(\"Bo\", 17))\nval adults = users.filter { it.age >= 18 }",
+    "source_language": "kotlin",
+    "difficulty_score": 5
+  },
+  {
+    "id": "kotlin-a1",
+    "level": "advanced",
+    "focus": "when_sealed",
+    "text": "sealed class Result\nclass Ok(val value: Int) : Result()\nclass Err(val message: String) : Result()\n\nfun show(r: Result) = when (r) {\n    is Ok -> \"ok: ${r.value}\"\n    is Err -> \"error: ${r.message}\"\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 8
+  },
+  {
+    "id": "kotlin-b2",
+    "level": "beginner",
+    "focus": "val_var",
+    "text": "val name = \"Ann\"\nvar count = 0\ncount++\nprintln(\"$name: $count\")",
+    "source_language": "kotlin",
+    "difficulty_score": 2
+  },
+  {
+    "id": "kotlin-b3",
+    "level": "beginner",
+    "focus": "if_expression",
+    "text": "val grade = if (score >= 90) \"A\" else \"B\"\nprintln(grade)",
+    "source_language": "kotlin",
+    "difficulty_score": 2
+  },
+  {
+    "id": "kotlin-b4",
+    "level": "beginner",
+    "focus": "list_basics",
+    "text": "val fruits = listOf(\"apple\", \"pear\")\nval mutable = mutableListOf(1, 2)\nmutable.add(3)",
+    "source_language": "kotlin",
+    "difficulty_score": 3
+  },
+  {
+    "id": "kotlin-i2",
+    "level": "intermediate",
+    "focus": "fun_default",
+    "text": "fun greet(name: String, greeting: String = \"Hello\"): String {\n    return \"$greeting, $name!\"\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 4
+  },
+  {
+    "id": "kotlin-i3",
+    "level": "intermediate",
+    "focus": "when_expression",
+    "text": "val label = when (n) {\n    0 -> \"zero\"\n    in 1..9 -> \"small\"\n    else -> \"big\"\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 5
+  },
+  {
+    "id": "kotlin-i4",
+    "level": "intermediate",
+    "focus": "null_safety",
+    "text": "val length = name?.length ?: 0\nname?.let { println(it.uppercase()) }\nval forced = maybe!!",
+    "source_language": "kotlin",
+    "difficulty_score": 6
+  },
+  {
+    "id": "kotlin-i5",
+    "level": "intermediate",
+    "focus": "collections_chain",
+    "text": "val names = users\n    .filter { it.age >= 18 }\n    .map { it.name }\n    .sorted()",
+    "source_language": "kotlin",
+    "difficulty_score": 6
+  },
+  {
+    "id": "kotlin-a2",
+    "level": "advanced",
+    "focus": "coroutines",
+    "text": "suspend fun fetchAll(): List<String> = coroutineScope {\n    val a = async { fetch(\"a\") }\n    val b = async { fetch(\"b\") }\n    listOf(a.await(), b.await())\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 8
+  },
+  {
+    "id": "kotlin-a3",
+    "level": "advanced",
+    "focus": "class_interface",
+    "text": "interface Shape {\n    fun area(): Double\n}\n\nclass Circle(private val r: Double) : Shape {\n    override fun area() = Math.PI * r * r\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 8
+  },
+  {
+    "id": "kotlin-a4",
+    "level": "advanced",
+    "focus": "extension_function",
+    "text": "fun String.isPalindrome(): Boolean {\n    val clean = lowercase().filter { it.isLetterOrDigit() }\n    return clean == clean.reversed()\n}",
+    "source_language": "kotlin",
+    "difficulty_score": 9
+  }
+]
