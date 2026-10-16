@@ -37,16 +37,17 @@ pre-releases with a suffix, e.g. `v0.1.0-beta.1`.
    npm run package
    ```
    The installer is written to `release/`.
-5. Tag the merged commit and push the tag:
+5. (Optional) Write the release notes in `release-notes/vX.Y.Z.md` before tagging; the workflow uses that file as the release description, or auto-generates notes if it does not exist.
+6. Tag the merged commit and push the tag:
    ```bash
    git tag v0.1.0
    git push origin v0.1.0
    ```
    The tag must match `package.json` (`v` + version) or the workflow fails on purpose.
-6. Watch the **Release** run in the Actions tab. When it finishes, the release appears at
+7. Watch the **Release** run in the Actions tab. When it finishes, the release appears at
    https://github.com/gitbiruk2010/DevTyper/releases/latest with `DevTyper-X.Y.Z-Setup.exe`
    and `SHA256SUMS.txt`.
-7. Edit the release notes if you want to add highlights; mark it as a pre-release if needed.
+8. Edit the release notes if you want to add highlights; mark it as a pre-release if needed.
 
 If a release run fails, fix the problem, delete the tag locally and on GitHub
 (`git tag -d vX.Y.Z && git push origin :refs/tags/vX.Y.Z`), and tag again.
@@ -56,14 +57,13 @@ If a release run fails, fix the problem, delete the tag locally and on GitHub
 - **Windows SmartScreen:** the installer is not code-signed, so first-time users may see a
   warning. Choose **More info → Run anyway**. Code signing would remove this.
 - **Verify a download:** compare `certutil -hashfile DevTyper-X.Y.Z-Setup.exe SHA256`
-  with the value in `SHA256SUMS.txt`.
-- **Platforms:** only Windows (x64) installers are built in CI. macOS and Linux targets exist in
-  `package.json` but need to be built on those systems.
+  with the value in `SHA256SUMS.txt`. On Linux, run `sha256sum -c SHA256SUMS.txt` in the download folder.
+- **Platforms:** the Release workflow builds the Windows installer (.exe) on a Windows runner and the Linux packages (.AppImage and .deb) on an Ubuntu runner, then a final job attaches everything plus SHA256SUMS.txt to the release. macOS targets exist in package.json but are not built in CI (they need a Mac runner).
 
 ## Requirements
 
 - Node.js 22.12 or newer (see `engines` in `package.json`)
-- Windows runner/machine to build the Windows installer
+- Build each installer on its own OS: Windows for the .exe, Linux for the .AppImage and .deb
 
 ## Troubleshooting
 

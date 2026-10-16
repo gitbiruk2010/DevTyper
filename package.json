@@ -6,7 +6,8 @@
   "main": "dist-electron/main.cjs",
   "author": {
     "name": "Biruk.B",
-    "url": "https://github.com/gitbiruk2010"
+    "url": "https://github.com/gitbiruk2010",
+    "email": "103274295+gitbiruk2010@users.noreply.github.com"
   },
   "description": "DevTyper - A developer typing tutor for mastering code typing speed",
   "license": "MIT",
@@ -81,10 +82,14 @@
     },
     "linux": {
       "target": [
-        "AppImage"
+        "AppImage",
+        "deb"
       ],
       "category": "Development",
-      "icon": "build/icons/icon.png"
+      "icon": "build/icons/icon.png",
+      "maintainer": "Biruk Beyene <103274295+gitbiruk2010@users.noreply.github.com>",
+      "synopsis": "Developer typing tutor",
+      "artifactName": "${productName}-${version}-linux.${ext}"
     }
   },
   "dependencies": {
