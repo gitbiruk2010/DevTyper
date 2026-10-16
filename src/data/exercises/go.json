@@ -174,5 +174,77 @@
     "text": "type Counter struct {\n    mu sync.Mutex\n    n  int\n}\n\nfunc (c *Counter) Inc() {\n    c.mu.Lock()\n    defer c.mu.Unlock()\n    c.n++\n}",
     "source_language": "go",
     "difficulty_score": 9
+  },
+  {
+    "id": "go-b8",
+    "level": "beginner",
+    "focus": "printf_verbs",
+    "text": "name := \"Gopher\"\nage := 12\nfmt.Printf(\"%s is %d\\n\", name, age)",
+    "source_language": "go",
+    "difficulty_score": 2
+  },
+  {
+    "id": "go-b9",
+    "level": "beginner",
+    "focus": "string_basics",
+    "text": "s := \"Hello, Go\"\nfmt.Println(len(s), strings.ToUpper(s))\nfmt.Println(strings.Contains(s, \"Go\"))",
+    "source_language": "go",
+    "difficulty_score": 3
+  },
+  {
+    "id": "go-b10",
+    "level": "beginner",
+    "focus": "array_vs_slice",
+    "text": "var arr [3]int\narr[0] = 7\npart := []string{\"a\", \"b\", \"c\"}[1:]\nfmt.Println(arr, part)",
+    "source_language": "go",
+    "difficulty_score": 3
+  },
+  {
+    "id": "go-i9",
+    "level": "intermediate",
+    "focus": "struct_constructor",
+    "text": "type Server struct {\n    Host string\n    Port int\n}\n\nfunc NewServer(host string, port int) *Server {\n    return &Server{Host: host, Port: port}\n}",
+    "source_language": "go",
+    "difficulty_score": 5
+  },
+  {
+    "id": "go-i10",
+    "level": "intermediate",
+    "focus": "custom_error",
+    "text": "type NotFoundError struct{ ID int }\n\nfunc (e NotFoundError) Error() string {\n    return fmt.Sprintf(\"item %d not found\", e.ID)\n}",
+    "source_language": "go",
+    "difficulty_score": 6
+  },
+  {
+    "id": "go-i11",
+    "level": "intermediate",
+    "focus": "json_marshal",
+    "text": "user := User{ID: 1, Name: \"Ann\"}\ndata, err := json.Marshal(user)\nif err != nil {\n    return err\n}\nfmt.Println(string(data))",
+    "source_language": "go",
+    "difficulty_score": 6
+  },
+  {
+    "id": "go-a8",
+    "level": "advanced",
+    "focus": "worker_pool",
+    "text": "jobs := make(chan int, 10)\nresults := make(chan int, 10)\n\nfor w := 0; w < 3; w++ {\n    go func() {\n        for j := range jobs {\n            results <- j * 2\n        }\n    }()\n}",
+    "source_language": "go",
+    "difficulty_score": 8
+  },
+  {
+    "id": "go-a9",
+    "level": "advanced",
+    "focus": "generic_constraint",
+    "text": "type Number interface {\n    ~int | ~int64 | ~float64\n}\n\nfunc Sum[T Number](items []T) T {\n    var total T\n    for _, v := range items {\n        total += v\n    }\n    return total\n}",
+    "source_language": "go",
+    "difficulty_score": 9
+  },
+  {
+    "id": "go-a10",
+    "level": "advanced",
+    "focus": "table_test",
+    "text": "func TestAdd(t *testing.T) {\n    tests := []struct{ a, b, want int }{\n        {1, 2, 3},\n        {0, 0, 0},\n    }\n    for _, tc := range tests {\n        if got := Add(tc.a, tc.b); got != tc.want {\n            t.Errorf(\"Add(%d,%d) = %d\", tc.a, tc.b, got)\n        }\n    }\n}",
+    "source_language": "go",
+    "difficulty_score": 9
   }
 ]

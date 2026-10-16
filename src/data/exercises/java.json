@@ -190,5 +190,77 @@
     "text": "public class Pizza {\n    private final String size;\n    private Pizza(Builder b) { this.size = b.size; }\n\n    public static class Builder {\n        private String size = \"M\";\n        public Builder size(String s) { this.size = s; return this; }\n        public Pizza build() { return new Pizza(this); }\n    }\n}",
     "source_language": "java",
     "difficulty_score": 9
+  },
+  {
+    "id": "java-b9",
+    "level": "beginner",
+    "focus": "while_loop",
+    "text": "int i = 0;\nwhile (i < 5) {\n    System.out.println(i);\n    i++;\n}",
+    "source_language": "java",
+    "difficulty_score": 2
+  },
+  {
+    "id": "java-b10",
+    "level": "beginner",
+    "focus": "ternary_math",
+    "text": "int max = Math.max(a, b);\nString parity = n % 2 == 0 ? \"even\" : \"odd\";\nSystem.out.println(parity + \" \" + max);",
+    "source_language": "java",
+    "difficulty_score": 3
+  },
+  {
+    "id": "java-b11",
+    "level": "beginner",
+    "focus": "string_format",
+    "text": "String name = \"Ann\";\nint age = 31;\nSystem.out.printf(\"%s is %d years old%n\", name, age);",
+    "source_language": "java",
+    "difficulty_score": 3
+  },
+  {
+    "id": "java-i9",
+    "level": "intermediate",
+    "focus": "hashset",
+    "text": "Set<String> tags = new HashSet<>();\ntags.add(\"java\");\ntags.add(\"java\");\nSystem.out.println(tags.size());",
+    "source_language": "java",
+    "difficulty_score": 5
+  },
+  {
+    "id": "java-i10",
+    "level": "intermediate",
+    "focus": "static_nested",
+    "text": "public class Counter {\n    private static int total = 0;\n\n    public static synchronized int next() {\n        return ++total;\n    }\n}",
+    "source_language": "java",
+    "difficulty_score": 6
+  },
+  {
+    "id": "java-i11",
+    "level": "intermediate",
+    "focus": "file_read_nio",
+    "text": "List<String> lines = Files.readAllLines(Path.of(\"data.txt\"));\nfor (String line : lines) {\n    System.out.println(line.trim());\n}",
+    "source_language": "java",
+    "difficulty_score": 6
+  },
+  {
+    "id": "java-a9",
+    "level": "advanced",
+    "focus": "enum_methods",
+    "text": "public enum Planet {\n    EARTH(5.97e24), MARS(6.42e23);\n\n    private final double mass;\n    Planet(double mass) { this.mass = mass; }\n    public double getMass() { return mass; }\n}",
+    "source_language": "java",
+    "difficulty_score": 8
+  },
+  {
+    "id": "java-a10",
+    "level": "advanced",
+    "focus": "sealed_pattern",
+    "text": "sealed interface Shape permits Circle, Square {}\nrecord Circle(double r) implements Shape {}\nrecord Square(double s) implements Shape {}\n\ndouble area(Shape s) {\n    return switch (s) {\n        case Circle c -> Math.PI * c.r() * c.r();\n        case Square q -> q.s() * q.s();\n    };\n}",
+    "source_language": "java",
+    "difficulty_score": 9
+  },
+  {
+    "id": "java-a11",
+    "level": "advanced",
+    "focus": "executor_service",
+    "text": "ExecutorService pool = Executors.newFixedThreadPool(4);\nList<Future<Integer>> results = new ArrayList<>();\nfor (int i = 0; i < 4; i++) {\n    final int n = i;\n    results.add(pool.submit(() -> n * n));\n}\npool.shutdown();",
+    "source_language": "java",
+    "difficulty_score": 9
   }
 ]

@@ -262,5 +262,29 @@
     "text": "const memoize = fn => {\n  const cache = new Map();\n  return n => cache.has(n) ? cache.get(n) : (cache.set(n, fn(n)), cache.get(n));\n};",
     "source_language": "javascript",
     "difficulty_score": 9
+  },
+  {
+    "id": "javascript-b10",
+    "level": "beginner",
+    "focus": "string_methods",
+    "text": "const text = \"  Hello World  \";\nconsole.log(text.trim().toLowerCase());\nconsole.log(text.includes(\"World\"));",
+    "source_language": "javascript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "javascript-i12",
+    "level": "intermediate",
+    "focus": "filter_find_some",
+    "text": "const users = [{ id: 1, active: true }, { id: 2, active: false }];\nconst active = users.filter(u => u.active);\nconst found = users.find(u => u.id === 2);\nconst any = users.some(u => u.active);",
+    "source_language": "javascript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "javascript-a14",
+    "level": "advanced",
+    "focus": "event_delegation",
+    "text": "list.addEventListener(\"click\", event => {\n  const item = event.target.closest(\"li[data-id]\");\n  if (!item) return;\n  selectItem(Number(item.dataset.id));\n});",
+    "source_language": "javascript",
+    "difficulty_score": 8
   }
 ]

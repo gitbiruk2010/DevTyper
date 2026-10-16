@@ -246,5 +246,45 @@
     "text": "import pytest\n\n@pytest.fixture\ndef client():\n    return App().test_client()\n\ndef test_health(client):\n    response = client.get(\"/health\")\n    assert response.status_code == 200",
     "source_language": "python",
     "difficulty_score": 8
+  },
+  {
+    "id": "python-b10",
+    "level": "beginner",
+    "focus": "tuple_set",
+    "text": "point = (3, 4)\ntags = {\"python\", \"code\", \"python\"}\nprint(point[0], len(tags))",
+    "source_language": "python",
+    "difficulty_score": 2
+  },
+  {
+    "id": "python-b11",
+    "level": "beginner",
+    "focus": "string_slicing",
+    "text": "word = \"typing\"\nprint(word[0], word[-1], word[1:4], word[::-1])",
+    "source_language": "python",
+    "difficulty_score": 3
+  },
+  {
+    "id": "python-i13",
+    "level": "intermediate",
+    "focus": "list_sort_key",
+    "text": "people = [(\"ann\", 31), (\"bob\", 27)]\npeople.sort(key=lambda p: p[1], reverse=True)\nyoungest = min(people, key=lambda p: p[1])",
+    "source_language": "python",
+    "difficulty_score": 6
+  },
+  {
+    "id": "python-a11",
+    "level": "advanced",
+    "focus": "dunder_methods",
+    "text": "class Vector:\n    def __init__(self, x, y):\n        self.x, self.y = x, y\n\n    def __add__(self, other):\n        return Vector(self.x + other.x, self.y + other.y)\n\n    def __repr__(self):\n        return f\"Vector({self.x}, {self.y})\"",
+    "source_language": "python",
+    "difficulty_score": 8
+  },
+  {
+    "id": "python-a12",
+    "level": "advanced",
+    "focus": "itertools_collections",
+    "text": "from collections import Counter, defaultdict\nfrom itertools import groupby, chain\n\ncounts = Counter(\"mississippi\").most_common(2)\ngroups = defaultdict(list)",
+    "source_language": "python",
+    "difficulty_score": 9
   }
 ]

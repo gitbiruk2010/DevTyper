@@ -174,5 +174,77 @@
     "text": "public event EventHandler<string> Message;\n\nprotected void Raise(string text)\n{\n    Message?.Invoke(this, text);\n}",
     "source_language": "csharp",
     "difficulty_score": 9
+  },
+  {
+    "id": "csharp-b8",
+    "level": "beginner",
+    "focus": "switch_expression",
+    "text": "string size = n switch\n{\n    < 10 => \"small\",\n    < 100 => \"medium\",\n    _ => \"large\"\n};",
+    "source_language": "csharp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "csharp-b9",
+    "level": "beginner",
+    "focus": "array_basics",
+    "text": "int[] nums = { 5, 3, 8 };\nArray.Sort(nums);\nConsole.WriteLine(string.Join(\", \", nums));",
+    "source_language": "csharp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "csharp-b10",
+    "level": "beginner",
+    "focus": "for_loop",
+    "text": "for (int i = 0; i < 5; i++)\n{\n    Console.WriteLine($\"Item {i}\");\n}",
+    "source_language": "csharp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "csharp-i9",
+    "level": "intermediate",
+    "focus": "string_methods",
+    "text": "string text = \"  Hello, World  \";\nConsole.WriteLine(text.Trim().ToUpper());\nConsole.WriteLine(text.Contains(\"World\"));\nConsole.WriteLine(text.Replace(\"World\", \"C#\"));",
+    "source_language": "csharp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "csharp-i10",
+    "level": "intermediate",
+    "focus": "class_constructor",
+    "text": "public class Account\n{\n    public decimal Balance { get; private set; }\n\n    public Account(decimal opening)\n    {\n        Balance = opening;\n    }\n\n    public void Deposit(decimal amount) => Balance += amount;\n}",
+    "source_language": "csharp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "csharp-i11",
+    "level": "intermediate",
+    "focus": "struct_tuple",
+    "text": "(string Name, int Age) person = (\"Ann\", 31);\nConsole.WriteLine(person.Name);\n\nvar (name, age) = person;",
+    "source_language": "csharp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "csharp-a8",
+    "level": "advanced",
+    "focus": "generic_interface",
+    "text": "public interface IRepository<T>\n{\n    Task<T?> GetAsync(int id);\n    Task AddAsync(T item);\n    IAsyncEnumerable<T> ListAsync();\n}",
+    "source_language": "csharp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "csharp-a9",
+    "level": "advanced",
+    "focus": "dependency_injection",
+    "text": "builder.Services.AddScoped<IUserService, UserService>();\nbuilder.Services.AddDbContext<AppDb>(o =>\n    o.UseSqlite(builder.Configuration.GetConnectionString(\"Default\")));",
+    "source_language": "csharp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "csharp-a10",
+    "level": "advanced",
+    "focus": "channel_producer",
+    "text": "var channel = Channel.CreateUnbounded<int>();\n\n_ = Task.Run(async () =>\n{\n    for (var i = 0; i < 5; i++) await channel.Writer.WriteAsync(i);\n    channel.Writer.Complete();\n});",
+    "source_language": "csharp",
+    "difficulty_score": 9
   }
 ]

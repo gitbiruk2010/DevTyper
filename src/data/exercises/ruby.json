@@ -174,5 +174,77 @@
     "text": "class Ghost\n  def method_missing(name, *args, &block)\n    return \"boo #{name}\" if name.to_s.start_with?(\"say_\")\n    super\n  end\n\n  def respond_to_missing?(name, include_private = false)\n    name.to_s.start_with?(\"say_\") || super\n  end\nend",
     "source_language": "ruby",
     "difficulty_score": 9
+  },
+  {
+    "id": "ruby-b8",
+    "level": "beginner",
+    "focus": "times_loop",
+    "text": "3.times do |i|\n  puts \"Round #{i + 1}\"\nend\n\n1.upto(3) { |n| puts n }",
+    "source_language": "ruby",
+    "difficulty_score": 2
+  },
+  {
+    "id": "ruby-b9",
+    "level": "beginner",
+    "focus": "gets_chomp",
+    "text": "print \"Name: \"\nname = gets.chomp\nputs \"Hello, #{name.capitalize}!\"",
+    "source_language": "ruby",
+    "difficulty_score": 3
+  },
+  {
+    "id": "ruby-b10",
+    "level": "beginner",
+    "focus": "range_array",
+    "text": "(1..5).each { |n| puts n * n }\nletters = (\"a\"..\"e\").to_a\nputs letters.reverse.join",
+    "source_language": "ruby",
+    "difficulty_score": 3
+  },
+  {
+    "id": "ruby-i9",
+    "level": "intermediate",
+    "focus": "class_basic",
+    "text": "class Dog\n  def initialize(name)\n    @name = name\n  end\n\n  def bark\n    puts \"#{@name} says woof\"\n  end\nend",
+    "source_language": "ruby",
+    "difficulty_score": 5
+  },
+  {
+    "id": "ruby-i10",
+    "level": "intermediate",
+    "focus": "symbols_hash_each",
+    "text": "config = { host: \"localhost\", port: 3000 }\nconfig.each do |key, value|\n  puts \"#{key}: #{value}\"\nend",
+    "source_language": "ruby",
+    "difficulty_score": 6
+  },
+  {
+    "id": "ruby-i11",
+    "level": "intermediate",
+    "focus": "string_formatting",
+    "text": "price = 12.5\nputs format(\"%.2f\", price)\nputs \"Total: %s\" % price.round\nputs \"ruby\".center(20, \"*\")",
+    "source_language": "ruby",
+    "difficulty_score": 6
+  },
+  {
+    "id": "ruby-a8",
+    "level": "advanced",
+    "focus": "proc_lambda_yield",
+    "text": "def twice\n  yield\n  yield\nend\n\ntwice { puts \"hi\" }\nsquare = ->(n) { n * n }\nputs square.call(4)",
+    "source_language": "ruby",
+    "difficulty_score": 8
+  },
+  {
+    "id": "ruby-a9",
+    "level": "advanced",
+    "focus": "comparable_each",
+    "text": "class Version\n  include Comparable\n  attr_reader :major\n\n  def initialize(major) = @major = major\n  def <=>(other) = major <=> other.major\nend",
+    "source_language": "ruby",
+    "difficulty_score": 9
+  },
+  {
+    "id": "ruby-a10",
+    "level": "advanced",
+    "focus": "rspec_style",
+    "text": "RSpec.describe Calculator do\n  describe \"#add\" do\n    it \"returns the sum\" do\n      expect(Calculator.new.add(2, 3)).to eq(5)\n    end\n  end\nend",
+    "source_language": "ruby",
+    "difficulty_score": 9
   }
 ]

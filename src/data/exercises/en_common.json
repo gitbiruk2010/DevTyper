@@ -102,5 +102,101 @@
     "text": "Rubber duck debugging: explain your code line by line to a rubber duck, and the bug will usually reveal itself before you finish.",
     "source_language": "en_common",
     "difficulty_score": 8
+  },
+  {
+    "id": "en_common-b7",
+    "level": "beginner",
+    "focus": "pangram_quartz",
+    "text": "Sphinx of black quartz, judge my vow.",
+    "source_language": "en_common",
+    "difficulty_score": 1
+  },
+  {
+    "id": "en_common-b8",
+    "level": "beginner",
+    "focus": "tongue_twister",
+    "text": "She sells sea shells by the sea shore.",
+    "source_language": "en_common",
+    "difficulty_score": 2
+  },
+  {
+    "id": "en_common-b9",
+    "level": "beginner",
+    "focus": "todo_list",
+    "text": "Fix the bug, write a test, push the code, and drink some water.",
+    "source_language": "en_common",
+    "difficulty_score": 2
+  },
+  {
+    "id": "en_common-i5",
+    "level": "intermediate",
+    "focus": "dijkstra_quote",
+    "text": "Simplicity is prerequisite for reliability. - Edsger Dijkstra",
+    "source_language": "en_common",
+    "difficulty_score": 4
+  },
+  {
+    "id": "en_common-i6",
+    "level": "intermediate",
+    "focus": "torvalds_quote",
+    "text": "Talk is cheap. Show me the code. - Linus Torvalds",
+    "source_language": "en_common",
+    "difficulty_score": 4
+  },
+  {
+    "id": "en_common-i7",
+    "level": "intermediate",
+    "focus": "dev_joke_light_bulb",
+    "text": "How many programmers does it take to change a light bulb? None, that is a hardware problem.",
+    "source_language": "en_common",
+    "difficulty_score": 5
+  },
+  {
+    "id": "en_common-i8",
+    "level": "intermediate",
+    "focus": "dev_joke_dark_mode",
+    "text": "Why do programmers prefer dark mode? Because light attracts bugs.",
+    "source_language": "en_common",
+    "difficulty_score": 5
+  },
+  {
+    "id": "en_common-a4",
+    "level": "advanced",
+    "focus": "hopper_quote",
+    "text": "The most dangerous phrase in the language is: we have always done it this way. - Grace Hopper",
+    "source_language": "en_common",
+    "difficulty_score": 7
+  },
+  {
+    "id": "en_common-a5",
+    "level": "advanced",
+    "focus": "unix_philosophy",
+    "text": "Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.",
+    "source_language": "en_common",
+    "difficulty_score": 7
+  },
+  {
+    "id": "en_common-a6",
+    "level": "advanced",
+    "focus": "works_on_my_machine",
+    "text": "It works on my machine is not a deployment strategy; containers exist so that your machine and the server finally agree on what works.",
+    "source_language": "en_common",
+    "difficulty_score": 8
+  },
+  {
+    "id": "en_common-a7",
+    "level": "advanced",
+    "focus": "code_review_wisdom",
+    "text": "Code is read far more often than it is written, so name things clearly, keep functions small, and leave the campsite cleaner than you found it.",
+    "source_language": "en_common",
+    "difficulty_score": 8
+  },
+  {
+    "id": "en_common-a8",
+    "level": "advanced",
+    "focus": "rubber_stamp",
+    "text": "If you think good architecture is expensive, try bad architecture. Technical debt always collects interest, and the interest rate is your weekend.",
+    "source_language": "en_common",
+    "difficulty_score": 9
   }
 ]

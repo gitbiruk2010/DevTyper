@@ -102,5 +102,77 @@
     "text": "protocol Describable {\n    var description: String { get }\n}\n\nextension Describable {\n    func shout() -> String { description.uppercased() }\n}",
     "source_language": "swift",
     "difficulty_score": 9
+  },
+  {
+    "id": "swift-b5",
+    "level": "beginner",
+    "focus": "constants_vars",
+    "text": "let pi = 3.14159\nvar radius = 2.0\nlet area = pi * radius * radius\nprint(area)",
+    "source_language": "swift",
+    "difficulty_score": 2
+  },
+  {
+    "id": "swift-b6",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if score >= 90 {\n    print(\"A\")\n} else if score >= 80 {\n    print(\"B\")\n} else {\n    print(\"C\")\n}",
+    "source_language": "swift",
+    "difficulty_score": 3
+  },
+  {
+    "id": "swift-b7",
+    "level": "beginner",
+    "focus": "range_loops",
+    "text": "for i in 1...5 {\n    print(i)\n}\nfor i in 0..<3 { print(\"n\\(i)\") }",
+    "source_language": "swift",
+    "difficulty_score": 3
+  },
+  {
+    "id": "swift-i6",
+    "level": "intermediate",
+    "focus": "class_basic",
+    "text": "class Counter {\n    var count = 0\n\n    func increment() {\n        count += 1\n    }\n}",
+    "source_language": "swift",
+    "difficulty_score": 5
+  },
+  {
+    "id": "swift-i7",
+    "level": "intermediate",
+    "focus": "tuple_return",
+    "text": "func minMax(_ a: [Int]) -> (min: Int, max: Int)? {\n    guard let lo = a.min(), let hi = a.max() else { return nil }\n    return (lo, hi)\n}",
+    "source_language": "swift",
+    "difficulty_score": 6
+  },
+  {
+    "id": "swift-i8",
+    "level": "intermediate",
+    "focus": "enum_associated",
+    "text": "enum Result {\n    case success(String)\n    case failure(code: Int)\n}\n\nlet r = Result.failure(code: 404)",
+    "source_language": "swift",
+    "difficulty_score": 6
+  },
+  {
+    "id": "swift-a5",
+    "level": "advanced",
+    "focus": "generics_where",
+    "text": "func largest<T: Comparable>(_ items: [T]) -> T? {\n    guard var best = items.first else { return nil }\n    for item in items where item > best { best = item }\n    return best\n}",
+    "source_language": "swift",
+    "difficulty_score": 8
+  },
+  {
+    "id": "swift-a6",
+    "level": "advanced",
+    "focus": "property_wrapper_observer",
+    "text": "struct Settings {\n    var volume = 5 {\n        didSet { print(\"volume: \\(oldValue) -> \\(volume)\") }\n    }\n    lazy var summary = \"vol=\\(volume)\"\n}",
+    "source_language": "swift",
+    "difficulty_score": 9
+  },
+  {
+    "id": "swift-a7",
+    "level": "advanced",
+    "focus": "codable_struct",
+    "text": "struct Post: Codable, Identifiable {\n    let id: Int\n    let title: String\n    var tags: [String] = []\n}\n\nlet decoded = try JSONDecoder().decode([Post].self, from: data)",
+    "source_language": "swift",
+    "difficulty_score": 9
   }
 ]

@@ -94,5 +94,77 @@
     "text": "function Remove-OldFiles {\n    [CmdletBinding(SupportsShouldProcess)]\n    param([string]$Path, [int]$Days = 30)\n\n    Get-ChildItem $Path -File |\n        Where-Object LastWriteTime -lt (Get-Date).AddDays(-$Days) |\n        Remove-Item -WhatIf:$WhatIfPreference\n}",
     "source_language": "powershell",
     "difficulty_score": 9
+  },
+  {
+    "id": "powershell-b5",
+    "level": "beginner",
+    "focus": "math_string",
+    "text": "$a = 5\n$b = 3\nWrite-Host ($a + $b)\nWrite-Host \"Done\".ToUpper()",
+    "source_language": "powershell",
+    "difficulty_score": 2
+  },
+  {
+    "id": "powershell-b6",
+    "level": "beginner",
+    "focus": "copy_move_remove",
+    "text": "Copy-Item .\\a.txt .\\backup\\\nMove-Item .\\old.log .\\archive\\\nRemove-Item .\\temp -Recurse",
+    "source_language": "powershell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "powershell-b7",
+    "level": "beginner",
+    "focus": "get_help_command",
+    "text": "Get-Command *service*\nGet-Help Get-Process -Examples\nGet-Date -Format \"yyyy-MM-dd\"",
+    "source_language": "powershell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "powershell-b8",
+    "level": "beginner",
+    "focus": "read_write_file",
+    "text": "Set-Content -Path notes.txt -Value \"hello\"\nAdd-Content notes.txt \"more\"\nGet-Content notes.txt",
+    "source_language": "powershell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "powershell-i5",
+    "level": "intermediate",
+    "focus": "foreach_object",
+    "text": "1..5 | ForEach-Object { $_ * 2 }\nGet-Service | Where-Object Status -eq \"Running\" | Measure-Object",
+    "source_language": "powershell",
+    "difficulty_score": 5
+  },
+  {
+    "id": "powershell-i6",
+    "level": "intermediate",
+    "focus": "switch_statement",
+    "text": "switch ($env) {\n    \"dev\"  { Write-Host \"development\" }\n    \"prod\" { Write-Host \"production\" }\n    default { Write-Host \"unknown\" }\n}",
+    "source_language": "powershell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "powershell-i7",
+    "level": "intermediate",
+    "focus": "csv_export",
+    "text": "Get-Process |\n  Select-Object Name, Id, CPU |\n  Export-Csv -Path procs.csv -NoTypeInformation",
+    "source_language": "powershell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "powershell-a5",
+    "level": "advanced",
+    "focus": "class_definition",
+    "text": "class Person {\n    [string]$Name\n    [int]$Age\n\n    Person([string]$name, [int]$age) {\n        $this.Name = $name\n        $this.Age = $age\n    }\n}",
+    "source_language": "powershell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "powershell-a6",
+    "level": "advanced",
+    "focus": "parallel_jobs",
+    "text": "$jobs = 1..3 | ForEach-Object {\n    Start-Job -ScriptBlock { param($n) Start-Sleep 1; $n * 2 } -ArgumentList $_\n}\n$jobs | Wait-Job | Receive-Job",
+    "source_language": "powershell",
+    "difficulty_score": 9
   }
 ]

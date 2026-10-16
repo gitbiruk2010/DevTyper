@@ -94,5 +94,85 @@
     "text": "scope \"/\", MyAppWeb do\n  pipe_through :browser\n\n  get \"/\", PageController, :home\n  resources \"/users\", UserController, only: [:index, :show]\nend",
     "source_language": "elixir",
     "difficulty_score": 9
+  },
+  {
+    "id": "elixir-b5",
+    "level": "beginner",
+    "focus": "atoms_strings",
+    "text": "status = :ok\ngreeting = \"Hello\"\nIO.puts(greeting <> \", Elixir\")",
+    "source_language": "elixir",
+    "difficulty_score": 2
+  },
+  {
+    "id": "elixir-b6",
+    "level": "beginner",
+    "focus": "if_unless",
+    "text": "if age >= 18 do\n  IO.puts(\"adult\")\nelse\n  IO.puts(\"minor\")\nend",
+    "source_language": "elixir",
+    "difficulty_score": 3
+  },
+  {
+    "id": "elixir-b7",
+    "level": "beginner",
+    "focus": "anonymous_fn",
+    "text": "square = fn n -> n * n end\nIO.puts(square.(5))\nIO.puts(Enum.sum([1, 2, 3]))",
+    "source_language": "elixir",
+    "difficulty_score": 3
+  },
+  {
+    "id": "elixir-b8",
+    "level": "beginner",
+    "focus": "keyword_list",
+    "text": "opts = [name: \"Ann\", admin: true]\nIO.inspect(opts[:name])\nIO.inspect(Map.get(%{a: 1}, :a))",
+    "source_language": "elixir",
+    "difficulty_score": 3
+  },
+  {
+    "id": "elixir-i5",
+    "level": "intermediate",
+    "focus": "cond_expression",
+    "text": "cond do\n  n < 0 -> \"negative\"\n  n == 0 -> \"zero\"\n  true -> \"positive\"\nend",
+    "source_language": "elixir",
+    "difficulty_score": 5
+  },
+  {
+    "id": "elixir-i6",
+    "level": "intermediate",
+    "focus": "struct_def",
+    "text": "defmodule User do\n  defstruct name: \"\", age: 0\nend\n\nuser = %User{name: \"Ann\", age: 31}\nIO.puts(user.name)",
+    "source_language": "elixir",
+    "difficulty_score": 5
+  },
+  {
+    "id": "elixir-i7",
+    "level": "intermediate",
+    "focus": "for_comprehension",
+    "text": "squares = for n <- 1..5, rem(n, 2) == 1, do: n * n\nIO.inspect(squares)",
+    "source_language": "elixir",
+    "difficulty_score": 6
+  },
+  {
+    "id": "elixir-a5",
+    "level": "advanced",
+    "focus": "recursion_accumulator",
+    "text": "defmodule MyList do\n  def reverse(list), do: reverse(list, [])\n  defp reverse([], acc), do: acc\n  defp reverse([h | t], acc), do: reverse(t, [h | acc])\nend",
+    "source_language": "elixir",
+    "difficulty_score": 8
+  },
+  {
+    "id": "elixir-a6",
+    "level": "advanced",
+    "focus": "task_async",
+    "text": "tasks = for id <- 1..3 do\n  Task.async(fn -> Process.sleep(100); id * 2 end)\nend\n\nIO.inspect(Task.await_many(tasks))",
+    "source_language": "elixir",
+    "difficulty_score": 9
+  },
+  {
+    "id": "elixir-a7",
+    "level": "advanced",
+    "focus": "ecto_query",
+    "text": "import Ecto.Query\n\nquery =\n  from u in User,\n    where: u.age > 18,\n    order_by: [desc: u.inserted_at],\n    limit: 10\n\nRepo.all(query)",
+    "source_language": "elixir",
+    "difficulty_score": 9
   }
 ]

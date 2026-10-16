@@ -94,5 +94,77 @@
     "text": "jobs:\n  test:\n    strategy:\n      matrix:\n        node: [20, 22]\n        os: [ubuntu-latest, windows-latest]\n    runs-on: ${{ matrix.os }}",
     "source_language": "json",
     "difficulty_score": 9
+  },
+  {
+    "id": "json-b5",
+    "level": "beginner",
+    "focus": "simple_config",
+    "text": "{\n  \"debug\": true,\n  \"port\": 3000,\n  \"host\": \"localhost\"\n}",
+    "source_language": "json",
+    "difficulty_score": 2
+  },
+  {
+    "id": "json-b6",
+    "level": "beginner",
+    "focus": "users_array",
+    "text": "[\n  { \"id\": 1, \"name\": \"Ann\" },\n  { \"id\": 2, \"name\": \"Bob\" }\n]",
+    "source_language": "json",
+    "difficulty_score": 3
+  },
+  {
+    "id": "json-b7",
+    "level": "beginner",
+    "focus": "yaml_list_map",
+    "text": "fruits:\n  - apple\n  - pear\nsettings:\n  theme: dark\n  size: 14",
+    "source_language": "json",
+    "difficulty_score": 3
+  },
+  {
+    "id": "json-b8",
+    "level": "beginner",
+    "focus": "env_style",
+    "text": "DATABASE_URL=postgres://localhost/app\nPORT=8080\nDEBUG=false",
+    "source_language": "json",
+    "difficulty_score": 3
+  },
+  {
+    "id": "json-i5",
+    "level": "intermediate",
+    "focus": "eslintrc",
+    "text": "{\n  \"extends\": [\"eslint:recommended\"],\n  \"rules\": {\n    \"semi\": [\"error\", \"always\"],\n    \"quotes\": [\"warn\", \"single\"]\n  }\n}",
+    "source_language": "json",
+    "difficulty_score": 5
+  },
+  {
+    "id": "json-i6",
+    "level": "intermediate",
+    "focus": "yaml_multiline",
+    "text": "description: |\n  First line\n  Second line\nitems:\n  - name: one\n    qty: 2\n  - name: two\n    qty: 5",
+    "source_language": "json",
+    "difficulty_score": 6
+  },
+  {
+    "id": "json-i7",
+    "level": "intermediate",
+    "focus": "launch_json",
+    "text": "{\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    { \"type\": \"node\", \"request\": \"launch\", \"name\": \"Run\", \"program\": \"${workspaceFolder}/index.js\" }\n  ]\n}",
+    "source_language": "json",
+    "difficulty_score": 6
+  },
+  {
+    "id": "json-a5",
+    "level": "advanced",
+    "focus": "openapi_snippet",
+    "text": "openapi: 3.0.0\npaths:\n  /users/{id}:\n    get:\n      parameters:\n        - name: id\n          in: path\n          required: true\n      responses:\n        \"200\":\n          description: OK",
+    "source_language": "json",
+    "difficulty_score": 8
+  },
+  {
+    "id": "json-a6",
+    "level": "advanced",
+    "focus": "json_schema",
+    "text": "{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"type\": \"object\",\n  \"required\": [\"name\"],\n  \"properties\": {\n    \"name\": { \"type\": \"string\", \"minLength\": 1 },\n    \"age\": { \"type\": \"integer\", \"minimum\": 0 }\n  }\n}",
+    "source_language": "json",
+    "difficulty_score": 9
   }
 ]
