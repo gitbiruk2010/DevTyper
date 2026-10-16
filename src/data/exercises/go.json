@@ -1,0 +1,178 @@
+[
+  {
+    "id": "go-b1",
+    "level": "beginner",
+    "focus": "hello",
+    "text": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+    "source_language": "go",
+    "difficulty_score": 2
+  },
+  {
+    "id": "go-b2",
+    "level": "beginner",
+    "focus": "short_declaration",
+    "text": "count := 3\nnames := []string{\"ann\", \"bob\"}\nfmt.Println(count, names)",
+    "source_language": "go",
+    "difficulty_score": 3
+  },
+  {
+    "id": "go-i1",
+    "level": "intermediate",
+    "focus": "structs_methods",
+    "text": "type Rect struct {\n    W, H float64\n}\n\nfunc (r Rect) Area() float64 {\n    return r.W * r.H\n}",
+    "source_language": "go",
+    "difficulty_score": 5
+  },
+  {
+    "id": "go-i2",
+    "level": "intermediate",
+    "focus": "errors",
+    "text": "f, err := os.Open(\"data.txt\")\nif err != nil {\n    log.Fatal(err)\n}\ndefer f.Close()",
+    "source_language": "go",
+    "difficulty_score": 6
+  },
+  {
+    "id": "go-a1",
+    "level": "advanced",
+    "focus": "goroutines",
+    "text": "ch := make(chan int)\ngo func() {\n    for i := 0; i < 3; i++ {\n        ch <- i * i\n    }\n    close(ch)\n}()\nfor v := range ch {\n    fmt.Println(v)\n}",
+    "source_language": "go",
+    "difficulty_score": 8
+  },
+  {
+    "id": "go-a2",
+    "level": "advanced",
+    "focus": "generics",
+    "text": "func Map[T, U any](items []T, fn func(T) U) []U {\n    out := make([]U, 0, len(items))\n    for _, it := range items {\n        out = append(out, fn(it))\n    }\n    return out\n}",
+    "source_language": "go",
+    "difficulty_score": 9
+  },
+  {
+    "id": "go-b3",
+    "level": "beginner",
+    "focus": "var_const",
+    "text": "const Pi = 3.14\nvar count int = 10\nname := \"Gopher\"",
+    "source_language": "go",
+    "difficulty_score": 1
+  },
+  {
+    "id": "go-b4",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if score >= 90 {\n    fmt.Println(\"A\")\n} else {\n    fmt.Println(\"B\")\n}",
+    "source_language": "go",
+    "difficulty_score": 2
+  },
+  {
+    "id": "go-b5",
+    "level": "beginner",
+    "focus": "for_loop",
+    "text": "for i := 0; i < 5; i++ {\n    fmt.Println(i)\n}",
+    "source_language": "go",
+    "difficulty_score": 2
+  },
+  {
+    "id": "go-b6",
+    "level": "beginner",
+    "focus": "slices_append",
+    "text": "nums := []int{1, 2, 3}\nnums = append(nums, 4)\nfmt.Println(len(nums), nums[0])",
+    "source_language": "go",
+    "difficulty_score": 2
+  },
+  {
+    "id": "go-b7",
+    "level": "beginner",
+    "focus": "maps",
+    "text": "ages := map[string]int{\"ann\": 31, \"bob\": 27}\nages[\"cy\"] = 45\ndelete(ages, \"bob\")",
+    "source_language": "go",
+    "difficulty_score": 3
+  },
+  {
+    "id": "go-i3",
+    "level": "intermediate",
+    "focus": "function_multi",
+    "text": "func divide(a, b float64) (float64, error) {\n    if b == 0 {\n        return 0, errors.New(\"divide by zero\")\n    }\n    return a / b, nil\n}",
+    "source_language": "go",
+    "difficulty_score": 4
+  },
+  {
+    "id": "go-i4",
+    "level": "intermediate",
+    "focus": "range_loop",
+    "text": "for i, name := range names {\n    fmt.Printf(\"%d: %s\\n\", i, name)\n}\nfor key, value := range ages {\n    fmt.Println(key, value)\n}",
+    "source_language": "go",
+    "difficulty_score": 5
+  },
+  {
+    "id": "go-i5",
+    "level": "intermediate",
+    "focus": "switch",
+    "text": "switch day {\ncase \"sat\", \"sun\":\n    fmt.Println(\"weekend\")\ndefault:\n    fmt.Println(\"weekday\")\n}",
+    "source_language": "go",
+    "difficulty_score": 5
+  },
+  {
+    "id": "go-i6",
+    "level": "intermediate",
+    "focus": "struct_json",
+    "text": "type User struct {\n    ID   int    `json:\"id\"`\n    Name string `json:\"name\"`\n}",
+    "source_language": "go",
+    "difficulty_score": 6
+  },
+  {
+    "id": "go-i7",
+    "level": "intermediate",
+    "focus": "interface",
+    "text": "type Shape interface {\n    Area() float64\n}\n\nfunc (c Circle) Area() float64 {\n    return math.Pi * c.R * c.R\n}",
+    "source_language": "go",
+    "difficulty_score": 6
+  },
+  {
+    "id": "go-i8",
+    "level": "intermediate",
+    "focus": "read_file",
+    "text": "data, err := os.ReadFile(\"config.json\")\nif err != nil {\n    log.Fatalf(\"read: %v\", err)\n}\nfmt.Println(string(data))",
+    "source_language": "go",
+    "difficulty_score": 6
+  },
+  {
+    "id": "go-a3",
+    "level": "advanced",
+    "focus": "waitgroup",
+    "text": "var wg sync.WaitGroup\nfor i := 0; i < 3; i++ {\n    wg.Add(1)\n    go func(n int) {\n        defer wg.Done()\n        fmt.Println(\"worker\", n)\n    }(i)\n}\nwg.Wait()",
+    "source_language": "go",
+    "difficulty_score": 8
+  },
+  {
+    "id": "go-a4",
+    "level": "advanced",
+    "focus": "http_handler",
+    "text": "http.HandleFunc(\"/hello\", func(w http.ResponseWriter, r *http.Request) {\n    fmt.Fprintf(w, \"Hello, %s!\", r.URL.Query().Get(\"name\"))\n})\nlog.Fatal(http.ListenAndServe(\":8080\", nil))",
+    "source_language": "go",
+    "difficulty_score": 8
+  },
+  {
+    "id": "go-a5",
+    "level": "advanced",
+    "focus": "select_timeout",
+    "text": "select {\ncase msg := <-ch:\n    fmt.Println(msg)\ncase <-time.After(2 * time.Second):\n    fmt.Println(\"timeout\")\n}",
+    "source_language": "go",
+    "difficulty_score": 9
+  },
+  {
+    "id": "go-a6",
+    "level": "advanced",
+    "focus": "context_cancel",
+    "text": "ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)\ndefer cancel()\n\nreq, _ := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)\nresp, err := http.DefaultClient.Do(req)",
+    "source_language": "go",
+    "difficulty_score": 9
+  },
+  {
+    "id": "go-a7",
+    "level": "advanced",
+    "focus": "mutex_counter",
+    "text": "type Counter struct {\n    mu sync.Mutex\n    n  int\n}\n\nfunc (c *Counter) Inc() {\n    c.mu.Lock()\n    defer c.mu.Unlock()\n    c.n++\n}",
+    "source_language": "go",
+    "difficulty_score": 9
+  }
+]

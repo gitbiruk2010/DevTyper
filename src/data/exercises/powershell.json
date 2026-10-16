@@ -1,0 +1,98 @@
+[
+  {
+    "id": "powershell-b1",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "$name = \"Windows\"\nWrite-Host \"Hello, $name\"",
+    "source_language": "powershell",
+    "difficulty_score": 2
+  },
+  {
+    "id": "powershell-i1",
+    "level": "intermediate",
+    "focus": "pipeline",
+    "text": "Get-ChildItem -Path . -Filter *.log |\n  Where-Object { $_.Length -gt 1MB } |\n  Select-Object Name, Length",
+    "source_language": "powershell",
+    "difficulty_score": 5
+  },
+  {
+    "id": "powershell-a1",
+    "level": "advanced",
+    "focus": "function_params",
+    "text": "function Get-Greeting {\n    param(\n        [Parameter(Mandatory)][string]$Name,\n        [int]$Times = 1\n    )\n    1..$Times | ForEach-Object { \"Hello, $Name\" }\n}",
+    "source_language": "powershell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "powershell-b2",
+    "level": "beginner",
+    "focus": "write_host",
+    "text": "$name = \"World\"\nWrite-Host \"Hello, $name\"",
+    "source_language": "powershell",
+    "difficulty_score": 1
+  },
+  {
+    "id": "powershell-b3",
+    "level": "beginner",
+    "focus": "get_childitem",
+    "text": "Get-ChildItem -Path C:\\Projects\nSet-Location C:\\Projects",
+    "source_language": "powershell",
+    "difficulty_score": 2
+  },
+  {
+    "id": "powershell-b4",
+    "level": "beginner",
+    "focus": "array_foreach",
+    "text": "$names = @(\"Ann\", \"Bob\", \"Cy\")\nforeach ($n in $names) {\n    Write-Output $n\n}",
+    "source_language": "powershell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "powershell-i2",
+    "level": "intermediate",
+    "focus": "if_else",
+    "text": "if (Test-Path \".\\config.json\") {\n    Write-Host \"found\"\n} else {\n    New-Item -ItemType File \".\\config.json\"\n}",
+    "source_language": "powershell",
+    "difficulty_score": 5
+  },
+  {
+    "id": "powershell-i3",
+    "level": "intermediate",
+    "focus": "json_read",
+    "text": "$config = Get-Content \".\\config.json\" -Raw | ConvertFrom-Json\nWrite-Host $config.name",
+    "source_language": "powershell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "powershell-i4",
+    "level": "intermediate",
+    "focus": "process_filter",
+    "text": "Get-Process |\n  Where-Object { $_.CPU -gt 100 } |\n  Sort-Object CPU -Descending |\n  Select-Object -First 5 Name, CPU",
+    "source_language": "powershell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "powershell-a2",
+    "level": "advanced",
+    "focus": "try_catch",
+    "text": "try {\n    Invoke-RestMethod -Uri \"https://api.example.com/data\" -Method Get\n}\ncatch {\n    Write-Error \"Request failed: $($_.Exception.Message)\"\n}",
+    "source_language": "powershell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "powershell-a3",
+    "level": "advanced",
+    "focus": "hashtable_splat",
+    "text": "$params = @{\n    Path        = \".\\logs\"\n    Filter      = \"*.log\"\n    Recurse     = $true\n}\nGet-ChildItem @params",
+    "source_language": "powershell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "powershell-a4",
+    "level": "advanced",
+    "focus": "advanced_function",
+    "text": "function Remove-OldFiles {\n    [CmdletBinding(SupportsShouldProcess)]\n    param([string]$Path, [int]$Days = 30)\n\n    Get-ChildItem $Path -File |\n        Where-Object LastWriteTime -lt (Get-Date).AddDays(-$Days) |\n        Remove-Item -WhatIf:$WhatIfPreference\n}",
+    "source_language": "powershell",
+    "difficulty_score": 9
+  }
+]

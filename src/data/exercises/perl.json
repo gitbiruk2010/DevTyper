@@ -1,0 +1,98 @@
+[
+  {
+    "id": "perl-b1",
+    "level": "beginner",
+    "focus": "print",
+    "text": "my $name = \"Larry\";\nprint \"Hello, $name!\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 2
+  },
+  {
+    "id": "perl-i1",
+    "level": "intermediate",
+    "focus": "hash_loop",
+    "text": "my %ages = (ann => 31, bob => 27);\nforeach my $name (sort keys %ages) {\n    print \"$name is $ages{$name}\\n\";\n}",
+    "source_language": "perl",
+    "difficulty_score": 5
+  },
+  {
+    "id": "perl-a1",
+    "level": "advanced",
+    "focus": "regex_match",
+    "text": "while (my $line = <STDIN>) {\n    chomp $line;\n    if ($line =~ /^(\\w+)@(\\w+)\\.com$/) {\n        print \"user=$1 domain=$2\\n\";\n    }\n}",
+    "source_language": "perl",
+    "difficulty_score": 8
+  },
+  {
+    "id": "perl-b2",
+    "level": "beginner",
+    "focus": "scalars_print",
+    "text": "my $name = \"Perl\";\nmy $count = 3;\nprint \"$name x $count\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 2
+  },
+  {
+    "id": "perl-b3",
+    "level": "beginner",
+    "focus": "arrays",
+    "text": "my @fruits = (\"apple\", \"pear\", \"plum\");\npush @fruits, \"fig\";\nprint scalar(@fruits), \"\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 2
+  },
+  {
+    "id": "perl-b4",
+    "level": "beginner",
+    "focus": "foreach",
+    "text": "foreach my $fruit (@fruits) {\n    print \"$fruit\\n\";\n}",
+    "source_language": "perl",
+    "difficulty_score": 3
+  },
+  {
+    "id": "perl-i2",
+    "level": "intermediate",
+    "focus": "subs",
+    "text": "sub add {\n    my ($a, $b) = @_;\n    return $a + $b;\n}\n\nprint add(2, 3), \"\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 5
+  },
+  {
+    "id": "perl-i3",
+    "level": "intermediate",
+    "focus": "file_read",
+    "text": "open(my $fh, '<', 'data.txt') or die \"Cannot open: $!\";\nwhile (my $line = <$fh>) {\n    chomp $line;\n    print \"$line\\n\";\n}\nclose($fh);",
+    "source_language": "perl",
+    "difficulty_score": 5
+  },
+  {
+    "id": "perl-i4",
+    "level": "intermediate",
+    "focus": "regex_substitute",
+    "text": "my $text = \"Hello World\";\n$text =~ s/World/Perl/;\nprint \"matched\\n\" if $text =~ /^Hello/;",
+    "source_language": "perl",
+    "difficulty_score": 6
+  },
+  {
+    "id": "perl-a2",
+    "level": "advanced",
+    "focus": "hash_ref",
+    "text": "my $user = { name => \"Ann\", langs => [\"perl\", \"c\"] };\nprint $user->{name}, \"\\n\";\nprint join(\", \", @{ $user->{langs} }), \"\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 8
+  },
+  {
+    "id": "perl-a3",
+    "level": "advanced",
+    "focus": "strict_warnings",
+    "text": "use strict;\nuse warnings;\nuse List::Util qw(sum max);\n\nmy @nums = (3, 1, 4, 1, 5);\nprint sum(@nums), \" \", max(@nums), \"\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 8
+  },
+  {
+    "id": "perl-a4",
+    "level": "advanced",
+    "focus": "map_grep_sort",
+    "text": "my @words = qw(pear apple fig);\nmy @lens = map { length($_) } @words;\nmy @long = grep { length($_) > 3 } @words;\nmy @sorted = sort { $a cmp $b } @words;",
+    "source_language": "perl",
+    "difficulty_score": 9
+  }
+]

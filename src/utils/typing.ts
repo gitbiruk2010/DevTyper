@@ -13,3 +13,21 @@ export const formatTime = (seconds: number): string => {
   const secs = seconds % 60;
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 };
+
+const whitespaceRun = (text: string, from: number) => {
+  let end = from;
+  while (end < text.length && (text[end] === ' ' || text[end] === '\t')) end++;
+  return text.slice(from, end);
+};
+
+/**
+ * What a key press inserts at the cursor, editor style: Enter after the expected newline also
+ * inserts the next line's indentation, and Tab fills the expected indentation.
+ * Returns null for keys that insert nothing.
+ */
+export const resolveInsert = (target: string, index: number, key: string): string | null => {
+  const expected = target[index];
+  if (key === 'Enter') return expected === '\n' ? '\n' + whitespaceRun(target, index + 1) : '\n';
+  if (key === 'Tab') return /[ \t]/.test(expected) ? whitespaceRun(target, index) : '\t';
+  return key.length === 1 ? key : null;
+};

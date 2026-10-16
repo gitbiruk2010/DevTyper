@@ -22,4 +22,5 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm audit --audit-level=high
       - run: npx tsc -b
+      - run: npm run lint
       - run: npx vite build

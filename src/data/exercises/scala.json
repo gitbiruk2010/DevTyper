@@ -1,0 +1,98 @@
+[
+  {
+    "id": "scala-b1",
+    "level": "beginner",
+    "focus": "val_var",
+    "text": "val name = \"Martin\"\nvar count = 0\nprintln(s\"Hello, $name\")",
+    "source_language": "scala",
+    "difficulty_score": 2
+  },
+  {
+    "id": "scala-i1",
+    "level": "intermediate",
+    "focus": "case_class",
+    "text": "case class Point(x: Int, y: Int)\n\nval points = List(Point(1, 2), Point(3, 4))\nval xs = points.map(_.x)",
+    "source_language": "scala",
+    "difficulty_score": 5
+  },
+  {
+    "id": "scala-a1",
+    "level": "advanced",
+    "focus": "pattern_matching",
+    "text": "def describe(x: Any): String = x match {\n  case 0 => \"zero\"\n  case n: Int if n > 0 => \"positive\"\n  case s: String => s\"text: $s\"\n  case _ => \"unknown\"\n}",
+    "source_language": "scala",
+    "difficulty_score": 8
+  },
+  {
+    "id": "scala-b2",
+    "level": "beginner",
+    "focus": "val_print",
+    "text": "val language = \"Scala\"\nvar version = 3\nprintln(s\"$language $version\")",
+    "source_language": "scala",
+    "difficulty_score": 2
+  },
+  {
+    "id": "scala-b3",
+    "level": "beginner",
+    "focus": "list_basics",
+    "text": "val nums = List(1, 2, 3)\nval more = nums :+ 4\nprintln(more.sum)",
+    "source_language": "scala",
+    "difficulty_score": 2
+  },
+  {
+    "id": "scala-b4",
+    "level": "beginner",
+    "focus": "def_function",
+    "text": "def square(n: Int): Int = n * n\n\nprintln(square(5))",
+    "source_language": "scala",
+    "difficulty_score": 3
+  },
+  {
+    "id": "scala-i2",
+    "level": "intermediate",
+    "focus": "map_filter",
+    "text": "val evens = (1 to 10)\n  .filter(_ % 2 == 0)\n  .map(n => n * n)\n  .toList",
+    "source_language": "scala",
+    "difficulty_score": 5
+  },
+  {
+    "id": "scala-i3",
+    "level": "intermediate",
+    "focus": "option",
+    "text": "val maybe: Option[Int] = Some(5)\nmaybe match {\n  case Some(n) => println(n)\n  case None => println(\"empty\")\n}",
+    "source_language": "scala",
+    "difficulty_score": 5
+  },
+  {
+    "id": "scala-i4",
+    "level": "intermediate",
+    "focus": "class_trait",
+    "text": "trait Greeter {\n  def greet(name: String): String\n}\n\nclass Polite extends Greeter {\n  def greet(name: String) = s\"Good day, $name\"\n}",
+    "source_language": "scala",
+    "difficulty_score": 6
+  },
+  {
+    "id": "scala-a2",
+    "level": "advanced",
+    "focus": "for_comprehension",
+    "text": "val result = for {\n  a <- Some(2)\n  b <- Some(3)\n} yield a * b",
+    "source_language": "scala",
+    "difficulty_score": 8
+  },
+  {
+    "id": "scala-a3",
+    "level": "advanced",
+    "focus": "sealed_trait",
+    "text": "sealed trait Expr\ncase class Num(n: Int) extends Expr\ncase class Add(l: Expr, r: Expr) extends Expr\n\ndef eval(e: Expr): Int = e match {\n  case Num(n) => n\n  case Add(l, r) => eval(l) + eval(r)\n}",
+    "source_language": "scala",
+    "difficulty_score": 8
+  },
+  {
+    "id": "scala-a4",
+    "level": "advanced",
+    "focus": "implicit_given",
+    "text": "given Ordering[User] = Ordering.by(_.age)\n\ndef oldest(users: List[User])(using ord: Ordering[User]): User =\n  users.max",
+    "source_language": "scala",
+    "difficulty_score": 9
+  }
+]

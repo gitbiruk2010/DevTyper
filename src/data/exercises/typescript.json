@@ -1,0 +1,210 @@
+[
+  {
+    "id": "21",
+    "level": "beginner",
+    "focus": "typescript_basics",
+    "text": "const name: string = 'John';",
+    "source_language": "typescript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "22",
+    "level": "intermediate",
+    "focus": "typescript_interface",
+    "text": "interface User { id: number; name: string; }",
+    "source_language": "typescript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "23",
+    "level": "advanced",
+    "focus": "typescript_generics",
+    "text": "function identity<T>(arg: T): T { return arg; }",
+    "source_language": "typescript",
+    "difficulty_score": 7
+  },
+  {
+    "id": "24",
+    "level": "advanced",
+    "focus": "typescript_types",
+    "text": "type Result<T> = { success: true; data: T } | { success: false; error: string };",
+    "source_language": "typescript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "31",
+    "level": "intermediate",
+    "focus": "typescript_async",
+    "text": "async function fetchUser(id: number): Promise<User | null> { return await db.get(id); }",
+    "source_language": "typescript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "typescript-b1",
+    "level": "beginner",
+    "focus": "typed_array",
+    "text": "const scores: number[] = [90, 85, 72];",
+    "source_language": "typescript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typescript-i1",
+    "level": "intermediate",
+    "focus": "enum_union",
+    "text": "type Status = 'idle' | 'loading' | 'error';\nenum Role {\n  Admin,\n  User,\n}",
+    "source_language": "typescript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typescript-a1",
+    "level": "advanced",
+    "focus": "generic_class",
+    "text": "class Box<T extends { id: number }> {\n  constructor(private items: T[] = []) {}\n\n  find(id: number): T | undefined {\n    return this.items.find(item => item.id === id);\n  }\n}",
+    "source_language": "typescript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "typescript-b3",
+    "level": "beginner",
+    "focus": "basic_types",
+    "text": "let id: number = 1;\nlet title: string = \"Hello\";\nlet done: boolean = false;",
+    "source_language": "typescript",
+    "difficulty_score": 1
+  },
+  {
+    "id": "typescript-b4",
+    "level": "beginner",
+    "focus": "function_types",
+    "text": "function add(a: number, b: number): number {\n  return a + b;\n}",
+    "source_language": "typescript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typescript-b5",
+    "level": "beginner",
+    "focus": "optional_prop",
+    "text": "interface User {\n  id: number;\n  name: string;\n  email?: string;\n}",
+    "source_language": "typescript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typescript-b6",
+    "level": "beginner",
+    "focus": "union_literal",
+    "text": "type Direction = \"up\" | \"down\" | \"left\" | \"right\";\nlet heading: Direction = \"up\";",
+    "source_language": "typescript",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typescript-b7",
+    "level": "beginner",
+    "focus": "arrow_typed",
+    "text": "const greet = (name: string): string => `Hello, ${name}`;",
+    "source_language": "typescript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "typescript-b8",
+    "level": "beginner",
+    "focus": "array_tuple",
+    "text": "const ids: number[] = [1, 2, 3];\nconst pair: [string, number] = [\"age\", 30];",
+    "source_language": "typescript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "typescript-i4",
+    "level": "intermediate",
+    "focus": "enum",
+    "text": "enum Status {\n  Active = \"ACTIVE\",\n  Inactive = \"INACTIVE\",\n  Banned = \"BANNED\",\n}",
+    "source_language": "typescript",
+    "difficulty_score": 4
+  },
+  {
+    "id": "typescript-i5",
+    "level": "intermediate",
+    "focus": "type_alias_obj",
+    "text": "type Point = { x: number; y: number };\n\nconst distance = (a: Point, b: Point): number =>\n  Math.hypot(a.x - b.x, a.y - b.y);",
+    "source_language": "typescript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typescript-i6",
+    "level": "intermediate",
+    "focus": "class_modifiers",
+    "text": "class Account {\n  private balance = 0;\n  constructor(public readonly owner: string) {}\n\n  deposit(amount: number): void {\n    this.balance += amount;\n  }\n}",
+    "source_language": "typescript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typescript-i7",
+    "level": "intermediate",
+    "focus": "generic_fn",
+    "text": "function first<T>(items: T[]): T | undefined {\n  return items[0];\n}\n\nconst n = first<number>([1, 2, 3]);",
+    "source_language": "typescript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "typescript-i8",
+    "level": "intermediate",
+    "focus": "utility_types",
+    "text": "type UserPreview = Pick<User, \"id\" | \"name\">;\ntype UserUpdate = Partial<Omit<User, \"id\">>;\ntype Lookup = Record<string, User>;",
+    "source_language": "typescript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "typescript-i9",
+    "level": "intermediate",
+    "focus": "type_guard",
+    "text": "function isString(value: unknown): value is string {\n  return typeof value === \"string\";\n}",
+    "source_language": "typescript",
+    "difficulty_score": 6
+  },
+  {
+    "id": "typescript-a4",
+    "level": "advanced",
+    "focus": "react_props",
+    "text": "interface ButtonProps {\n  label: string;\n  onClick: () => void;\n  disabled?: boolean;\n}\n\nexport const Button = ({ label, onClick, disabled = false }: ButtonProps) => (\n  <button onClick={onClick} disabled={disabled}>{label}</button>\n);",
+    "source_language": "typescript",
+    "difficulty_score": 7
+  },
+  {
+    "id": "typescript-a5",
+    "level": "advanced",
+    "focus": "mapped_types",
+    "text": "type Readonly2<T> = {\n  readonly [K in keyof T]: T[K];\n};\n\ntype Getters<T> = {\n  [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K];\n};",
+    "source_language": "typescript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "typescript-a6",
+    "level": "advanced",
+    "focus": "discriminated_union",
+    "text": "type Shape =\n  | { kind: \"circle\"; radius: number }\n  | { kind: \"square\"; size: number };\n\nfunction area(s: Shape): number {\n  switch (s.kind) {\n    case \"circle\": return Math.PI * s.radius ** 2;\n    case \"square\": return s.size ** 2;\n  }\n}",
+    "source_language": "typescript",
+    "difficulty_score": 8
+  },
+  {
+    "id": "typescript-a7",
+    "level": "advanced",
+    "focus": "conditional_types",
+    "text": "type ElementType<T> = T extends (infer U)[] ? U : never;\ntype Awaited2<T> = T extends Promise<infer R> ? Awaited2<R> : T;",
+    "source_language": "typescript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "typescript-a8",
+    "level": "advanced",
+    "focus": "use_state_hook",
+    "text": "const [items, setItems] = useState<Item[]>([]);\n\nuseEffect(() => {\n  fetch(\"/api/items\")\n    .then(res => res.json() as Promise<Item[]>)\n    .then(setItems);\n}, []);",
+    "source_language": "typescript",
+    "difficulty_score": 9
+  },
+  {
+    "id": "typescript-a9",
+    "level": "advanced",
+    "focus": "zod_style_result",
+    "text": "type Result<T, E = Error> =\n  | { ok: true; value: T }\n  | { ok: false; error: E };\n\nconst ok = <T,>(value: T): Result<T> => ({ ok: true, value });",
+    "source_language": "typescript",
+    "difficulty_score": 9
+  }
+]

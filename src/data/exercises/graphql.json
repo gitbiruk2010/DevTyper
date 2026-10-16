@@ -1,0 +1,90 @@
+[
+  {
+    "id": "graphql-b1",
+    "level": "beginner",
+    "focus": "query",
+    "text": "query {\n  user(id: 1) {\n    name\n    email\n  }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "graphql-i1",
+    "level": "intermediate",
+    "focus": "variables",
+    "text": "query GetPosts($limit: Int!) {\n  posts(first: $limit) {\n    id\n    title\n    author { name }\n  }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "graphql-a1",
+    "level": "advanced",
+    "focus": "schema",
+    "text": "type User {\n  id: ID!\n  name: String!\n  posts: [Post!]!\n}\n\ntype Mutation {\n  createPost(title: String!, authorId: ID!): Post\n}",
+    "source_language": "graphql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "graphql-b2",
+    "level": "beginner",
+    "focus": "simple_query",
+    "text": "query {\n  posts {\n    id\n    title\n  }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "graphql-b3",
+    "level": "beginner",
+    "focus": "mutation_basic",
+    "text": "mutation {\n  createUser(name: \"Ann\") {\n    id\n    name\n  }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "graphql-i2",
+    "level": "intermediate",
+    "focus": "fragments",
+    "text": "fragment UserFields on User {\n  id\n  name\n  email\n}\n\nquery {\n  me { ...UserFields }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "graphql-i3",
+    "level": "intermediate",
+    "focus": "input_type",
+    "text": "input NewPost {\n  title: String!\n  body: String\n  tags: [String!]\n}",
+    "source_language": "graphql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "graphql-i4",
+    "level": "intermediate",
+    "focus": "directives",
+    "text": "query Feed($withAuthor: Boolean!, $skipBody: Boolean!) {\n  posts {\n    title\n    body @skip(if: $skipBody)\n    author @include(if: $withAuthor) { name }\n  }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "graphql-a2",
+    "level": "advanced",
+    "focus": "schema_interface_enum",
+    "text": "enum Role { ADMIN USER GUEST }\n\ninterface Node {\n  id: ID!\n}\n\ntype Account implements Node {\n  id: ID!\n  role: Role!\n}",
+    "source_language": "graphql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "graphql-a3",
+    "level": "advanced",
+    "focus": "subscription_union",
+    "text": "union SearchResult = User | Post | Comment\n\ntype Subscription {\n  postAdded(authorId: ID): Post!\n}",
+    "source_language": "graphql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "graphql-a4",
+    "level": "advanced",
+    "focus": "pagination_connection",
+    "text": "query Page($after: String) {\n  posts(first: 10, after: $after) {\n    edges { cursor node { id title } }\n    pageInfo { hasNextPage endCursor }\n  }\n}",
+    "source_language": "graphql",
+    "difficulty_score": 9
+  }
+]

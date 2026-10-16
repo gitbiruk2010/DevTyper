@@ -1,0 +1,106 @@
+[
+  {
+    "id": "swift-b1",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "let name = \"Chris\"\nvar score = 0\nscore += 10\nprint(\"\\(name): \\(score)\")",
+    "source_language": "swift",
+    "difficulty_score": 2
+  },
+  {
+    "id": "swift-i1",
+    "level": "intermediate",
+    "focus": "optionals",
+    "text": "func greet(_ name: String?) -> String {\n    guard let name = name else {\n        return \"Hello, stranger\"\n    }\n    return \"Hello, \\(name)\"\n}",
+    "source_language": "swift",
+    "difficulty_score": 5
+  },
+  {
+    "id": "swift-a1",
+    "level": "advanced",
+    "focus": "structs_protocols",
+    "text": "protocol Shape {\n    var area: Double { get }\n}\n\nstruct Square: Shape {\n    let side: Double\n    var area: Double { side * side }\n}",
+    "source_language": "swift",
+    "difficulty_score": 8
+  },
+  {
+    "id": "swift-b2",
+    "level": "beginner",
+    "focus": "optionals_basic",
+    "text": "var nickname: String? = nil\nnickname = \"Chris\"\nprint(nickname ?? \"none\")",
+    "source_language": "swift",
+    "difficulty_score": 2
+  },
+  {
+    "id": "swift-b3",
+    "level": "beginner",
+    "focus": "arrays_loop",
+    "text": "let fruits = [\"apple\", \"pear\", \"plum\"]\nfor fruit in fruits {\n    print(fruit)\n}",
+    "source_language": "swift",
+    "difficulty_score": 2
+  },
+  {
+    "id": "swift-b4",
+    "level": "beginner",
+    "focus": "func_basic",
+    "text": "func greet(name: String) -> String {\n    return \"Hello, \\(name)!\"\n}\nprint(greet(name: \"Ann\"))",
+    "source_language": "swift",
+    "difficulty_score": 3
+  },
+  {
+    "id": "swift-i2",
+    "level": "intermediate",
+    "focus": "struct_init",
+    "text": "struct User {\n    let name: String\n    var age: Int\n}\n\nvar user = User(name: \"Ann\", age: 31)\nuser.age += 1",
+    "source_language": "swift",
+    "difficulty_score": 5
+  },
+  {
+    "id": "swift-i3",
+    "level": "intermediate",
+    "focus": "dictionary",
+    "text": "var scores = [\"ann\": 91, \"bob\": 78]\nscores[\"cy\"] = 85\nfor (name, score) in scores {\n    print(\"\\(name): \\(score)\")\n}",
+    "source_language": "swift",
+    "difficulty_score": 5
+  },
+  {
+    "id": "swift-i4",
+    "level": "intermediate",
+    "focus": "closures_map",
+    "text": "let numbers = [1, 2, 3, 4]\nlet doubled = numbers.map { $0 * 2 }\nlet evens = numbers.filter { $0 % 2 == 0 }",
+    "source_language": "swift",
+    "difficulty_score": 6
+  },
+  {
+    "id": "swift-i5",
+    "level": "intermediate",
+    "focus": "switch_enum",
+    "text": "enum Direction {\n    case north, south\n}\n\nswitch heading {\ncase .north: print(\"up\")\ncase .south: print(\"down\")\n}",
+    "source_language": "swift",
+    "difficulty_score": 6
+  },
+  {
+    "id": "swift-a2",
+    "level": "advanced",
+    "focus": "swiftui_view",
+    "text": "struct ContentView: View {\n    @State private var count = 0\n\n    var body: some View {\n        Button(\"Tapped \\(count)\") {\n            count += 1\n        }\n    }\n}",
+    "source_language": "swift",
+    "difficulty_score": 8
+  },
+  {
+    "id": "swift-a3",
+    "level": "advanced",
+    "focus": "async_await",
+    "text": "func loadUser(id: Int) async throws -> User {\n    let url = URL(string: \"https://api.test/users/\\(id)\")!\n    let (data, _) = try await URLSession.shared.data(from: url)\n    return try JSONDecoder().decode(User.self, from: data)\n}",
+    "source_language": "swift",
+    "difficulty_score": 8
+  },
+  {
+    "id": "swift-a4",
+    "level": "advanced",
+    "focus": "protocol_extension",
+    "text": "protocol Describable {\n    var description: String { get }\n}\n\nextension Describable {\n    func shout() -> String { description.uppercased() }\n}",
+    "source_language": "swift",
+    "difficulty_score": 9
+  }
+]

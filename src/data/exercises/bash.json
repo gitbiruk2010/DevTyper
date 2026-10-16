@@ -1,0 +1,122 @@
+[
+  {
+    "id": "bash-b1",
+    "level": "beginner",
+    "focus": "echo_vars",
+    "text": "name=\"dev\"\necho \"Hello, $name\"",
+    "source_language": "bash",
+    "difficulty_score": 2
+  },
+  {
+    "id": "bash-i1",
+    "level": "intermediate",
+    "focus": "for_loop",
+    "text": "for file in *.log; do\n  echo \"Compressing $file\"\n  gzip \"$file\"\ndone",
+    "source_language": "bash",
+    "difficulty_score": 5
+  },
+  {
+    "id": "bash-a1",
+    "level": "advanced",
+    "focus": "pipes_functions",
+    "text": "count_errors() {\n  grep -i \"error\" \"$1\" | sort | uniq -c | sort -rn | head -n 5\n}\n\nif [ -f app.log ]; then\n  count_errors app.log\nfi",
+    "source_language": "bash",
+    "difficulty_score": 8
+  },
+  {
+    "id": "bash-b2",
+    "level": "beginner",
+    "focus": "ls_cd",
+    "text": "cd ~/projects\nls -la\npwd",
+    "source_language": "bash",
+    "difficulty_score": 1
+  },
+  {
+    "id": "bash-b3",
+    "level": "beginner",
+    "focus": "mkdir_cp_mv",
+    "text": "mkdir -p build/logs\ncp config.txt build/\nmv old.txt archive/old.txt",
+    "source_language": "bash",
+    "difficulty_score": 2
+  },
+  {
+    "id": "bash-b4",
+    "level": "beginner",
+    "focus": "variables_echo",
+    "text": "NAME=\"dev\"\nCOUNT=3\necho \"Hello, $NAME x$COUNT\"",
+    "source_language": "bash",
+    "difficulty_score": 2
+  },
+  {
+    "id": "bash-b5",
+    "level": "beginner",
+    "focus": "grep_pipe",
+    "text": "cat app.log | grep \"ERROR\" | wc -l\nls | head -n 5",
+    "source_language": "bash",
+    "difficulty_score": 3
+  },
+  {
+    "id": "bash-i2",
+    "level": "intermediate",
+    "focus": "if_test",
+    "text": "if [ -d \"$DIR\" ]; then\n  echo \"exists\"\nelse\n  mkdir \"$DIR\"\nfi",
+    "source_language": "bash",
+    "difficulty_score": 4
+  },
+  {
+    "id": "bash-i3",
+    "level": "intermediate",
+    "focus": "while_read",
+    "text": "while read -r line; do\n  echo \"Line: $line\"\ndone < input.txt",
+    "source_language": "bash",
+    "difficulty_score": 5
+  },
+  {
+    "id": "bash-i4",
+    "level": "intermediate",
+    "focus": "find_exec",
+    "text": "find . -name \"*.tmp\" -type f -mtime +7 -delete\nfind src -name \"*.js\" | xargs wc -l",
+    "source_language": "bash",
+    "difficulty_score": 5
+  },
+  {
+    "id": "bash-i5",
+    "level": "intermediate",
+    "focus": "args_check",
+    "text": "if [ $# -lt 1 ]; then\n  echo \"Usage: $0 <file>\" >&2\n  exit 1\nfi\necho \"Processing $1\"",
+    "source_language": "bash",
+    "difficulty_score": 6
+  },
+  {
+    "id": "bash-a2",
+    "level": "advanced",
+    "focus": "strict_mode",
+    "text": "#!/usr/bin/env bash\nset -euo pipefail\n\ntrap 'echo \"failed on line $LINENO\"' ERR",
+    "source_language": "bash",
+    "difficulty_score": 7
+  },
+  {
+    "id": "bash-a3",
+    "level": "advanced",
+    "focus": "case_statement",
+    "text": "case \"$1\" in\n  start) echo \"starting\" ;;\n  stop)  echo \"stopping\" ;;\n  *)     echo \"usage: $0 {start|stop}\" ;;\nesac",
+    "source_language": "bash",
+    "difficulty_score": 8
+  },
+  {
+    "id": "bash-a4",
+    "level": "advanced",
+    "focus": "awk_sed",
+    "text": "awk -F, '{ sum += $3 } END { print sum }' sales.csv\nsed -i 's/foo/bar/g' config.txt",
+    "source_language": "bash",
+    "difficulty_score": 8
+  },
+  {
+    "id": "bash-a5",
+    "level": "advanced",
+    "focus": "array_loop",
+    "text": "files=(a.txt b.txt c.txt)\nfor f in \"${files[@]}\"; do\n  [ -f \"$f\" ] && echo \"found $f\"\ndone",
+    "source_language": "bash",
+    "difficulty_score": 9
+  }
+]

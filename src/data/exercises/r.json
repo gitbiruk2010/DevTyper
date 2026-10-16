@@ -1,0 +1,98 @@
+[
+  {
+    "id": "r-b1",
+    "level": "beginner",
+    "focus": "vectors",
+    "text": "scores <- c(90, 85, 72)\nmean(scores)",
+    "source_language": "r",
+    "difficulty_score": 2
+  },
+  {
+    "id": "r-i1",
+    "level": "intermediate",
+    "focus": "data_frame",
+    "text": "df <- data.frame(name = c(\"Ann\", \"Bo\"), age = c(31, 27))\nadults <- df[df$age > 18, ]\nnrow(adults)",
+    "source_language": "r",
+    "difficulty_score": 5
+  },
+  {
+    "id": "r-a1",
+    "level": "advanced",
+    "focus": "pipes_ggplot",
+    "text": "mtcars |>\n  subset(cyl == 4) |>\n  ggplot(aes(x = wt, y = mpg)) +\n  geom_point(color = \"steelblue\") +\n  theme_minimal()",
+    "source_language": "r",
+    "difficulty_score": 8
+  },
+  {
+    "id": "r-b2",
+    "level": "beginner",
+    "focus": "assign_vector",
+    "text": "x <- c(1, 2, 3, 4)\nmean(x)\nsd(x)",
+    "source_language": "r",
+    "difficulty_score": 2
+  },
+  {
+    "id": "r-b3",
+    "level": "beginner",
+    "focus": "seq_rep",
+    "text": "seq(1, 10, by = 2)\nrep(\"a\", times = 3)\n1:5",
+    "source_language": "r",
+    "difficulty_score": 2
+  },
+  {
+    "id": "r-b4",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (x > 0) {\n  print(\"positive\")\n} else {\n  print(\"not positive\")\n}",
+    "source_language": "r",
+    "difficulty_score": 3
+  },
+  {
+    "id": "r-i2",
+    "level": "intermediate",
+    "focus": "function_def",
+    "text": "square <- function(n) {\n  n^2\n}\n\nsapply(1:5, square)",
+    "source_language": "r",
+    "difficulty_score": 5
+  },
+  {
+    "id": "r-i3",
+    "level": "intermediate",
+    "focus": "for_loop",
+    "text": "for (i in 1:5) {\n  cat(\"Value:\", i, \"\\n\")\n}",
+    "source_language": "r",
+    "difficulty_score": 5
+  },
+  {
+    "id": "r-i4",
+    "level": "intermediate",
+    "focus": "df_summary",
+    "text": "df <- read.csv(\"data.csv\")\nhead(df)\nsummary(df$score)\ntable(df$group)",
+    "source_language": "r",
+    "difficulty_score": 6
+  },
+  {
+    "id": "r-a2",
+    "level": "advanced",
+    "focus": "dplyr_chain",
+    "text": "library(dplyr)\n\ndf %>%\n  filter(age > 18) %>%\n  group_by(city) %>%\n  summarise(avg = mean(score), n = n())",
+    "source_language": "r",
+    "difficulty_score": 8
+  },
+  {
+    "id": "r-a3",
+    "level": "advanced",
+    "focus": "lm_model",
+    "text": "model <- lm(mpg ~ wt + hp, data = mtcars)\nsummary(model)\npredict(model, newdata = data.frame(wt = 3, hp = 110))",
+    "source_language": "r",
+    "difficulty_score": 8
+  },
+  {
+    "id": "r-a4",
+    "level": "advanced",
+    "focus": "apply_family",
+    "text": "scores <- list(a = 1:5, b = 6:10)\nmeans <- vapply(scores, mean, numeric(1))\nlapply(scores, function(v) v[v > 3])",
+    "source_language": "r",
+    "difficulty_score": 9
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "2",
+    "level": "beginner",
+    "focus": "homeRow",
+    "text": "asdf jkl; asdf jkl; home row keys practice",
+    "source_language": "typing",
+    "difficulty_score": 1
+  },
+  {
+    "id": "typing-b2",
+    "level": "beginner",
+    "focus": "home_row_left",
+    "text": "asdf fdsa sadf dsaf asdf fads",
+    "source_language": "typing",
+    "difficulty_score": 1
+  },
+  {
+    "id": "typing-b3",
+    "level": "beginner",
+    "focus": "home_row_words",
+    "text": "flask salad glass dad had fall ask",
+    "source_language": "typing",
+    "difficulty_score": 1
+  },
+  {
+    "id": "typing-b4",
+    "level": "beginner",
+    "focus": "numbers_row",
+    "text": "1234 5678 9012 3456 7890 4321",
+    "source_language": "typing",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typing-b5",
+    "level": "beginner",
+    "focus": "brackets_pairs",
+    "text": "() [] {} <> () [] {} <>",
+    "source_language": "typing",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typing-b6",
+    "level": "beginner",
+    "focus": "quote_marks",
+    "text": "\"a\" 'b' \"c\" 'd' \"e\" 'f'",
+    "source_language": "typing",
+    "difficulty_score": 3
+  },
+  {
+    "id": "typing-i1",
+    "level": "intermediate",
+    "focus": "operators",
+    "text": "+ - * / % = == != <= >= && || !",
+    "source_language": "typing",
+    "difficulty_score": 4
+  },
+  {
+    "id": "typing-i2",
+    "level": "intermediate",
+    "focus": "symbol_words",
+    "text": "x_1 = (a + b) * c; y[0] = {k: v};",
+    "source_language": "typing",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typing-i3",
+    "level": "intermediate",
+    "focus": "arrows_paths",
+    "text": "=> -> :: ... ?. ?? <= >= !== ===",
+    "source_language": "typing",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typing-i4",
+    "level": "intermediate",
+    "focus": "shell_symbols",
+    "text": "~/dev/app/src $HOME/.config/*.json | grep -v \"#\" > out.txt",
+    "source_language": "typing",
+    "difficulty_score": 6
+  },
+  {
+    "id": "typing-a1",
+    "level": "advanced",
+    "focus": "bracket_soup",
+    "text": "({[()]})[{<()>}]({[]})[{()}]<{[()]}>",
+    "source_language": "typing",
+    "difficulty_score": 7
+  },
+  {
+    "id": "typing-a2",
+    "level": "advanced",
+    "focus": "mixed_symbols",
+    "text": "a[i] = (b << 2) | (c & 0xFF) ^ ~d; // x %= 7;",
+    "source_language": "typing",
+    "difficulty_score": 8
+  },
+  {
+    "id": "typing-a3",
+    "level": "advanced",
+    "focus": "regex_soup",
+    "text": "/^[\\w.+-]+@[\\w-]+\\.[a-z]{2,}$/i.test(input) ? 1 : 0",
+    "source_language": "typing",
+    "difficulty_score": 9
+  },
+  {
+    "id": "typing-a4",
+    "level": "advanced",
+    "focus": "escape_sequences",
+    "text": "\"line1\\nline2\\t\\\"quoted\\\"\\\\path\\\\to\\\\file\"",
+    "source_language": "typing",
+    "difficulty_score": 9
+  }
+]

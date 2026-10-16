@@ -1,0 +1,98 @@
+[
+  {
+    "id": "haskell-b1",
+    "level": "beginner",
+    "focus": "functions",
+    "text": "add :: Int -> Int -> Int\nadd x y = x + y",
+    "source_language": "haskell",
+    "difficulty_score": 2
+  },
+  {
+    "id": "haskell-i1",
+    "level": "intermediate",
+    "focus": "list_functions",
+    "text": "squares :: [Int] -> [Int]\nsquares xs = [x * x | x <- xs, even x]\n\ntotal = sum (map (* 2) [1 .. 10])",
+    "source_language": "haskell",
+    "difficulty_score": 5
+  },
+  {
+    "id": "haskell-a1",
+    "level": "advanced",
+    "focus": "data_maybe",
+    "text": "data Shape = Circle Double | Rect Double Double\n\narea :: Shape -> Double\narea (Circle r) = pi * r * r\narea (Rect w h) = w * h",
+    "source_language": "haskell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "haskell-b2",
+    "level": "beginner",
+    "focus": "simple_function",
+    "text": "double :: Int -> Int\ndouble x = x * 2\n\nmain :: IO ()\nmain = print (double 21)",
+    "source_language": "haskell",
+    "difficulty_score": 2
+  },
+  {
+    "id": "haskell-b3",
+    "level": "beginner",
+    "focus": "lists",
+    "text": "nums = [1, 2, 3, 4, 5]\ntotal = sum nums\nfirstTwo = take 2 nums",
+    "source_language": "haskell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "haskell-b4",
+    "level": "beginner",
+    "focus": "if_guards",
+    "text": "grade :: Int -> Char\ngrade n\n  | n >= 90 = 'A'\n  | n >= 80 = 'B'\n  | otherwise = 'C'",
+    "source_language": "haskell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "haskell-i2",
+    "level": "intermediate",
+    "focus": "pattern_matching",
+    "text": "len :: [a] -> Int\nlen [] = 0\nlen (_:xs) = 1 + len xs",
+    "source_language": "haskell",
+    "difficulty_score": 5
+  },
+  {
+    "id": "haskell-i3",
+    "level": "intermediate",
+    "focus": "map_filter_fold",
+    "text": "evens = filter even [1 .. 10]\nsquares = map (^ 2) evens\ntotal = foldr (+) 0 squares",
+    "source_language": "haskell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "haskell-i4",
+    "level": "intermediate",
+    "focus": "let_where",
+    "text": "area :: Double -> Double\narea r = pi * sq\n  where\n    sq = r * r",
+    "source_language": "haskell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "haskell-a2",
+    "level": "advanced",
+    "focus": "data_type_deriving",
+    "text": "data Color = Red | Green | Blue\n  deriving (Show, Eq, Enum)\n\ndescribe :: Color -> String\ndescribe c = \"Color: \" ++ show c",
+    "source_language": "haskell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "haskell-a3",
+    "level": "advanced",
+    "focus": "maybe_monad",
+    "text": "safeDiv :: Int -> Int -> Maybe Int\nsafeDiv _ 0 = Nothing\nsafeDiv a b = Just (a `div` b)\n\ncalc = do\n  x <- safeDiv 10 2\n  safeDiv x 1",
+    "source_language": "haskell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "haskell-a4",
+    "level": "advanced",
+    "focus": "typeclass",
+    "text": "class Shape a where\n  area :: a -> Double\n\ndata Circle = Circle Double\n\ninstance Shape Circle where\n  area (Circle r) = pi * r * r",
+    "source_language": "haskell",
+    "difficulty_score": 9
+  }
+]

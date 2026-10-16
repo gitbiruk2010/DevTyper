@@ -1,0 +1,98 @@
+[
+  {
+    "id": "regex-b1",
+    "level": "beginner",
+    "focus": "digits",
+    "text": "^\\d{3}-\\d{4}$",
+    "source_language": "regex",
+    "difficulty_score": 3
+  },
+  {
+    "id": "regex-i1",
+    "level": "intermediate",
+    "focus": "email_simple",
+    "text": "^[\\w.+-]+@[\\w-]+\\.[\\w.]+$",
+    "source_language": "regex",
+    "difficulty_score": 6
+  },
+  {
+    "id": "regex-a1",
+    "level": "advanced",
+    "focus": "lookahead_password",
+    "text": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*]).{8,}$",
+    "source_language": "regex",
+    "difficulty_score": 9
+  },
+  {
+    "id": "regex-b2",
+    "level": "beginner",
+    "focus": "digits_word",
+    "text": "\\d+\\s\\w+",
+    "source_language": "regex",
+    "difficulty_score": 2
+  },
+  {
+    "id": "regex-b3",
+    "level": "beginner",
+    "focus": "anchors",
+    "text": "^Hello|world$",
+    "source_language": "regex",
+    "difficulty_score": 3
+  },
+  {
+    "id": "regex-b4",
+    "level": "beginner",
+    "focus": "char_class",
+    "text": "[a-z]+[0-9]*",
+    "source_language": "regex",
+    "difficulty_score": 3
+  },
+  {
+    "id": "regex-i2",
+    "level": "intermediate",
+    "focus": "phone",
+    "text": "^\\(\\d{3}\\) \\d{3}-\\d{4}$",
+    "source_language": "regex",
+    "difficulty_score": 5
+  },
+  {
+    "id": "regex-i3",
+    "level": "intermediate",
+    "focus": "hex_color",
+    "text": "^#(?:[0-9a-fA-F]{3}){1,2}$",
+    "source_language": "regex",
+    "difficulty_score": 6
+  },
+  {
+    "id": "regex-i4",
+    "level": "intermediate",
+    "focus": "date_iso",
+    "text": "^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$",
+    "source_language": "regex",
+    "difficulty_score": 6
+  },
+  {
+    "id": "regex-a2",
+    "level": "advanced",
+    "focus": "url_parts",
+    "text": "^(https?):\\/\\/([\\w.-]+)(?::(\\d+))?(\\/[^\\s?#]*)?$",
+    "source_language": "regex",
+    "difficulty_score": 8
+  },
+  {
+    "id": "regex-a3",
+    "level": "advanced",
+    "focus": "named_groups",
+    "text": "^(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})T(?<time>[\\d:.]+)Z$",
+    "source_language": "regex",
+    "difficulty_score": 9
+  },
+  {
+    "id": "regex-a4",
+    "level": "advanced",
+    "focus": "lookbehind",
+    "text": "(?<=\\$)\\d+(?:\\.\\d{2})?(?=\\s|$)",
+    "source_language": "regex",
+    "difficulty_score": 9
+  }
+]

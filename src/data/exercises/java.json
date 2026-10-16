@@ -1,0 +1,194 @@
+[
+  {
+    "id": "16",
+    "level": "beginner",
+    "focus": "variables_java",
+    "text": "String name = \"John\";",
+    "source_language": "java",
+    "difficulty_score": 2
+  },
+  {
+    "id": "17",
+    "level": "intermediate",
+    "focus": "classes_java",
+    "text": "public class User { private String name; }",
+    "source_language": "java",
+    "difficulty_score": 5
+  },
+  {
+    "id": "18",
+    "level": "advanced",
+    "focus": "generics_java",
+    "text": "List<Map<String, Object>> data = new ArrayList<>();",
+    "source_language": "java",
+    "difficulty_score": 8
+  },
+  {
+    "id": "java-b1",
+    "level": "beginner",
+    "focus": "main_method",
+    "text": "public static void main(String[] args) {\n    System.out.println(\"Hi\");\n}",
+    "source_language": "java",
+    "difficulty_score": 2
+  },
+  {
+    "id": "java-i1",
+    "level": "intermediate",
+    "focus": "for_loop",
+    "text": "int sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    sum += i;\n}\nSystem.out.println(sum);",
+    "source_language": "java",
+    "difficulty_score": 5
+  },
+  {
+    "id": "java-a1",
+    "level": "advanced",
+    "focus": "streams",
+    "text": "List<String> names = users.stream()\n    .filter(u -> u.getAge() >= 18)\n    .map(User::getName)\n    .sorted()\n    .collect(Collectors.toList());",
+    "source_language": "java",
+    "difficulty_score": 8
+  },
+  {
+    "id": "java-b3",
+    "level": "beginner",
+    "focus": "variables",
+    "text": "int count = 10;\ndouble price = 9.99;\nboolean active = true;\nchar grade = 'A';",
+    "source_language": "java",
+    "difficulty_score": 1
+  },
+  {
+    "id": "java-b4",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (score >= 90) {\n    System.out.println(\"A\");\n} else {\n    System.out.println(\"B\");\n}",
+    "source_language": "java",
+    "difficulty_score": 2
+  },
+  {
+    "id": "java-b5",
+    "level": "beginner",
+    "focus": "array_basics",
+    "text": "int[] nums = {5, 3, 8};\nArrays.sort(nums);\nSystem.out.println(nums.length);",
+    "source_language": "java",
+    "difficulty_score": 2
+  },
+  {
+    "id": "java-b6",
+    "level": "beginner",
+    "focus": "arraylist",
+    "text": "List<String> names = new ArrayList<>();\nnames.add(\"Ann\");\nnames.add(\"Bob\");",
+    "source_language": "java",
+    "difficulty_score": 2
+  },
+  {
+    "id": "java-b7",
+    "level": "beginner",
+    "focus": "string_methods",
+    "text": "String text = \"Hello World\";\nSystem.out.println(text.toUpperCase());\nSystem.out.println(text.substring(0, 5));",
+    "source_language": "java",
+    "difficulty_score": 3
+  },
+  {
+    "id": "java-b8",
+    "level": "beginner",
+    "focus": "scanner_input",
+    "text": "Scanner in = new Scanner(System.in);\nSystem.out.print(\"Name: \");\nString name = in.nextLine();",
+    "source_language": "java",
+    "difficulty_score": 3
+  },
+  {
+    "id": "java-i3",
+    "level": "intermediate",
+    "focus": "imports_class",
+    "text": "import java.util.List;\nimport java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    }\n}",
+    "source_language": "java",
+    "difficulty_score": 4
+  },
+  {
+    "id": "java-i4",
+    "level": "intermediate",
+    "focus": "foreach_map",
+    "text": "Map<String, Integer> ages = new HashMap<>();\nages.put(\"Ann\", 31);\nfor (Map.Entry<String, Integer> e : ages.entrySet()) {\n    System.out.println(e.getKey() + \": \" + e.getValue());\n}",
+    "source_language": "java",
+    "difficulty_score": 5
+  },
+  {
+    "id": "java-i5",
+    "level": "intermediate",
+    "focus": "constructor_getter",
+    "text": "public class User {\n    private final String name;\n\n    public User(String name) {\n        this.name = name;\n    }\n\n    public String getName() {\n        return name;\n    }\n}",
+    "source_language": "java",
+    "difficulty_score": 5
+  },
+  {
+    "id": "java-i6",
+    "level": "intermediate",
+    "focus": "try_catch",
+    "text": "try {\n    int value = Integer.parseInt(text);\n} catch (NumberFormatException e) {\n    System.err.println(\"Invalid: \" + e.getMessage());\n} finally {\n    System.out.println(\"done\");\n}",
+    "source_language": "java",
+    "difficulty_score": 5
+  },
+  {
+    "id": "java-i7",
+    "level": "intermediate",
+    "focus": "interface_impl",
+    "text": "public interface Shape {\n    double area();\n}\n\npublic class Circle implements Shape {\n    private final double r;\n    public Circle(double r) { this.r = r; }\n    @Override\n    public double area() { return Math.PI * r * r; }\n}",
+    "source_language": "java",
+    "difficulty_score": 6
+  },
+  {
+    "id": "java-i8",
+    "level": "intermediate",
+    "focus": "switch_expr",
+    "text": "String label = switch (day) {\n    case MONDAY, TUESDAY -> \"early\";\n    case FRIDAY -> \"almost\";\n    default -> \"other\";\n};",
+    "source_language": "java",
+    "difficulty_score": 6
+  },
+  {
+    "id": "java-a3",
+    "level": "advanced",
+    "focus": "optional_chain",
+    "text": "String city = Optional.ofNullable(user)\n    .map(User::getAddress)\n    .map(Address::getCity)\n    .orElse(\"Unknown\");",
+    "source_language": "java",
+    "difficulty_score": 7
+  },
+  {
+    "id": "java-a4",
+    "level": "advanced",
+    "focus": "record_stream_group",
+    "text": "record Person(String name, int age) {}\n\nMap<Integer, List<Person>> byAge = people.stream()\n    .collect(Collectors.groupingBy(Person::age));",
+    "source_language": "java",
+    "difficulty_score": 8
+  },
+  {
+    "id": "java-a5",
+    "level": "advanced",
+    "focus": "generic_method",
+    "text": "public static <T extends Comparable<T>> T max(List<T> items) {\n    T best = items.get(0);\n    for (T item : items) {\n        if (item.compareTo(best) > 0) best = item;\n    }\n    return best;\n}",
+    "source_language": "java",
+    "difficulty_score": 8
+  },
+  {
+    "id": "java-a6",
+    "level": "advanced",
+    "focus": "completable_future",
+    "text": "CompletableFuture<String> future = CompletableFuture\n    .supplyAsync(() -> fetchUser(id))\n    .thenApply(User::getName)\n    .exceptionally(ex -> \"unknown\");",
+    "source_language": "java",
+    "difficulty_score": 9
+  },
+  {
+    "id": "java-a7",
+    "level": "advanced",
+    "focus": "spring_controller",
+    "text": "@RestController\n@RequestMapping(\"/api/users\")\npublic class UserController {\n    @GetMapping(\"/{id}\")\n    public ResponseEntity<User> get(@PathVariable Long id) {\n        return ResponseEntity.ok(service.find(id));\n    }\n}",
+    "source_language": "java",
+    "difficulty_score": 9
+  },
+  {
+    "id": "java-a8",
+    "level": "advanced",
+    "focus": "builder_pattern",
+    "text": "public class Pizza {\n    private final String size;\n    private Pizza(Builder b) { this.size = b.size; }\n\n    public static class Builder {\n        private String size = \"M\";\n        public Builder size(String s) { this.size = s; return this; }\n        public Pizza build() { return new Pizza(this); }\n    }\n}",
+    "source_language": "java",
+    "difficulty_score": 9
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "cpp-b1",
+    "level": "beginner",
+    "focus": "cout",
+    "text": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello, C++!\" << std::endl;\n}",
+    "source_language": "cpp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "cpp-b2",
+    "level": "beginner",
+    "focus": "vector_basics",
+    "text": "std::vector<int> nums = {3, 1, 2};\nnums.push_back(4);\nstd::sort(nums.begin(), nums.end());",
+    "source_language": "cpp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "cpp-i1",
+    "level": "intermediate",
+    "focus": "class_basics",
+    "text": "class Point {\npublic:\n    Point(int x, int y) : x_(x), y_(y) {}\n    int x() const { return x_; }\nprivate:\n    int x_, y_;\n};",
+    "source_language": "cpp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "cpp-i2",
+    "level": "intermediate",
+    "focus": "range_for_auto",
+    "text": "std::map<std::string, int> ages{{\"ann\", 31}, {\"bob\", 27}};\nfor (const auto& [name, age] : ages) {\n    std::cout << name << \": \" << age << \"\\n\";\n}",
+    "source_language": "cpp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "cpp-a1",
+    "level": "advanced",
+    "focus": "templates",
+    "text": "template <typename T>\nT clamp_value(T value, T low, T high) {\n    return value < low ? low : (value > high ? high : value);\n}",
+    "source_language": "cpp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "cpp-a2",
+    "level": "advanced",
+    "focus": "smart_pointers",
+    "text": "auto widget = std::make_unique<Widget>(\"main\");\nstd::shared_ptr<Widget> shared = std::move(widget);\nstd::for_each(items.begin(), items.end(),\n    [&](const Item& it) { total += it.price; });",
+    "source_language": "cpp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "cpp-b3",
+    "level": "beginner",
+    "focus": "cin_cout",
+    "text": "int n;\nstd::cin >> n;\nstd::cout << \"n = \" << n << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 1
+  },
+  {
+    "id": "cpp-b4",
+    "level": "beginner",
+    "focus": "string_basic",
+    "text": "std::string name = \"Bjarne\";\nname += \" Stroustrup\";\nstd::cout << name.size() << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "cpp-b5",
+    "level": "beginner",
+    "focus": "for_range",
+    "text": "std::vector<int> v = {1, 2, 3};\nfor (int x : v) {\n    std::cout << x << \" \";\n}",
+    "source_language": "cpp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "cpp-b6",
+    "level": "beginner",
+    "focus": "auto_const",
+    "text": "const int limit = 100;\nauto ratio = 3.14;\nauto text = std::string(\"hi\");",
+    "source_language": "cpp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "cpp-i3",
+    "level": "intermediate",
+    "focus": "namespace_using",
+    "text": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> v{1, 2, 3};\n    cout << v.size() << endl;\n}",
+    "source_language": "cpp",
+    "difficulty_score": 4
+  },
+  {
+    "id": "cpp-i4",
+    "level": "intermediate",
+    "focus": "lambda_sort",
+    "text": "std::sort(people.begin(), people.end(),\n    [](const Person& a, const Person& b) {\n        return a.age < b.age;\n    });",
+    "source_language": "cpp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "cpp-i5",
+    "level": "intermediate",
+    "focus": "unordered_map",
+    "text": "std::unordered_map<std::string, int> counts;\nfor (const auto& word : words) {\n    ++counts[word];\n}",
+    "source_language": "cpp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "cpp-i6",
+    "level": "intermediate",
+    "focus": "pass_by_ref",
+    "text": "void append_all(std::vector<int>& dst, const std::vector<int>& src) {\n    dst.insert(dst.end(), src.begin(), src.end());\n}",
+    "source_language": "cpp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "cpp-i7",
+    "level": "intermediate",
+    "focus": "constructor_init",
+    "text": "class Timer {\npublic:\n    explicit Timer(std::string label) : label_(std::move(label)) {}\n    ~Timer() { std::cout << label_ << \" done\\n\"; }\nprivate:\n    std::string label_;\n};",
+    "source_language": "cpp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "cpp-a3",
+    "level": "advanced",
+    "focus": "virtual_override",
+    "text": "class Shape {\npublic:\n    virtual ~Shape() = default;\n    virtual double area() const = 0;\n};\n\nclass Square : public Shape {\npublic:\n    explicit Square(double s) : s_(s) {}\n    double area() const override { return s_ * s_; }\nprivate:\n    double s_;\n};",
+    "source_language": "cpp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "cpp-a4",
+    "level": "advanced",
+    "focus": "raii_lock",
+    "text": "std::mutex mtx;\n\nvoid add(int& total, int n) {\n    std::lock_guard<std::mutex> lock(mtx);\n    total += n;\n}",
+    "source_language": "cpp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "cpp-a5",
+    "level": "advanced",
+    "focus": "optional_variant",
+    "text": "std::optional<int> find_index(const std::vector<int>& v, int target) {\n    auto it = std::find(v.begin(), v.end(), target);\n    if (it == v.end()) return std::nullopt;\n    return static_cast<int>(it - v.begin());\n}",
+    "source_language": "cpp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "cpp-a6",
+    "level": "advanced",
+    "focus": "thread_async",
+    "text": "auto future = std::async(std::launch::async, [] {\n    return heavy_work(42);\n});\nstd::cout << future.get() << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "cpp-a7",
+    "level": "advanced",
+    "focus": "template_class",
+    "text": "template <typename T, std::size_t N>\nclass FixedArray {\npublic:\n    T& operator[](std::size_t i) { return data_[i]; }\n    constexpr std::size_t size() const { return N; }\nprivate:\n    T data_[N]{};\n};",
+    "source_language": "cpp",
+    "difficulty_score": 9
+  }
+]

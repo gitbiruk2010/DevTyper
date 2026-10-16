@@ -1,42 +1,51 @@
 import React from 'react';
 import { TypingArea } from './TypingArea';
 import type { Exercise } from '../types/types';
+import type { EngineResult } from '../hooks/useTypingEngine';
+import { getLanguage } from '../data/languages';
 
 interface GameScreenProps {
   exercise: Exercise;
-  onComplete: (wpm: number, accuracy: number, errors: number, timeElapsed: number) => void;
+  bestWPM: number;
+  onComplete: (result: EngineResult) => void;
   onBack: () => void;
 }
 
-export const GameScreen: React.FC<GameScreenProps> = ({ exercise, onComplete, onBack }) => {
+const LEVEL_STYLE: Record<Exercise['level'], string> = {
+  beginner: 'text-neon-lime border-neon-lime/30 bg-neon-lime/10',
+  intermediate: 'text-neon-amber border-neon-amber/30 bg-neon-amber/10',
+  advanced: 'text-neon-pink border-neon-pink/30 bg-neon-pink/10',
+};
+
+export const GameScreen: React.FC<GameScreenProps> = ({ exercise, bestWPM, onComplete, onBack }) => {
+  const language = getLanguage(exercise.source_language);
   return (
-    <div className="min-h-screen bg-[#1a1a1a] py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-8 flex justify-between items-center">
+    <div className="mx-auto w-full max-w-5xl px-6 py-8">
+      <div className="mb-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <span
+            className="flex h-11 w-11 items-center justify-center rounded-xl font-mono text-sm font-bold text-ink-950"
+            style={{ background: language.color }}
+          >
+            {language.glyph}
+          </span>
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Type the code below</h2>
-            <div className="flex gap-4 text-sm">
-              <span className="px-3 py-1 bg-blue-600 rounded-full text-white">
+            <h2 className="text-xl font-bold leading-tight">{language.name}</h2>
+            <div className="flex gap-2 text-xs">
+              <span className={`rounded-full border px-2 py-0.5 capitalize ${LEVEL_STYLE[exercise.level]}`}>
                 {exercise.level}
               </span>
-              <span className="px-3 py-1 bg-gray-700 rounded-full text-gray-300">
-                {exercise.source_language}
-              </span>
-              <span className="px-3 py-1 bg-gray-700 rounded-full text-gray-300">
-                Difficulty: {exercise.difficulty_score}/10
+              <span className="rounded-full border border-white/10 px-2 py-0.5 text-mist">
+                difficulty {exercise.difficulty_score}/10
               </span>
             </div>
           </div>
-          <button
-            onClick={onBack}
-            className="btn-secondary"
-          >
-            ← Back to Menu
-          </button>
         </div>
-
-        <TypingArea targetText={exercise.text} onComplete={onComplete} />
+        <button onClick={onBack} className="btn-secondary">
+          ← Menu
+        </button>
       </div>
+      <TypingArea exercise={exercise} bestWPM={bestWPM} onComplete={onComplete} />
     </div>
   );
 };

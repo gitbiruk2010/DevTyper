@@ -1,0 +1,106 @@
+[
+  {
+    "id": "docker-b1",
+    "level": "beginner",
+    "focus": "git_basics",
+    "text": "git add .\ngit commit -m \"Add feature\"\ngit push origin main",
+    "source_language": "docker",
+    "difficulty_score": 2
+  },
+  {
+    "id": "docker-i1",
+    "level": "intermediate",
+    "focus": "git_branches",
+    "text": "git checkout -b feature/login\ngit rebase -i HEAD~3\ngit push --force-with-lease",
+    "source_language": "docker",
+    "difficulty_score": 5
+  },
+  {
+    "id": "docker-i2",
+    "level": "intermediate",
+    "focus": "dockerfile",
+    "text": "FROM node:22-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci\nCMD [\"node\", \"server.js\"]",
+    "source_language": "docker",
+    "difficulty_score": 6
+  },
+  {
+    "id": "docker-a1",
+    "level": "advanced",
+    "focus": "docker_compose",
+    "text": "services:\n  web:\n    build: .\n    ports:\n      - \"3000:3000\"\n    environment:\n      - NODE_ENV=production\n    depends_on:\n      - db",
+    "source_language": "docker",
+    "difficulty_score": 8
+  },
+  {
+    "id": "docker-b2",
+    "level": "beginner",
+    "focus": "git_status_log",
+    "text": "git status\ngit log --oneline -n 5\ngit diff",
+    "source_language": "docker",
+    "difficulty_score": 2
+  },
+  {
+    "id": "docker-b3",
+    "level": "beginner",
+    "focus": "git_clone_pull",
+    "text": "git clone https://github.com/user/repo.git\ncd repo\ngit pull origin main",
+    "source_language": "docker",
+    "difficulty_score": 2
+  },
+  {
+    "id": "docker-b4",
+    "level": "beginner",
+    "focus": "docker_run",
+    "text": "docker run -d -p 8080:80 --name web nginx\ndocker ps\ndocker logs web",
+    "source_language": "docker",
+    "difficulty_score": 3
+  },
+  {
+    "id": "docker-i3",
+    "level": "intermediate",
+    "focus": "git_branch_merge",
+    "text": "git checkout -b feature/search\ngit add -A\ngit commit -m \"Add search\"\ngit checkout main\ngit merge feature/search",
+    "source_language": "docker",
+    "difficulty_score": 5
+  },
+  {
+    "id": "docker-i4",
+    "level": "intermediate",
+    "focus": "git_stash_reset",
+    "text": "git stash push -m \"wip\"\ngit stash pop\ngit reset --soft HEAD~1",
+    "source_language": "docker",
+    "difficulty_score": 5
+  },
+  {
+    "id": "docker-i5",
+    "level": "intermediate",
+    "focus": "dockerfile_python",
+    "text": "FROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY . .\nCMD [\"python\", \"main.py\"]",
+    "source_language": "docker",
+    "difficulty_score": 6
+  },
+  {
+    "id": "docker-i6",
+    "level": "intermediate",
+    "focus": "docker_cleanup",
+    "text": "docker stop $(docker ps -q)\ndocker rm $(docker ps -aq)\ndocker image prune -f",
+    "source_language": "docker",
+    "difficulty_score": 6
+  },
+  {
+    "id": "docker-a2",
+    "level": "advanced",
+    "focus": "dockerfile_multistage",
+    "text": "FROM node:22 AS build\nWORKDIR /app\nCOPY . .\nRUN npm ci && npm run build\n\nFROM nginx:alpine\nCOPY --from=build /app/dist /usr/share/nginx/html\nEXPOSE 80",
+    "source_language": "docker",
+    "difficulty_score": 8
+  },
+  {
+    "id": "docker-a3",
+    "level": "advanced",
+    "focus": "git_rebase_cherry",
+    "text": "git fetch origin\ngit rebase -i origin/main\ngit cherry-pick a1b2c3d\ngit push --force-with-lease origin feature/search",
+    "source_language": "docker",
+    "difficulty_score": 9
+  }
+]
