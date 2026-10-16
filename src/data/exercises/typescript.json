@@ -206,5 +206,29 @@
     "text": "type Result<T, E = Error> =\n  | { ok: true; value: T }\n  | { ok: false; error: E };\n\nconst ok = <T,>(value: T): Result<T> => ({ ok: true, value });",
     "source_language": "typescript",
     "difficulty_score": 9
+  },
+  {
+    "id": "typescript-b9",
+    "level": "beginner",
+    "focus": "function_optional",
+    "text": "function greet(name: string, title?: string): string {\n  return title ? `${title} ${name}` : name;\n}",
+    "source_language": "typescript",
+    "difficulty_score": 3
+  },
+  {
+    "id": "typescript-i10",
+    "level": "intermediate",
+    "focus": "readonly_const_assert",
+    "text": "const config = {\n  mode: \"dark\",\n  retries: 3,\n} as const;\n\ntype Mode = typeof config[\"mode\"];",
+    "source_language": "typescript",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typescript-a10",
+    "level": "advanced",
+    "focus": "abstract_class",
+    "text": "abstract class Shape {\n  abstract area(): number;\n\n  describe(): string {\n    return `Area: ${this.area().toFixed(2)}`;\n  }\n}",
+    "source_language": "typescript",
+    "difficulty_score": 8
   }
 ]

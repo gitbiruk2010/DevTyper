@@ -142,5 +142,45 @@
     "text": "CREATE OR REPLACE FUNCTION touch_updated_at() RETURNS trigger AS $$\nBEGIN\n  NEW.updated_at = now();\n  RETURN NEW;\nEND;\n$$ LANGUAGE plpgsql;",
     "source_language": "postgresql",
     "difficulty_score": 9
+  },
+  {
+    "id": "postgresql-b6",
+    "level": "beginner",
+    "focus": "serial_types",
+    "text": "CREATE TABLE tags (\n  id SERIAL PRIMARY KEY,\n  label TEXT NOT NULL UNIQUE\n);",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "postgresql-b7",
+    "level": "beginner",
+    "focus": "copy_csv",
+    "text": "\\copy users TO 'users.csv' WITH (FORMAT csv, HEADER)\n\\dt\n\\d users",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "postgresql-b8",
+    "level": "beginner",
+    "focus": "coalesce_cast",
+    "text": "SELECT COALESCE(nickname, name) AS shown,\n       created_at::date AS joined\nFROM users;",
+    "source_language": "postgresql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "postgresql-i7",
+    "level": "intermediate",
+    "focus": "filter_aggregate",
+    "text": "SELECT COUNT(*) FILTER (WHERE status = 'paid') AS paid,\n       COUNT(*) FILTER (WHERE status = 'open') AS open\nFROM invoices;",
+    "source_language": "postgresql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "postgresql-a8",
+    "level": "advanced",
+    "focus": "explain_analyze",
+    "text": "EXPLAIN (ANALYZE, BUFFERS)\nSELECT * FROM orders\nWHERE customer_id = 42\nORDER BY created_at DESC\nLIMIT 20;",
+    "source_language": "postgresql",
+    "difficulty_score": 9
   }
 ]

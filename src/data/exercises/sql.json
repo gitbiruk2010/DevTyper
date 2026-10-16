@@ -158,5 +158,77 @@
     "text": "SELECT order_date, amount,\n  SUM(amount) OVER (ORDER BY order_date\n    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running\nFROM sales;",
     "source_language": "sql",
     "difficulty_score": 9
+  },
+  {
+    "id": "sql-b7",
+    "level": "beginner",
+    "focus": "distinct_count",
+    "text": "SELECT DISTINCT country FROM customers;\nSELECT COUNT(*) FROM orders;",
+    "source_language": "sql",
+    "difficulty_score": 2
+  },
+  {
+    "id": "sql-b8",
+    "level": "beginner",
+    "focus": "null_checks",
+    "text": "SELECT name FROM users\nWHERE phone IS NULL OR email IS NOT NULL;",
+    "source_language": "sql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "sql-b9",
+    "level": "beginner",
+    "focus": "aliases_math",
+    "text": "SELECT price * quantity AS total, UPPER(name) AS label\nFROM order_items;",
+    "source_language": "sql",
+    "difficulty_score": 3
+  },
+  {
+    "id": "sql-i8",
+    "level": "intermediate",
+    "focus": "inner_join_three",
+    "text": "SELECT o.id, c.name, p.title\nFROM orders o\nJOIN customers c ON c.id = o.customer_id\nJOIN products p ON p.id = o.product_id;",
+    "source_language": "sql",
+    "difficulty_score": 5
+  },
+  {
+    "id": "sql-i9",
+    "level": "intermediate",
+    "focus": "union_all",
+    "text": "SELECT name, 'customer' AS type FROM customers\nUNION ALL\nSELECT name, 'supplier' FROM suppliers\nORDER BY name;",
+    "source_language": "sql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "sql-i10",
+    "level": "intermediate",
+    "focus": "date_functions",
+    "text": "SELECT order_id, DATE(created_at) AS day\nFROM orders\nWHERE created_at >= '2026-01-01'\n  AND created_at < '2026-02-01';",
+    "source_language": "sql",
+    "difficulty_score": 6
+  },
+  {
+    "id": "sql-a8",
+    "level": "advanced",
+    "focus": "self_join",
+    "text": "SELECT e.name AS employee, m.name AS manager\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.id;",
+    "source_language": "sql",
+    "difficulty_score": 8
+  },
+  {
+    "id": "sql-a9",
+    "level": "advanced",
+    "focus": "lag_lead",
+    "text": "SELECT day, revenue,\n  revenue - LAG(revenue) OVER (ORDER BY day) AS change\nFROM daily_sales;",
+    "source_language": "sql",
+    "difficulty_score": 9
+  },
+  {
+    "id": "sql-a10",
+    "level": "advanced",
+    "focus": "view_constraint",
+    "text": "CREATE VIEW active_users AS\nSELECT id, name FROM users WHERE active = 1;\n\nALTER TABLE orders\n  ADD CONSTRAINT chk_total CHECK (total >= 0);",
+    "source_language": "sql",
+    "difficulty_score": 9
   }
 ]

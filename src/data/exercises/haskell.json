@@ -94,5 +94,77 @@
     "text": "class Shape a where\n  area :: a -> Double\n\ndata Circle = Circle Double\n\ninstance Shape Circle where\n  area (Circle r) = pi * r * r",
     "source_language": "haskell",
     "difficulty_score": 9
+  },
+  {
+    "id": "haskell-b5",
+    "level": "beginner",
+    "focus": "hello_main",
+    "text": "main :: IO ()\nmain = do\n  putStrLn \"Hello, Haskell!\"\n  print (2 + 3)",
+    "source_language": "haskell",
+    "difficulty_score": 2
+  },
+  {
+    "id": "haskell-b6",
+    "level": "beginner",
+    "focus": "tuples_fst",
+    "text": "pair = (1, \"one\")\na = fst pair\nb = snd pair\nc = zip [1, 2, 3] \"abc\"",
+    "source_language": "haskell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "haskell-b7",
+    "level": "beginner",
+    "focus": "lambda_map",
+    "text": "doubled = map (\\x -> x * 2) [1, 2, 3]\ntotal = sum doubled\nbig = filter (> 3) doubled",
+    "source_language": "haskell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "haskell-b8",
+    "level": "beginner",
+    "focus": "string_functions",
+    "text": "shout :: String -> String\nshout s = map toUpper s ++ \"!\"\n\ngreeting = \"Hello\" ++ \", \" ++ \"world\"",
+    "source_language": "haskell",
+    "difficulty_score": 3
+  },
+  {
+    "id": "haskell-i5",
+    "level": "intermediate",
+    "focus": "case_expression",
+    "text": "describe :: Int -> String\ndescribe n = case n of\n  0 -> \"zero\"\n  1 -> \"one\"\n  _ -> \"many\"",
+    "source_language": "haskell",
+    "difficulty_score": 5
+  },
+  {
+    "id": "haskell-i6",
+    "level": "intermediate",
+    "focus": "recursion_factorial",
+    "text": "factorial :: Integer -> Integer\nfactorial 0 = 1\nfactorial n = n * factorial (n - 1)\n\nfibs = 0 : 1 : zipWith (+) fibs (tail fibs)",
+    "source_language": "haskell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "haskell-i7",
+    "level": "intermediate",
+    "focus": "record_syntax",
+    "text": "data User = User\n  { name :: String\n  , age  :: Int\n  } deriving (Show, Eq)\n\nann = User { name = \"Ann\", age = 31 }",
+    "source_language": "haskell",
+    "difficulty_score": 6
+  },
+  {
+    "id": "haskell-a5",
+    "level": "advanced",
+    "focus": "functor_instance",
+    "text": "data Box a = Box a deriving Show\n\ninstance Functor Box where\n  fmap f (Box a) = Box (f a)\n\nresult = fmap (+ 1) (Box 41)",
+    "source_language": "haskell",
+    "difficulty_score": 8
+  },
+  {
+    "id": "haskell-a6",
+    "level": "advanced",
+    "focus": "io_read_lines",
+    "text": "main :: IO ()\nmain = do\n  contents <- readFile \"data.txt\"\n  let ls = lines contents\n  mapM_ putStrLn (zipWith (\\i l -> show i ++ \": \" ++ l) [1 ..] ls)",
+    "source_language": "haskell",
+    "difficulty_score": 9
   }
 ]

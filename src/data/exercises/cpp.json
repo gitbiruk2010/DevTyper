@@ -158,5 +158,101 @@
     "text": "template <typename T, std::size_t N>\nclass FixedArray {\npublic:\n    T& operator[](std::size_t i) { return data_[i]; }\n    constexpr std::size_t size() const { return N; }\nprivate:\n    T data_[N]{};\n};",
     "source_language": "cpp",
     "difficulty_score": 9
+  },
+  {
+    "id": "cpp-b7",
+    "level": "beginner",
+    "focus": "getline",
+    "text": "std::string line;\nstd::getline(std::cin, line);\nstd::cout << \"You said: \" << line << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "cpp-b8",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (n % 2 == 0) {\n    std::cout << \"even\\n\";\n} else {\n    std::cout << \"odd\\n\";\n}",
+    "source_language": "cpp",
+    "difficulty_score": 2
+  },
+  {
+    "id": "cpp-b9",
+    "level": "beginner",
+    "focus": "array_std",
+    "text": "std::array<int, 3> a = {1, 2, 3};\na[0] = 10;\nstd::cout << a.size() << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "cpp-b10",
+    "level": "beginner",
+    "focus": "ranges_math",
+    "text": "#include <cmath>\n\ndouble r = std::sqrt(2.0);\nint m = std::max(3, 7);\nstd::cout << r << \" \" << m << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 3
+  },
+  {
+    "id": "cpp-i8",
+    "level": "intermediate",
+    "focus": "struct_vector_loop",
+    "text": "struct Item {\n    std::string name;\n    double price;\n};\n\nstd::vector<Item> items{{\"pen\", 1.5}, {\"book\", 9.0}};\nfor (const auto& it : items) std::cout << it.name << \"\\n\";",
+    "source_language": "cpp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "cpp-i9",
+    "level": "intermediate",
+    "focus": "ifstream_read",
+    "text": "std::ifstream file(\"data.txt\");\nstd::string line;\nwhile (std::getline(file, line)) {\n    std::cout << line << \"\\n\";\n}",
+    "source_language": "cpp",
+    "difficulty_score": 5
+  },
+  {
+    "id": "cpp-i10",
+    "level": "intermediate",
+    "focus": "set_find",
+    "text": "std::set<int> seen = {1, 2, 3};\nif (seen.find(2) != seen.end()) {\n    std::cout << \"found\\n\";\n}\nseen.insert(4);",
+    "source_language": "cpp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "cpp-i11",
+    "level": "intermediate",
+    "focus": "stringstream",
+    "text": "std::stringstream ss(\"10 20 30\");\nint total = 0, n;\nwhile (ss >> n) {\n    total += n;\n}",
+    "source_language": "cpp",
+    "difficulty_score": 6
+  },
+  {
+    "id": "cpp-a8",
+    "level": "advanced",
+    "focus": "operator_overload",
+    "text": "struct Vec {\n    double x, y;\n    Vec operator+(const Vec& o) const { return {x + o.x, y + o.y}; }\n    bool operator==(const Vec& o) const { return x == o.x && y == o.y; }\n};",
+    "source_language": "cpp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "cpp-a9",
+    "level": "advanced",
+    "focus": "move_semantics",
+    "text": "class Buffer {\npublic:\n    Buffer(Buffer&& other) noexcept\n        : data_(other.data_), size_(other.size_) {\n        other.data_ = nullptr;\n        other.size_ = 0;\n    }\nprivate:\n    int* data_;\n    std::size_t size_;\n};",
+    "source_language": "cpp",
+    "difficulty_score": 8
+  },
+  {
+    "id": "cpp-a10",
+    "level": "advanced",
+    "focus": "ranges_algorithms",
+    "text": "auto evens = numbers\n    | std::views::filter([](int n) { return n % 2 == 0; })\n    | std::views::transform([](int n) { return n * n; });\nfor (int v : evens) std::cout << v << \" \";",
+    "source_language": "cpp",
+    "difficulty_score": 9
+  },
+  {
+    "id": "cpp-a11",
+    "level": "advanced",
+    "focus": "concepts",
+    "text": "template <typename T>\nconcept Numeric = std::is_arithmetic_v<T>;\n\ntemplate <Numeric T>\nT sum(const std::vector<T>& v) {\n    return std::accumulate(v.begin(), v.end(), T{});\n}",
+    "source_language": "cpp",
+    "difficulty_score": 9
   }
 ]

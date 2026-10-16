@@ -102,5 +102,77 @@
     "text": "git fetch origin\ngit rebase -i origin/main\ngit cherry-pick a1b2c3d\ngit push --force-with-lease origin feature/search",
     "source_language": "docker",
     "difficulty_score": 9
+  },
+  {
+    "id": "docker-b5",
+    "level": "beginner",
+    "focus": "git_init_add",
+    "text": "git init\ngit add README.md\ngit commit -m \"Initial commit\"\ngit branch -M main",
+    "source_language": "docker",
+    "difficulty_score": 2
+  },
+  {
+    "id": "docker-b6",
+    "level": "beginner",
+    "focus": "git_remote",
+    "text": "git remote add origin git@github.com:user/repo.git\ngit push -u origin main\ngit remote -v",
+    "source_language": "docker",
+    "difficulty_score": 3
+  },
+  {
+    "id": "docker-b7",
+    "level": "beginner",
+    "focus": "docker_build_images",
+    "text": "docker build -t myapp:1.0 .\ndocker images\ndocker rmi myapp:1.0",
+    "source_language": "docker",
+    "difficulty_score": 3
+  },
+  {
+    "id": "docker-b8",
+    "level": "beginner",
+    "focus": "docker_exec",
+    "text": "docker exec -it web bash\ndocker stop web\ndocker start web\ndocker rm -f web",
+    "source_language": "docker",
+    "difficulty_score": 3
+  },
+  {
+    "id": "docker-i7",
+    "level": "intermediate",
+    "focus": "dockerfile_node",
+    "text": "FROM node:22-alpine\nWORKDIR /app\nCOPY package*.json ./\nRUN npm ci --omit=dev\nCOPY . .\nEXPOSE 3000\nCMD [\"node\", \"index.js\"]",
+    "source_language": "docker",
+    "difficulty_score": 5
+  },
+  {
+    "id": "docker-i8",
+    "level": "intermediate",
+    "focus": "docker_volumes_env",
+    "text": "docker run -d \\\n  -v pgdata:/var/lib/postgresql/data \\\n  -e POSTGRES_PASSWORD=secret \\\n  -p 5432:5432 postgres:16",
+    "source_language": "docker",
+    "difficulty_score": 6
+  },
+  {
+    "id": "docker-a4",
+    "level": "advanced",
+    "focus": "dockerfile_healthcheck",
+    "text": "FROM python:3.12-slim\nENV PYTHONUNBUFFERED=1\nWORKDIR /app\nCOPY . .\nHEALTHCHECK --interval=30s CMD curl -f http://localhost:8000/health || exit 1\nUSER nobody\nENTRYPOINT [\"python\", \"app.py\"]",
+    "source_language": "docker",
+    "difficulty_score": 8
+  },
+  {
+    "id": "docker-a5",
+    "level": "advanced",
+    "focus": "git_bisect_reflog",
+    "text": "git bisect start\ngit bisect bad HEAD\ngit bisect good v1.0\ngit reflog\ngit reset --hard HEAD@{2}",
+    "source_language": "docker",
+    "difficulty_score": 9
+  },
+  {
+    "id": "docker-a6",
+    "level": "advanced",
+    "focus": "compose_networks",
+    "text": "services:\n  db:\n    image: postgres:16\n    volumes:\n      - pgdata:/var/lib/postgresql/data\n    networks: [backend]\nvolumes:\n  pgdata:\nnetworks:\n  backend:",
+    "source_language": "docker",
+    "difficulty_score": 9
   }
 ]

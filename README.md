@@ -9,7 +9,7 @@ DevTyper is a fully offline, cross-platform desktop application designed to help
 
 ## Features
 
-- **Code-Focused Practice**: 560+ snippets across 33 languages and tools: JavaScript, TypeScript, Python, Java, C, C++, C#, Go, Rust, PHP, Ruby, Swift, Kotlin, Dart, Lua, R, Scala, Perl, Haskell, Elixir, Bash, PowerShell, HTML, CSS, SQL, PostgreSQL, MongoDB, GraphQL, JSON/YAML, Docker/Git and Regex
+- **Code-Focused Practice**: 850+ snippets across 33 languages and tools: JavaScript, TypeScript, Python, Java, C, C++, C#, Go, Rust, PHP, Ruby, Swift, Kotlin, Dart, Lua, R, Scala, Perl, Haskell, Elixir, Bash, PowerShell, HTML, CSS, SQL, PostgreSQL, MongoDB, GraphQL, JSON/YAML, Docker/Git and Regex
 - **Never-ending practice**: Explore mode serves every snippet before repeating one; Memorize mode drills the ones you have not mastered yet (2 clean runs at 96%+ accuracy)
 - **Interactive Game Track**: Watch a racing car move across the screen as you type - the faster you type, the faster it goes!
 - **Real-time Performance**: Live WPM and accuracy updates during gameplay

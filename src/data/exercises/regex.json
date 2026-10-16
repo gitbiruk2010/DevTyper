@@ -94,5 +94,77 @@
     "text": "(?<=\\$)\\d+(?:\\.\\d{2})?(?=\\s|$)",
     "source_language": "regex",
     "difficulty_score": 9
+  },
+  {
+    "id": "regex-b5",
+    "level": "beginner",
+    "focus": "literal_dot",
+    "text": "cat|dog|bird",
+    "source_language": "regex",
+    "difficulty_score": 2
+  },
+  {
+    "id": "regex-b6",
+    "level": "beginner",
+    "focus": "quantifiers",
+    "text": "a+b*c?d{2,4}",
+    "source_language": "regex",
+    "difficulty_score": 3
+  },
+  {
+    "id": "regex-b7",
+    "level": "beginner",
+    "focus": "word_boundary",
+    "text": "\\bcode\\b",
+    "source_language": "regex",
+    "difficulty_score": 3
+  },
+  {
+    "id": "regex-b8",
+    "level": "beginner",
+    "focus": "whitespace_groups",
+    "text": "(\\w+)\\s+(\\w+)",
+    "source_language": "regex",
+    "difficulty_score": 3
+  },
+  {
+    "id": "regex-i5",
+    "level": "intermediate",
+    "focus": "username",
+    "text": "^[a-zA-Z][a-zA-Z0-9_]{2,15}$",
+    "source_language": "regex",
+    "difficulty_score": 5
+  },
+  {
+    "id": "regex-i6",
+    "level": "intermediate",
+    "focus": "time_24h",
+    "text": "^([01]\\d|2[0-3]):[0-5]\\d$",
+    "source_language": "regex",
+    "difficulty_score": 6
+  },
+  {
+    "id": "regex-i7",
+    "level": "intermediate",
+    "focus": "ipv4_simple",
+    "text": "^(\\d{1,3}\\.){3}\\d{1,3}$",
+    "source_language": "regex",
+    "difficulty_score": 6
+  },
+  {
+    "id": "regex-a5",
+    "level": "advanced",
+    "focus": "html_tag",
+    "text": "<([a-z][a-z0-9]*)\\b[^>]*>(.*?)<\\/\\1>",
+    "source_language": "regex",
+    "difficulty_score": 8
+  },
+  {
+    "id": "regex-a6",
+    "level": "advanced",
+    "focus": "negative_lookahead",
+    "text": "^(?!.*\\.\\.)(?!.*\\.$)[\\w.+-]+@[\\w-]+(\\.[\\w-]+)+$",
+    "source_language": "regex",
+    "difficulty_score": 9
   }
 ]

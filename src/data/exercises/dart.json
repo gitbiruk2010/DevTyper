@@ -102,5 +102,85 @@
     "text": "Stream<int> countdown(int from) async* {\n  for (var i = from; i >= 0; i--) {\n    await Future.delayed(const Duration(seconds: 1));\n    yield i;\n  }\n}",
     "source_language": "dart",
     "difficulty_score": 9
+  },
+  {
+    "id": "dart-b5",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if (age >= 18) {\n  print('adult');\n} else {\n  print('minor');\n}",
+    "source_language": "dart",
+    "difficulty_score": 2
+  },
+  {
+    "id": "dart-b6",
+    "level": "beginner",
+    "focus": "string_interpolation",
+    "text": "final name = 'Ann';\nfinal year = 2026;\nprint('Hi $name, it is ${year + 1} soon');",
+    "source_language": "dart",
+    "difficulty_score": 2
+  },
+  {
+    "id": "dart-b7",
+    "level": "beginner",
+    "focus": "set_basics",
+    "text": "final tags = <String>{'dart', 'flutter'};\ntags.add('mobile');\nprint(tags.contains('dart'));",
+    "source_language": "dart",
+    "difficulty_score": 3
+  },
+  {
+    "id": "dart-b8",
+    "level": "beginner",
+    "focus": "for_loop_index",
+    "text": "for (var i = 0; i < 5; i++) {\n  print('Item $i');\n}",
+    "source_language": "dart",
+    "difficulty_score": 3
+  },
+  {
+    "id": "dart-i6",
+    "level": "intermediate",
+    "focus": "enum_switch",
+    "text": "enum Status { idle, loading, done }\n\nString label(Status s) => switch (s) {\n  Status.idle => 'Idle',\n  Status.loading => 'Loading',\n  Status.done => 'Done',\n};",
+    "source_language": "dart",
+    "difficulty_score": 5
+  },
+  {
+    "id": "dart-i7",
+    "level": "intermediate",
+    "focus": "async_await_basic",
+    "text": "Future<void> main() async {\n  final data = await fetchData();\n  print(data.length);\n}\n\nFuture<String> fetchData() async => 'hello';",
+    "source_language": "dart",
+    "difficulty_score": 6
+  },
+  {
+    "id": "dart-i8",
+    "level": "intermediate",
+    "focus": "inheritance_super",
+    "text": "class Animal {\n  String speak() => '...';\n}\n\nclass Cat extends Animal {\n  @override\n  String speak() => 'meow';\n}",
+    "source_language": "dart",
+    "difficulty_score": 6
+  },
+  {
+    "id": "dart-a5",
+    "level": "advanced",
+    "focus": "mixins_extension",
+    "text": "mixin Swimmer {\n  void swim() => print('swimming');\n}\n\nextension Shout on String {\n  String get shout => toUpperCase() + '!';\n}",
+    "source_language": "dart",
+    "difficulty_score": 8
+  },
+  {
+    "id": "dart-a6",
+    "level": "advanced",
+    "focus": "listview_builder",
+    "text": "ListView.builder(\n  itemCount: items.length,\n  itemBuilder: (context, index) {\n    return ListTile(title: Text(items[index].name));\n  },\n)",
+    "source_language": "dart",
+    "difficulty_score": 9
+  },
+  {
+    "id": "dart-a7",
+    "level": "advanced",
+    "focus": "generic_class",
+    "text": "class Box<T extends Comparable<T>> {\n  final List<T> _items = [];\n\n  void add(T item) => _items.add(item);\n  T get largest => _items.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);\n}",
+    "source_language": "dart",
+    "difficulty_score": 9
   }
 ]

@@ -94,5 +94,77 @@
     "text": "my @words = qw(pear apple fig);\nmy @lens = map { length($_) } @words;\nmy @long = grep { length($_) > 3 } @words;\nmy @sorted = sort { $a cmp $b } @words;",
     "source_language": "perl",
     "difficulty_score": 9
+  },
+  {
+    "id": "perl-b5",
+    "level": "beginner",
+    "focus": "if_else",
+    "text": "if ($score >= 90) {\n    print \"A\\n\";\n} else {\n    print \"B\\n\";\n}",
+    "source_language": "perl",
+    "difficulty_score": 2
+  },
+  {
+    "id": "perl-b6",
+    "level": "beginner",
+    "focus": "hash_basics",
+    "text": "my %ages = (ann => 31, bob => 27);\n$ages{cy} = 45;\nprint \"$ages{ann}\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 3
+  },
+  {
+    "id": "perl-b7",
+    "level": "beginner",
+    "focus": "string_ops",
+    "text": "my $text = \"Hello, Perl\";\nprint length($text), \"\\n\";\nprint uc($text), \"\\n\";\nprint join(\"-\", split(/,\\s*/, $text)), \"\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 3
+  },
+  {
+    "id": "perl-b8",
+    "level": "beginner",
+    "focus": "while_loop",
+    "text": "my $i = 0;\nwhile ($i < 5) {\n    print \"i=$i\\n\";\n    $i++;\n}",
+    "source_language": "perl",
+    "difficulty_score": 3
+  },
+  {
+    "id": "perl-i5",
+    "level": "intermediate",
+    "focus": "array_ops",
+    "text": "my @nums = (5, 3, 8);\nmy @sorted = sort { $a <=> $b } @nums;\nmy $last = pop @sorted;\nunshift @sorted, 0;\nprint \"@sorted\\n\";",
+    "source_language": "perl",
+    "difficulty_score": 5
+  },
+  {
+    "id": "perl-i6",
+    "level": "intermediate",
+    "focus": "hash_exists_delete",
+    "text": "if (exists $ages{ann}) {\n    delete $ages{ann};\n}\nfor my $key (sort keys %ages) {\n    printf \"%-5s %d\\n\", $key, $ages{$key};\n}",
+    "source_language": "perl",
+    "difficulty_score": 6
+  },
+  {
+    "id": "perl-i7",
+    "level": "intermediate",
+    "focus": "tr_sprintf",
+    "text": "(my $clean = $input) =~ s/\\s+/ /g;\nmy $code = sprintf(\"%05d\", $id);\n(my $upper = $name) =~ tr/a-z/A-Z/;",
+    "source_language": "perl",
+    "difficulty_score": 6
+  },
+  {
+    "id": "perl-a5",
+    "level": "advanced",
+    "focus": "package_oo",
+    "text": "package Counter;\n\nsub new {\n    my ($class) = @_;\n    return bless { count => 0 }, $class;\n}\n\nsub inc { $_[0]{count}++ }\n\n1;",
+    "source_language": "perl",
+    "difficulty_score": 8
+  },
+  {
+    "id": "perl-a6",
+    "level": "advanced",
+    "focus": "local_wantarray_ref",
+    "text": "sub apply {\n    my ($fn, @items) = @_;\n    return map { $fn->($_) } @items;\n}\n\nmy @doubled = apply(sub { $_[0] * 2 }, 1 .. 5);",
+    "source_language": "perl",
+    "difficulty_score": 9
   }
 ]

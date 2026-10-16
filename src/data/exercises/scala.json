@@ -94,5 +94,77 @@
     "text": "given Ordering[User] = Ordering.by(_.age)\n\ndef oldest(users: List[User])(using ord: Ordering[User]): User =\n  users.max",
     "source_language": "scala",
     "difficulty_score": 9
+  },
+  {
+    "id": "scala-b5",
+    "level": "beginner",
+    "focus": "if_expression",
+    "text": "val grade = if (score >= 90) \"A\" else \"B\"\nprintln(grade)",
+    "source_language": "scala",
+    "difficulty_score": 2
+  },
+  {
+    "id": "scala-b6",
+    "level": "beginner",
+    "focus": "for_loop",
+    "text": "for (i <- 1 to 5) {\n  println(i)\n}\nfor (name <- List(\"a\", \"b\")) println(name)",
+    "source_language": "scala",
+    "difficulty_score": 3
+  },
+  {
+    "id": "scala-b7",
+    "level": "beginner",
+    "focus": "map_basics",
+    "text": "val ages = Map(\"ann\" -> 31, \"bob\" -> 27)\nprintln(ages(\"ann\"))\nprintln(ages.getOrElse(\"cy\", 0))",
+    "source_language": "scala",
+    "difficulty_score": 3
+  },
+  {
+    "id": "scala-b8",
+    "level": "beginner",
+    "focus": "tuples_strings",
+    "text": "val pair = (1, \"one\")\nprintln(pair._2)\nprintln(\"scala\".toUpperCase)",
+    "source_language": "scala",
+    "difficulty_score": 3
+  },
+  {
+    "id": "scala-i5",
+    "level": "intermediate",
+    "focus": "object_main",
+    "text": "object Main {\n  def main(args: Array[String]): Unit = {\n    println(\"Hello, Scala!\")\n  }\n}",
+    "source_language": "scala",
+    "difficulty_score": 5
+  },
+  {
+    "id": "scala-i6",
+    "level": "intermediate",
+    "focus": "fold_reduce",
+    "text": "val nums = List(1, 2, 3, 4)\nval sum = nums.foldLeft(0)(_ + _)\nval product = nums.reduce(_ * _)\nval (even, odd) = nums.partition(_ % 2 == 0)",
+    "source_language": "scala",
+    "difficulty_score": 6
+  },
+  {
+    "id": "scala-i7",
+    "level": "intermediate",
+    "focus": "try_either",
+    "text": "import scala.util.{Try, Success, Failure}\n\nTry(text.toInt) match {\n  case Success(n) => println(n)\n  case Failure(e) => println(e.getMessage)\n}",
+    "source_language": "scala",
+    "difficulty_score": 6
+  },
+  {
+    "id": "scala-a5",
+    "level": "advanced",
+    "focus": "case_class_copy",
+    "text": "case class User(name: String, age: Int)\n\nval ann = User(\"Ann\", 31)\nval older = ann.copy(age = ann.age + 1)\nprintln(older)",
+    "source_language": "scala",
+    "difficulty_score": 8
+  },
+  {
+    "id": "scala-a6",
+    "level": "advanced",
+    "focus": "future_async",
+    "text": "import scala.concurrent.Future\nimport scala.concurrent.ExecutionContext.Implicits.global\n\nval result = Future { 21 }\n  .map(_ * 2)\n  .recover { case _ => 0 }",
+    "source_language": "scala",
+    "difficulty_score": 9
   }
 ]

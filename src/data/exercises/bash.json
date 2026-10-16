@@ -118,5 +118,117 @@
     "text": "files=(a.txt b.txt c.txt)\nfor f in \"${files[@]}\"; do\n  [ -f \"$f\" ] && echo \"found $f\"\ndone",
     "source_language": "bash",
     "difficulty_score": 9
+  },
+  {
+    "id": "bash-b6",
+    "level": "beginner",
+    "focus": "touch_rm",
+    "text": "touch notes.txt\nrm notes.txt\nrm -r old_folder\nls -lh",
+    "source_language": "bash",
+    "difficulty_score": 2
+  },
+  {
+    "id": "bash-b7",
+    "level": "beginner",
+    "focus": "redirect_append",
+    "text": "echo \"first\" > log.txt\necho \"second\" >> log.txt\ncat log.txt",
+    "source_language": "bash",
+    "difficulty_score": 3
+  },
+  {
+    "id": "bash-b8",
+    "level": "beginner",
+    "focus": "head_tail_sort",
+    "text": "sort names.txt | uniq\nhead -n 3 names.txt\ntail -f app.log",
+    "source_language": "bash",
+    "difficulty_score": 3
+  },
+  {
+    "id": "bash-b9",
+    "level": "beginner",
+    "focus": "chmod_which",
+    "text": "chmod +x script.sh\n./script.sh\nwhich python3\nhistory | tail",
+    "source_language": "bash",
+    "difficulty_score": 3
+  },
+  {
+    "id": "bash-b10",
+    "level": "beginner",
+    "focus": "env_export",
+    "text": "export PATH=\"$HOME/bin:$PATH\"\nexport EDITOR=vim\necho $PATH | tr ':' '\\n'",
+    "source_language": "bash",
+    "difficulty_score": 3
+  },
+  {
+    "id": "bash-i6",
+    "level": "intermediate",
+    "focus": "function_def",
+    "text": "greet() {\n  local name=\"$1\"\n  echo \"Hello, $name!\"\n}\n\ngreet \"Ann\"",
+    "source_language": "bash",
+    "difficulty_score": 5
+  },
+  {
+    "id": "bash-i7",
+    "level": "intermediate",
+    "focus": "for_seq",
+    "text": "for i in $(seq 1 5); do\n  echo \"Item $i\"\ndone\nfor i in {1..3}; do echo \"n$i\"; done",
+    "source_language": "bash",
+    "difficulty_score": 6
+  },
+  {
+    "id": "bash-i8",
+    "level": "intermediate",
+    "focus": "curl_json",
+    "text": "curl -s https://api.example.com/users | jq '.[] | .name'\ncurl -X POST -H \"Content-Type: application/json\" -d '{\"a\":1}' \"$URL\"",
+    "source_language": "bash",
+    "difficulty_score": 6
+  },
+  {
+    "id": "bash-i9",
+    "level": "intermediate",
+    "focus": "tar_zip",
+    "text": "tar -czf backup.tar.gz ./project\ntar -xzf backup.tar.gz -C /tmp\nzip -r site.zip public/",
+    "source_language": "bash",
+    "difficulty_score": 6
+  },
+  {
+    "id": "bash-i10",
+    "level": "intermediate",
+    "focus": "ssh_scp",
+    "text": "ssh user@server.example.com\nscp ./app.tar.gz user@server:/var/www/\nrsync -avz ./dist/ user@server:/var/www/",
+    "source_language": "bash",
+    "difficulty_score": 6
+  },
+  {
+    "id": "bash-a6",
+    "level": "advanced",
+    "focus": "cleanup_trap",
+    "text": "tmp=$(mktemp -d)\ntrap 'rm -rf \"$tmp\"' EXIT\n\ncp data.csv \"$tmp/\"\necho \"working in $tmp\"",
+    "source_language": "bash",
+    "difficulty_score": 8
+  },
+  {
+    "id": "bash-a7",
+    "level": "advanced",
+    "focus": "getopts",
+    "text": "while getopts \"f:v\" opt; do\n  case $opt in\n    f) file=\"$OPTARG\" ;;\n    v) verbose=1 ;;\n    *) exit 1 ;;\n  esac\ndone",
+    "source_language": "bash",
+    "difficulty_score": 8
+  },
+  {
+    "id": "bash-a8",
+    "level": "advanced",
+    "focus": "parameter_expansion",
+    "text": "file=\"report.final.txt\"\necho \"${file%.txt}\"\necho \"${file##*.}\"\necho \"${name:-default}\"\necho \"${#file}\"",
+    "source_language": "bash",
+    "difficulty_score": 9
+  },
+  {
+    "id": "bash-a9",
+    "level": "advanced",
+    "focus": "process_substitution",
+    "text": "diff <(sort a.txt) <(sort b.txt)\nwhile IFS=, read -r id name; do\n  echo \"$id -> $name\"\ndone < users.csv",
+    "source_language": "bash",
+    "difficulty_score": 9
   }
 ]

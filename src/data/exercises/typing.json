@@ -110,5 +110,101 @@
     "text": "\"line1\\nline2\\t\\\"quoted\\\"\\\\path\\\\to\\\\file\"",
     "source_language": "typing",
     "difficulty_score": 9
+  },
+  {
+    "id": "typing-b7",
+    "level": "beginner",
+    "focus": "home_row_right",
+    "text": "jkl; ;lkj kjl; ljk; jkl; lkj;",
+    "source_language": "typing",
+    "difficulty_score": 1
+  },
+  {
+    "id": "typing-b8",
+    "level": "beginner",
+    "focus": "top_row",
+    "text": "qwer tyui op qwer tyui op wert yuio",
+    "source_language": "typing",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typing-b9",
+    "level": "beginner",
+    "focus": "bottom_row",
+    "text": "zxcv bnm, zxcv bnm. cvbn mzx, vbnm.",
+    "source_language": "typing",
+    "difficulty_score": 2
+  },
+  {
+    "id": "typing-b10",
+    "level": "beginner",
+    "focus": "semicolon_colon",
+    "text": "a; b; c; d: e: f: ; : ; : ; : x;",
+    "source_language": "typing",
+    "difficulty_score": 3
+  },
+  {
+    "id": "typing-i5",
+    "level": "intermediate",
+    "focus": "curly_braces_blocks",
+    "text": "if (x) { y(); } else { z(); } for (;;) { break; }",
+    "source_language": "typing",
+    "difficulty_score": 4
+  },
+  {
+    "id": "typing-i6",
+    "level": "intermediate",
+    "focus": "comparison_chain",
+    "text": "a < b && b <= c || d > e && e >= f && g != h",
+    "source_language": "typing",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typing-i7",
+    "level": "intermediate",
+    "focus": "underscore_camel",
+    "text": "user_name userName UserName USER_NAME __init__ _private",
+    "source_language": "typing",
+    "difficulty_score": 5
+  },
+  {
+    "id": "typing-i8",
+    "level": "intermediate",
+    "focus": "dollar_percent_hash",
+    "text": "$var %d #define @decorator &ref *ptr ^xor ~not",
+    "source_language": "typing",
+    "difficulty_score": 6
+  },
+  {
+    "id": "typing-a5",
+    "level": "advanced",
+    "focus": "quotes_nested",
+    "text": "print(\"It's \\\"quoted\\\" and 'nested' inside\") // done",
+    "source_language": "typing",
+    "difficulty_score": 7
+  },
+  {
+    "id": "typing-a6",
+    "level": "advanced",
+    "focus": "array_index_math",
+    "text": "arr[(i + 1) % n] += grid[y][x] * (a - b) / (c + 1);",
+    "source_language": "typing",
+    "difficulty_score": 8
+  },
+  {
+    "id": "typing-a7",
+    "level": "advanced",
+    "focus": "lambda_chain_symbols",
+    "text": "fn = (a, b) => ({ ...a, [b.id]: b?.v ?? [] }) // ->|<-",
+    "source_language": "typing",
+    "difficulty_score": 9
+  },
+  {
+    "id": "typing-a8",
+    "level": "advanced",
+    "focus": "url_query_soup",
+    "text": "https://x.io/a/b?id=7&q=a%20b&t=1#top?utm_source=dev+typer",
+    "source_language": "typing",
+    "difficulty_score": 9
   }
 ]

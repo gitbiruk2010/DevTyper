@@ -134,5 +134,77 @@
     "text": "<video controls poster=\"thumb.jpg\">\n  <source src=\"clip.mp4\" type=\"video/mp4\">\n  <track kind=\"captions\" src=\"en.vtt\" srclang=\"en\" label=\"English\">\n</video>",
     "source_language": "html",
     "difficulty_score": 9
+  },
+  {
+    "id": "html-b7",
+    "level": "beginner",
+    "focus": "headings_emphasis",
+    "text": "<h2>Chapter 1</h2>\n<p>This is <strong>bold</strong> and <em>italic</em>.</p>\n<br>\n<hr>",
+    "source_language": "html",
+    "difficulty_score": 2
+  },
+  {
+    "id": "html-b8",
+    "level": "beginner",
+    "focus": "ordered_list_div",
+    "text": "<ol>\n  <li>First</li>\n  <li>Second</li>\n</ol>\n<div id=\"app\" class=\"box\"></div>",
+    "source_language": "html",
+    "difficulty_score": 3
+  },
+  {
+    "id": "html-b9",
+    "level": "beginner",
+    "focus": "span_attributes",
+    "text": "<p>Contact: <a href=\"mailto:hi@example.com\">hi@example.com</a></p>\n<span class=\"tag\" title=\"info\">New</span>",
+    "source_language": "html",
+    "difficulty_score": 3
+  },
+  {
+    "id": "html-i7",
+    "level": "intermediate",
+    "focus": "footer_section",
+    "text": "<section id=\"about\">\n  <h2>About</h2>\n  <p>We build small tools.</p>\n</section>\n<footer>\n  <small>&copy; 2026 DevTyper</small>\n</footer>",
+    "source_language": "html",
+    "difficulty_score": 5
+  },
+  {
+    "id": "html-i8",
+    "level": "intermediate",
+    "focus": "textarea_radio",
+    "text": "<fieldset>\n  <legend>Size</legend>\n  <label><input type=\"radio\" name=\"size\" value=\"s\"> Small</label>\n  <label><input type=\"radio\" name=\"size\" value=\"l\"> Large</label>\n</fieldset>\n<textarea name=\"note\" rows=\"4\" cols=\"40\"></textarea>",
+    "source_language": "html",
+    "difficulty_score": 6
+  },
+  {
+    "id": "html-i9",
+    "level": "intermediate",
+    "focus": "iframe_details",
+    "text": "<details>\n  <summary>More info</summary>\n  <p>Hidden until opened.</p>\n</details>\n<iframe src=\"https://example.com\" title=\"Example\" width=\"400\" height=\"300\"></iframe>",
+    "source_language": "html",
+    "difficulty_score": 6
+  },
+  {
+    "id": "html-a6",
+    "level": "advanced",
+    "focus": "og_meta",
+    "text": "<meta property=\"og:title\" content=\"DevTyper\">\n<meta property=\"og:image\" content=\"/share.png\">\n<meta name=\"description\" content=\"Type real code\">\n<link rel=\"canonical\" href=\"https://example.com/\">",
+    "source_language": "html",
+    "difficulty_score": 8
+  },
+  {
+    "id": "html-a7",
+    "level": "advanced",
+    "focus": "custom_element",
+    "text": "<template id=\"card\">\n  <style>p { color: teal; }</style>\n  <p><slot name=\"title\">Untitled</slot></p>\n</template>\n<my-card><span slot=\"title\">Hello</span></my-card>",
+    "source_language": "html",
+    "difficulty_score": 9
+  },
+  {
+    "id": "html-a8",
+    "level": "advanced",
+    "focus": "accessible_form",
+    "text": "<form novalidate>\n  <label for=\"email\">Email</label>\n  <input id=\"email\" type=\"email\" aria-describedby=\"email-hint\" autocomplete=\"email\" required>\n  <p id=\"email-hint\" role=\"note\">We never share it.</p>\n</form>",
+    "source_language": "html",
+    "difficulty_score": 8
   }
 ]

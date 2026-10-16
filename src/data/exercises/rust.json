@@ -158,5 +158,85 @@
     "text": "#[tokio::main]\nasync fn main() -> Result<(), Box<dyn std::error::Error>> {\n    let body = reqwest::get(\"https://example.com\").await?.text().await?;\n    println!(\"{}\", body.len());\n    Ok(())\n}",
     "source_language": "rust",
     "difficulty_score": 9
+  },
+  {
+    "id": "rust-b7",
+    "level": "beginner",
+    "focus": "while_loop",
+    "text": "let mut n = 3;\nwhile n > 0 {\n    println!(\"{}\", n);\n    n -= 1;\n}",
+    "source_language": "rust",
+    "difficulty_score": 2
+  },
+  {
+    "id": "rust-b8",
+    "level": "beginner",
+    "focus": "tuples_arrays",
+    "text": "let point = (3, 4);\nlet nums = [1, 2, 3];\nprintln!(\"{} {} {}\", point.0, nums[1], nums.len());",
+    "source_language": "rust",
+    "difficulty_score": 2
+  },
+  {
+    "id": "rust-b9",
+    "level": "beginner",
+    "focus": "match_number",
+    "text": "match n {\n    1 => println!(\"one\"),\n    2 | 3 => println!(\"few\"),\n    _ => println!(\"many\"),\n}",
+    "source_language": "rust",
+    "difficulty_score": 3
+  },
+  {
+    "id": "rust-b10",
+    "level": "beginner",
+    "focus": "shadowing_types",
+    "text": "let x = \"42\";\nlet x: i32 = x.parse().unwrap();\nlet y = x as f64 * 1.5;\nprintln!(\"{}\", y);",
+    "source_language": "rust",
+    "difficulty_score": 3
+  },
+  {
+    "id": "rust-i8",
+    "level": "intermediate",
+    "focus": "impl_new",
+    "text": "struct Counter {\n    count: u32,\n}\n\nimpl Counter {\n    fn new() -> Self {\n        Counter { count: 0 }\n    }\n    fn inc(&mut self) {\n        self.count += 1;\n    }\n}",
+    "source_language": "rust",
+    "difficulty_score": 5
+  },
+  {
+    "id": "rust-i9",
+    "level": "intermediate",
+    "focus": "borrowing",
+    "text": "fn print_len(s: &String) {\n    println!(\"{}\", s.len());\n}\n\nlet text = String::from(\"hello\");\nprint_len(&text);\nprintln!(\"{}\", text);",
+    "source_language": "rust",
+    "difficulty_score": 6
+  },
+  {
+    "id": "rust-i10",
+    "level": "intermediate",
+    "focus": "vec_iter_sum",
+    "text": "let nums = vec![1, 2, 3, 4];\nlet total: i32 = nums.iter().sum();\nlet max = nums.iter().max().unwrap();\nfor (i, n) in nums.iter().enumerate() {\n    println!(\"{} {}\", i, n);\n}",
+    "source_language": "rust",
+    "difficulty_score": 6
+  },
+  {
+    "id": "rust-a8",
+    "level": "advanced",
+    "focus": "custom_error_enum",
+    "text": "#[derive(Debug)]\nenum AppError {\n    Io(std::io::Error),\n    Parse(std::num::ParseIntError),\n}\n\nimpl From<std::io::Error> for AppError {\n    fn from(e: std::io::Error) -> Self { AppError::Io(e) }\n}",
+    "source_language": "rust",
+    "difficulty_score": 8
+  },
+  {
+    "id": "rust-a9",
+    "level": "advanced",
+    "focus": "box_dyn_trait",
+    "text": "trait Animal {\n    fn name(&self) -> String;\n}\n\nlet zoo: Vec<Box<dyn Animal>> = vec![Box::new(Dog), Box::new(Cat)];\nfor a in &zoo {\n    println!(\"{}\", a.name());\n}",
+    "source_language": "rust",
+    "difficulty_score": 9
+  },
+  {
+    "id": "rust-a10",
+    "level": "advanced",
+    "focus": "channel_threads",
+    "text": "let (tx, rx) = std::sync::mpsc::channel();\nfor id in 0..3 {\n    let tx = tx.clone();\n    std::thread::spawn(move || tx.send(id * 10).unwrap());\n}\ndrop(tx);\nfor v in rx { println!(\"{}\", v); }",
+    "source_language": "rust",
+    "difficulty_score": 9
   }
 ]

@@ -94,5 +94,85 @@
     "text": "db.sales.aggregate([\n  { $group: { _id: { $month: \"$date\" }, revenue: { $sum: \"$amount\" }, orders: { $count: {} } } },\n  { $sort: { _id: 1 } },\n  { $limit: 12 }\n])",
     "source_language": "mongodb",
     "difficulty_score": 9
+  },
+  {
+    "id": "mongodb-b5",
+    "level": "beginner",
+    "focus": "find_one",
+    "text": "db.users.findOne({ email: \"ann@example.com\" })",
+    "source_language": "mongodb",
+    "difficulty_score": 2
+  },
+  {
+    "id": "mongodb-b6",
+    "level": "beginner",
+    "focus": "delete_one",
+    "text": "db.users.deleteOne({ _id: ObjectId(\"64b0c0ffee\") })",
+    "source_language": "mongodb",
+    "difficulty_score": 3
+  },
+  {
+    "id": "mongodb-b7",
+    "level": "beginner",
+    "focus": "insert_many",
+    "text": "db.tags.insertMany([{ name: \"js\" }, { name: \"go\" }, { name: \"rust\" }])",
+    "source_language": "mongodb",
+    "difficulty_score": 3
+  },
+  {
+    "id": "mongodb-b8",
+    "level": "beginner",
+    "focus": "show_commands",
+    "text": "show dbs\nuse shop\nshow collections\ndb.products.countDocuments()",
+    "source_language": "mongodb",
+    "difficulty_score": 3
+  },
+  {
+    "id": "mongodb-i6",
+    "level": "intermediate",
+    "focus": "push_pull",
+    "text": "db.posts.updateOne(\n  { _id: postId },\n  { $push: { comments: { user: \"ann\", text: \"Nice!\" } } }\n)",
+    "source_language": "mongodb",
+    "difficulty_score": 5
+  },
+  {
+    "id": "mongodb-i7",
+    "level": "intermediate",
+    "focus": "regex_exists",
+    "text": "db.users.find({\n  name: { $regex: \"^an\", $options: \"i\" },\n  phone: { $exists: true }\n})",
+    "source_language": "mongodb",
+    "difficulty_score": 6
+  },
+  {
+    "id": "mongodb-i8",
+    "level": "intermediate",
+    "focus": "upsert",
+    "text": "db.stats.updateOne(\n  { page: \"home\" },\n  { $inc: { views: 1 } },\n  { upsert: true }\n)",
+    "source_language": "mongodb",
+    "difficulty_score": 6
+  },
+  {
+    "id": "mongodb-a4",
+    "level": "advanced",
+    "focus": "aggregate_unwind_group",
+    "text": "db.posts.aggregate([\n  { $unwind: \"$tags\" },\n  { $group: { _id: \"$tags\", count: { $sum: 1 } } },\n  { $sort: { count: -1 } },\n  { $limit: 5 }\n])",
+    "source_language": "mongodb",
+    "difficulty_score": 8
+  },
+  {
+    "id": "mongodb-a5",
+    "level": "advanced",
+    "focus": "aggregate_facet",
+    "text": "db.items.aggregate([\n  { $match: { active: true } },\n  { $facet: {\n      byCategory: [{ $sortByCount: \"$category\" }],\n      priceStats: [{ $group: { _id: null, avg: { $avg: \"$price\" } } }]\n  } }\n])",
+    "source_language": "mongodb",
+    "difficulty_score": 9
+  },
+  {
+    "id": "mongodb-a6",
+    "level": "advanced",
+    "focus": "transaction_session",
+    "text": "const session = db.getMongo().startSession();\nsession.startTransaction();\nsession.getDatabase(\"shop\").orders.insertOne({ item: \"pen\" });\nsession.commitTransaction();",
+    "source_language": "mongodb",
+    "difficulty_score": 9
   }
 ]

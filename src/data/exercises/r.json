@@ -94,5 +94,77 @@
     "text": "scores <- list(a = 1:5, b = 6:10)\nmeans <- vapply(scores, mean, numeric(1))\nlapply(scores, function(v) v[v > 3])",
     "source_language": "r",
     "difficulty_score": 9
+  },
+  {
+    "id": "r-b5",
+    "level": "beginner",
+    "focus": "paste_print",
+    "text": "name <- \"R\"\ncat(\"Hello,\", name, \"\\n\")\nprint(paste(\"Value:\", 42))",
+    "source_language": "r",
+    "difficulty_score": 2
+  },
+  {
+    "id": "r-b6",
+    "level": "beginner",
+    "focus": "vector_ops",
+    "text": "x <- c(5, 2, 9)\nsort(x)\nx * 2\nlength(x)\nwhich(x > 3)",
+    "source_language": "r",
+    "difficulty_score": 3
+  },
+  {
+    "id": "r-b7",
+    "level": "beginner",
+    "focus": "matrix_basic",
+    "text": "m <- matrix(1:6, nrow = 2)\ndim(m)\nt(m)\nm[1, 2]",
+    "source_language": "r",
+    "difficulty_score": 3
+  },
+  {
+    "id": "r-b8",
+    "level": "beginner",
+    "focus": "list_basic",
+    "text": "person <- list(name = \"Ann\", age = 31)\nperson$name\nperson[[\"age\"]]\nnames(person)",
+    "source_language": "r",
+    "difficulty_score": 3
+  },
+  {
+    "id": "r-i5",
+    "level": "intermediate",
+    "focus": "while_repeat",
+    "text": "i <- 1\nwhile (i <= 3) {\n  print(i)\n  i <- i + 1\n}",
+    "source_language": "r",
+    "difficulty_score": 5
+  },
+  {
+    "id": "r-i6",
+    "level": "intermediate",
+    "focus": "factor_tapply",
+    "text": "group <- factor(c(\"a\", \"b\", \"a\"))\nscores <- c(10, 20, 30)\ntapply(scores, group, mean)\nlevels(group)",
+    "source_language": "r",
+    "difficulty_score": 6
+  },
+  {
+    "id": "r-i7",
+    "level": "intermediate",
+    "focus": "plot_base",
+    "text": "plot(mtcars$wt, mtcars$mpg,\n     main = \"Weight vs MPG\",\n     xlab = \"Weight\", ylab = \"MPG\", pch = 19)",
+    "source_language": "r",
+    "difficulty_score": 6
+  },
+  {
+    "id": "r-a5",
+    "level": "advanced",
+    "focus": "tidyr_mutate",
+    "text": "library(tidyverse)\n\ndf %>%\n  mutate(ratio = a / b) %>%\n  arrange(desc(ratio)) %>%\n  select(id, ratio) %>%\n  head(5)",
+    "source_language": "r",
+    "difficulty_score": 8
+  },
+  {
+    "id": "r-a6",
+    "level": "advanced",
+    "focus": "function_default_dots",
+    "text": "describe <- function(x, ..., digits = 2) {\n  stopifnot(is.numeric(x))\n  round(c(mean = mean(x, ...), sd = sd(x, ...)), digits)\n}",
+    "source_language": "r",
+    "difficulty_score": 9
   }
 ]

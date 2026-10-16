@@ -94,5 +94,77 @@
     "text": "local co = coroutine.create(function(a)\n  local b = coroutine.yield(a * 2)\n  return a + b\nend)\n\nprint(coroutine.resume(co, 5))",
     "source_language": "lua",
     "difficulty_score": 9
+  },
+  {
+    "id": "lua-b5",
+    "level": "beginner",
+    "focus": "while_repeat",
+    "text": "local n = 0\nwhile n < 3 do\n  n = n + 1\n  print(n)\nend",
+    "source_language": "lua",
+    "difficulty_score": 2
+  },
+  {
+    "id": "lua-b6",
+    "level": "beginner",
+    "focus": "array_table",
+    "text": "local colors = { \"red\", \"green\", \"blue\" }\ntable.insert(colors, \"pink\")\nprint(#colors, colors[1])",
+    "source_language": "lua",
+    "difficulty_score": 3
+  },
+  {
+    "id": "lua-b7",
+    "level": "beginner",
+    "focus": "string_concat",
+    "text": "local first, last = \"Ada\", \"Lovelace\"\nprint(first .. \" \" .. last)\nprint(string.format(\"%s has %d chars\", first, #first))",
+    "source_language": "lua",
+    "difficulty_score": 3
+  },
+  {
+    "id": "lua-b8",
+    "level": "beginner",
+    "focus": "nil_booleans",
+    "text": "local ready = true\nlocal value = nil\nif ready and not value then\n  print(\"waiting\")\nend",
+    "source_language": "lua",
+    "difficulty_score": 3
+  },
+  {
+    "id": "lua-i5",
+    "level": "intermediate",
+    "focus": "varargs_function",
+    "text": "local function sum(...)\n  local total = 0\n  for _, n in ipairs({ ... }) do\n    total = total + n\n  end\n  return total\nend",
+    "source_language": "lua",
+    "difficulty_score": 5
+  },
+  {
+    "id": "lua-i6",
+    "level": "intermediate",
+    "focus": "table_sort_remove",
+    "text": "local nums = { 5, 2, 8, 1 }\ntable.sort(nums, function(a, b) return a > b end)\ntable.remove(nums, 1)\nprint(table.concat(nums, \", \"))",
+    "source_language": "lua",
+    "difficulty_score": 6
+  },
+  {
+    "id": "lua-i7",
+    "level": "intermediate",
+    "focus": "pcall_error",
+    "text": "local ok, err = pcall(function()\n  error(\"something broke\")\nend)\nif not ok then\n  print(\"caught: \" .. err)\nend",
+    "source_language": "lua",
+    "difficulty_score": 6
+  },
+  {
+    "id": "lua-a5",
+    "level": "advanced",
+    "focus": "inheritance",
+    "text": "local Animal = {}\nAnimal.__index = Animal\n\nlocal Dog = setmetatable({}, { __index = Animal })\nDog.__index = Dog\n\nfunction Dog:speak()\n  return \"woof\"\nend",
+    "source_language": "lua",
+    "difficulty_score": 8
+  },
+  {
+    "id": "lua-a6",
+    "level": "advanced",
+    "focus": "love2d_callbacks",
+    "text": "function love.load()\n  player = { x = 100, y = 100, speed = 200 }\nend\n\nfunction love.update(dt)\n  if love.keyboard.isDown(\"right\") then\n    player.x = player.x + player.speed * dt\n  end\nend",
+    "source_language": "lua",
+    "difficulty_score": 9
   }
 ]
