@@ -1,4 +1,5 @@
-import { app, BrowserWindow, ipcMain, session } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, Menu, session, shell } from 'electron';
+import type { MenuItemConstructorOptions } from 'electron';
 import type { IpcMainInvokeEvent } from 'electron';
 import path from 'path';
 import Store from 'electron-store';
@@ -39,6 +40,60 @@ function assertKey(key: unknown): asserts key is string {
   }
 }
 
+const ISSUES_URL = 'https://github.com/gitbiruk2010/DevTyper/issues';
+
+function openHelp(section?: string) {
+  if (!mainWindow) return;
+  if (mainWindow.isMinimized()) mainWindow.restore();
+  mainWindow.focus();
+  mainWindow.webContents.send('menu:open-help', section);
+}
+
+// File, View and Help only. No Edit/Window menus, no zoom item, no DevTools entry.
+function buildMenu() {
+  const isMac = process.platform === 'darwin';
+  const template: MenuItemConstructorOptions[] = [
+    ...(isMac ? [{ role: 'appMenu' } as MenuItemConstructorOptions] : []),
+    {
+      label: 'File',
+      submenu: [isMac ? { role: 'close' } : { role: 'quit' }],
+    },
+    {
+      label: 'View',
+      submenu: [
+        { role: 'resetZoom', label: 'Actual Size' },
+        { role: 'zoomIn' },
+        { role: 'zoomOut' },
+        { type: 'separator' },
+        { role: 'togglefullscreen' },
+      ],
+    },
+    {
+      label: 'Help',
+      submenu: [
+        { label: 'Help Index', accelerator: 'F1', click: () => openHelp() },
+        { label: 'Keyboard Shortcuts', click: () => openHelp('shortcuts') },
+        { type: 'separator' },
+        { label: 'Report an Issue', click: () => void shell.openExternal(ISSUES_URL) },
+        {
+          label: 'About DevTyper',
+          click: () => {
+            const options = {
+              type: 'info' as const,
+              title: 'About DevTyper',
+              message: `DevTyper ${app.getVersion()}`,
+              detail: 'A developer typing tutor for mastering code typing speed.\n\nMIT License',
+            };
+            if (mainWindow) void dialog.showMessageBox(mainWindow, options);
+            else void dialog.showMessageBox(options);
+          },
+        },
+      ],
+    },
+  ];
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template));
+}
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1200,
@@ -64,6 +119,13 @@ function createWindow() {
   mainWindow.webContents.on('will-navigate', (event, url) => {
     if (!DEV_SERVER_URL || !url.startsWith(DEV_SERVER_URL)) {
       event.preventDefault();
+    }
+  });
+  // Esc leaves full screen. It is swallowed in that case so it does not also restart a run.
+  mainWindow.webContents.on('before-input-event', (event, input) => {
+    if (input.type === 'keyDown' && input.key === 'Escape' && mainWindow?.isFullScreen()) {
+      event.preventDefault();
+      mainWindow.setFullScreen(false);
     }
   });
   mainWindow.webContents.on('will-attach-webview', (event) => event.preventDefault());
@@ -104,6 +166,7 @@ if (!app.requestSingleInstanceLock()) {
       });
     });
 
+    buildMenu();
     createWindow();
 
     app.on('activate', () => {

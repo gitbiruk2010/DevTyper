@@ -5,6 +5,8 @@ export interface ElectronAPI {
     delete: (key: string) => Promise<void>;
     clear: () => Promise<void>;
   };
+  /** Subscribes to Help menu clicks; returns an unsubscribe function. */
+  onOpenHelp: (callback: (section?: string) => void) => () => void;
 }
 
 declare global {

@@ -18,6 +18,7 @@ interface MenuScreenProps {
   onLevelChange: (level: Level) => void;
   onStart: () => void;
   onOpenStats: () => void;
+  onOpenHelp: () => void;
 }
 
 const LEVELS: { id: Level; label: string; bars: number; hint: string }[] = [
@@ -38,6 +39,16 @@ const MiniStat: React.FC<{ label: string; value: React.ReactNode }> = ({ label, 
   </div>
 );
 
+const StartPill: React.FC<{ onStart: () => void }> = ({ onStart }) => (
+  <button
+    onClick={onStart}
+    aria-label="Start typing"
+    className="absolute right-3 top-3 z-10 animate-pop rounded-full bg-gradient-to-r from-neon-cyan to-neon-violet px-3.5 py-1.5 text-sm font-bold text-ink-950 shadow-lg shadow-neon-cyan/30 transition-transform hover:scale-105 active:scale-95"
+  >
+    ▶ Start
+  </button>
+);
+
 export const MenuScreen: React.FC<MenuScreenProps> = ({
   stats,
   language,
@@ -50,6 +61,7 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
   onLevelChange,
   onStart,
   onOpenStats,
+  onOpenHelp,
 }) => {
   const [query, setQuery] = useState('');
   const startRef = useRef<HTMLButtonElement>(null);
@@ -113,9 +125,14 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
           <MiniStat label="Avg Acc" value={`${stats.averageAccuracy}%`} />
           <MiniStat label="Day streak" value={streak} />
         </div>
-        <button onClick={onOpenStats} className="btn-secondary">
-          📊 Stats
-        </button>
+        <div className="flex gap-2">
+          <button onClick={onOpenStats} className="btn-secondary">
+            📊 Stats
+          </button>
+          <button onClick={onOpenHelp} className="btn-secondary">
+            ❓ Help
+          </button>
+        </div>
       </section>
 
       <section className="mb-8 animate-fade-up" style={{ animationDelay: '120ms' }}>
@@ -131,10 +148,12 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
           />
         </div>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="relative">
+          {language === 'any' && <StartPill onStart={onStart} />}
           <button
             onClick={() => onLanguageChange('any')}
             className={cn(
-              'rounded-2xl border p-4 text-left transition-all hover:-translate-y-0.5',
+              'h-full w-full rounded-2xl border p-4 text-left transition-all hover:-translate-y-0.5',
               language === 'any'
                 ? 'border-neon-cyan/60 bg-neon-cyan/10 shadow-lg shadow-neon-cyan/10'
                 : 'glass hover:border-white/20',
@@ -150,17 +169,19 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
             </div>
             <div className="mt-1 text-[0.65rem] text-mist">{progress.any.mastered}/{progress.any.total} mastered</div>
           </button>
+          </div>
           {available.length === 0 && (
             <p className="col-span-full py-6 text-center text-sm text-mist">No language matches that search.</p>
           )}
           {available.map(l => {
             const selected = language === l.id;
             return (
+              <div key={l.id} className="relative">
+              {selected && <StartPill onStart={onStart} />}
               <button
-                key={l.id}
                 onClick={() => onLanguageChange(l.id)}
                 className={cn(
-                  'rounded-2xl border p-4 text-left transition-all hover:-translate-y-0.5',
+                  'h-full w-full rounded-2xl border p-4 text-left transition-all hover:-translate-y-0.5',
                   !selected && 'glass hover:border-white/20',
                 )}
                 style={
@@ -188,6 +209,7 @@ export const MenuScreen: React.FC<MenuScreenProps> = ({
                   {progress[l.id].mastered}/{progress[l.id].total} mastered · {progress[l.id].played} played
                 </div>
               </button>
+              </div>
             );
           })}
         </div>

@@ -57,4 +57,4 @@ export interface Settings {
 
 export type GameStatus = 'idle' | 'running' | 'finished';
 
-export type Screen = 'menu' | 'game' | 'result' | 'stats';
+export type Screen = 'menu' | 'game' | 'result' | 'stats' | 'help';

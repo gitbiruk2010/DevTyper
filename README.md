@@ -58,6 +58,8 @@ npm run package
 
 The packaged application will be in the `release` folder.
 
+`npm run package` only builds for the operating system it runs on, so on Windows you get the installer but no `.deb` or AppImage. Linux packages need a Linux environment: run `npm run package:linux` on Linux, in WSL, or let the tag-triggered release workflow build them. Use `npm run package:win` for the Windows installer only.
+
 ## Tech Stack
 
 - **Core**: Electron + React + TypeScript

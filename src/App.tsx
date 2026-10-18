@@ -1,8 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { MenuScreen } from './components/MenuScreen';
 import { GameScreen } from './components/GameScreen';
 import { ResultScreen } from './components/ResultScreen';
 import { StatsScreen } from './components/StatsScreen';
+import { HelpScreen } from './components/HelpScreen';
 import { StatsProvider } from './context/StatsContext';
 import { useStats } from './context/useStats';
 import type { EngineResult } from './hooks/useTypingEngine';
@@ -18,6 +19,7 @@ const AppContent: React.FC = () => {
   const [attempt, setAttempt] = useState(0);
   const [result, setResult] = useState<GameResult | null>(null);
   const [bestStreak, setBestStreak] = useState(0);
+  const [helpSection, setHelpSection] = useState<string | undefined>();
 
   const { lastLanguage: language, lastLevel: level, mode } = settings;
 
@@ -69,6 +71,16 @@ const AppContent: React.FC = () => {
     setScreen('result');
   };
 
+  // Help menu clicks come from the Electron main process.
+  useEffect(() => {
+    return window.electronAPI?.onOpenHelp(section => {
+      setHelpSection(section);
+      setExercise(null);
+      setResult(null);
+      setScreen('help');
+    });
+  }, []);
+
   const backToMenu = () => {
     setScreen('menu');
     setExercise(null);
@@ -113,10 +125,16 @@ const AppContent: React.FC = () => {
             onLevelChange={l => updateSettings({ lastLevel: l })}
             onStart={() => startGame()}
             onOpenStats={() => setScreen('stats')}
+            onOpenHelp={() => {
+              setHelpSection(undefined);
+              setScreen('help');
+            }}
           />
         )}
 
         {screen === 'stats' && <StatsScreen stats={userStats} onBack={backToMenu} onReset={resetStats} />}
+
+        {screen === 'help' && <HelpScreen section={helpSection} onBack={backToMenu} />}
 
         {screen === 'game' && exercise && (
           <GameScreen

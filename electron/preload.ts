@@ -7,4 +7,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
     delete: (key: string) => ipcRenderer.invoke('store:delete', key),
     clear: () => ipcRenderer.invoke('store:clear'),
   },
+  onOpenHelp: (callback: (section?: string) => void) => {
+    const listener = (_event: unknown, section?: string) => callback(typeof section === 'string' ? section : undefined);
+    ipcRenderer.on('menu:open-help', listener);
+    return () => {
+      ipcRenderer.removeListener('menu:open-help', listener);
+    };
+  },
 });
