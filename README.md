@@ -1,3 +1,4 @@
+<img width="1916" height="423" alt="image" src="https://github.com/user-attachments/assets/49aa6653-1dbb-4829-b506-088d7e26e0ac" />
 # DevTyper - Developer Typing Tutor
 
 ![DevTyper](https://img.shields.io/badge/version-0.1.0-blue)
