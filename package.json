@@ -89,7 +89,7 @@
       ],
       "category": "Development",
       "icon": "build/icons/icon.png",
-      "maintainer": "Biruk.B <103274295+gitbiruk2010@users.noreply.github.com>",
+      "maintainer": "Biruk.B  <103274295+gitbiruk2010@users.noreply.github.com>",
       "synopsis": "Developer typing tutor",
       "artifactName": "${productName}-${version}-linux.${ext}"
     }
